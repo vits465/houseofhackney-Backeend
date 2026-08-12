@@ -1,0 +1,307 @@
+{
+  "info": {
+    "name": "HOUSE Brand API",
+    "description": "Dedicated API collection for HOUSE Brand API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api/v1",
+      "type": "string"
+    },
+    {
+      "key": "accessToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "refreshToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "categoryId",
+      "value": "67a76d010b4a90fc1d5c9b10",
+      "type": "string"
+    },
+    {
+      "key": "brandId",
+      "value": "67a76d010b4a90fc1d5c9b14",
+      "type": "string"
+    },
+    {
+      "key": "productId",
+      "value": "67a76d010b4a90fc1d5c9b1b",
+      "type": "string"
+    },
+    {
+      "key": "variantId",
+      "value": "67a76d010b4a90fc1d5c9b20",
+      "type": "string"
+    },
+    {
+      "key": "inventoryId",
+      "value": "67a76d010b4a90fc1d5c9b25",
+      "type": "string"
+    },
+    {
+      "key": "attributeId",
+      "value": "67a76d010b4a90fc1d5c9b28",
+      "type": "string"
+    },
+    {
+      "key": "valueId",
+      "value": "67a76d010b4a90fc1d5c9b29",
+      "type": "string"
+    },
+    {
+      "key": "reviewId",
+      "value": "67a76d010b4a90fc1d5c9b2c",
+      "type": "string"
+    },
+    {
+      "key": "orderId",
+      "value": "67a76d010b4a90fc1d5c9b30",
+      "type": "string"
+    },
+    {
+      "key": "addressId",
+      "value": "67a76d010b4a90fc1d5c9b33",
+      "type": "string"
+    },
+    {
+      "key": "couponId",
+      "value": "67a76d010b4a90fc1d5c9b36",
+      "type": "string"
+    },
+    {
+      "key": "paymentId",
+      "value": "67a76d010b4a90fc1d5c9b38",
+      "type": "string"
+    },
+    {
+      "key": "shipmentId",
+      "value": "67a76d010b4a90fc1d5c9b3a",
+      "type": "string"
+    },
+    {
+      "key": "invoiceId",
+      "value": "67a76d010b4a90fc1d5c9b3c",
+      "type": "string"
+    },
+    {
+      "key": "companyId",
+      "value": "67a76d010b4a90fc1d5c9b40",
+      "type": "string"
+    },
+    {
+      "key": "tradeProfileId",
+      "value": "67a76d010b4a90fc1d5c9b50",
+      "type": "string"
+    },
+    {
+      "key": "tradeTierId",
+      "value": "67a76d010b4a90fc1d5c9b55",
+      "type": "string"
+    },
+    {
+      "key": "quotationId",
+      "value": "67a76d010b4a90fc1d5c9b60",
+      "type": "string"
+    },
+    {
+      "key": "userId",
+      "value": "67a76d010b4a90fc1d5c9b01",
+      "type": "string"
+    },
+    {
+      "key": "roleId",
+      "value": "67a76d010b4a90fc1d5c9b02",
+      "type": "string"
+    },
+    {
+      "key": "permissionId",
+      "value": "67a76d010b4a90fc1d5c9b03",
+      "type": "string"
+    },
+    {
+      "key": "moduleId",
+      "value": "67a76d010b4a90fc1d5c9b04",
+      "type": "string"
+    },
+    {
+      "key": "mediaId",
+      "value": "67a76d010b4a90fc1d5c9b70",
+      "type": "string"
+    },
+    {
+      "key": "itemId",
+      "value": "67a76d010b4a90fc1d5c9b80",
+      "type": "string"
+    },
+    {
+      "key": "trackingNumber",
+      "value": "HOH-TRK-987654321",
+      "type": "string"
+    },
+    {
+      "key": "targetProductId",
+      "value": "67a76d010b4a90fc1d5c9b1e",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "List All Brands",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/brands",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "brands"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Brand Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/brands/{{brandId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "brands",
+            "{{brandId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Brand",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/brands",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "brands"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"House of Hackney\",\n  \"slug\": \"house-of-hackney\",\n  \"description\": \"Iconic British luxury interior design brand\",\n  \"website\": \"https://houseofhackney.com\",\n  \"isActive\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Brand",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/brands/{{brandId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "brands",
+            "{{brandId}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"description\": \"Updated House of Hackney luxury brand description\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Brand",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/brands/{{brandId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "brands",
+            "{{brandId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

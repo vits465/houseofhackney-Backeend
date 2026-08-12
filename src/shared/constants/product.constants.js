@@ -1,0 +1,21 @@
+export const PRODUCT_STATUS = {
+    DRAFT: "DRAFT",
+    READY: "READY",
+    PUBLISHED: "PUBLISHED",
+    ARCHIVED: "ARCHIVED",
+};
+
+export const PRODUCT_VISIBILITY = {
+    PUBLIC: "PUBLIC",
+    PRIVATE: "PRIVATE",
+    HIDDEN: "HIDDEN",
+};
+
+export const PRODUCT_TYPES = {
+    WALLPAPER: "WALLPAPER",
+    FABRIC: "FABRIC",
+    FURNITURE: "FURNITURE",
+    LIGHTING: "LIGHTING",
+    PAINT: "PAINT",
+    ACCESSORY: "ACCESSORY",
+};

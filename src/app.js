@@ -1,0 +1,20 @@
+import express from "express";
+import routes from "./routes/index.js";
+import errorHandler from "./middlewares/error.middleware.js";
+
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.use("/api/v1", routes);
+
+// Global error handler (always last)
+app.use(errorHandler);
+
+app.get("/", (req, res) => {
+  res.send("Backend Running");
+});
+
+export default app;

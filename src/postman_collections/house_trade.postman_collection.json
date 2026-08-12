@@ -1,0 +1,943 @@
+{
+  "info": {
+    "name": "HOUSE B2B Trade API",
+    "description": "Dedicated API collection for HOUSE B2B Trade API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api/v1",
+      "type": "string"
+    },
+    {
+      "key": "accessToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "refreshToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "categoryId",
+      "value": "67a76d010b4a90fc1d5c9b10",
+      "type": "string"
+    },
+    {
+      "key": "brandId",
+      "value": "67a76d010b4a90fc1d5c9b14",
+      "type": "string"
+    },
+    {
+      "key": "productId",
+      "value": "67a76d010b4a90fc1d5c9b1b",
+      "type": "string"
+    },
+    {
+      "key": "variantId",
+      "value": "67a76d010b4a90fc1d5c9b20",
+      "type": "string"
+    },
+    {
+      "key": "inventoryId",
+      "value": "67a76d010b4a90fc1d5c9b25",
+      "type": "string"
+    },
+    {
+      "key": "attributeId",
+      "value": "67a76d010b4a90fc1d5c9b28",
+      "type": "string"
+    },
+    {
+      "key": "valueId",
+      "value": "67a76d010b4a90fc1d5c9b29",
+      "type": "string"
+    },
+    {
+      "key": "reviewId",
+      "value": "67a76d010b4a90fc1d5c9b2c",
+      "type": "string"
+    },
+    {
+      "key": "orderId",
+      "value": "67a76d010b4a90fc1d5c9b30",
+      "type": "string"
+    },
+    {
+      "key": "addressId",
+      "value": "67a76d010b4a90fc1d5c9b33",
+      "type": "string"
+    },
+    {
+      "key": "couponId",
+      "value": "67a76d010b4a90fc1d5c9b36",
+      "type": "string"
+    },
+    {
+      "key": "paymentId",
+      "value": "67a76d010b4a90fc1d5c9b38",
+      "type": "string"
+    },
+    {
+      "key": "shipmentId",
+      "value": "67a76d010b4a90fc1d5c9b3a",
+      "type": "string"
+    },
+    {
+      "key": "invoiceId",
+      "value": "67a76d010b4a90fc1d5c9b3c",
+      "type": "string"
+    },
+    {
+      "key": "companyId",
+      "value": "67a76d010b4a90fc1d5c9b40",
+      "type": "string"
+    },
+    {
+      "key": "tradeProfileId",
+      "value": "67a76d010b4a90fc1d5c9b50",
+      "type": "string"
+    },
+    {
+      "key": "tradeTierId",
+      "value": "67a76d010b4a90fc1d5c9b55",
+      "type": "string"
+    },
+    {
+      "key": "quotationId",
+      "value": "67a76d010b4a90fc1d5c9b60",
+      "type": "string"
+    },
+    {
+      "key": "userId",
+      "value": "67a76d010b4a90fc1d5c9b01",
+      "type": "string"
+    },
+    {
+      "key": "roleId",
+      "value": "67a76d010b4a90fc1d5c9b02",
+      "type": "string"
+    },
+    {
+      "key": "permissionId",
+      "value": "67a76d010b4a90fc1d5c9b03",
+      "type": "string"
+    },
+    {
+      "key": "moduleId",
+      "value": "67a76d010b4a90fc1d5c9b04",
+      "type": "string"
+    },
+    {
+      "key": "mediaId",
+      "value": "67a76d010b4a90fc1d5c9b70",
+      "type": "string"
+    },
+    {
+      "key": "itemId",
+      "value": "67a76d010b4a90fc1d5c9b80",
+      "type": "string"
+    },
+    {
+      "key": "trackingNumber",
+      "value": "HOH-TRK-987654321",
+      "type": "string"
+    },
+    {
+      "key": "targetProductId",
+      "value": "67a76d010b4a90fc1d5c9b1e",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get Current Trade Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/profiles/me",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "profiles",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Apply for Trade Account",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/profiles/apply",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "profiles",
+            "apply"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phone\": \"+442079460912\",\n  \"businessType\": \"INTERIOR_DESIGNER\",\n  \"gstNumber\": \"GST-GB-987654321\",\n  \"vatNumber\": \"GB123456789\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Pending Applications (Admin)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/profiles/pending",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "profiles",
+            "pending"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Review Application (Admin)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/profiles/{{tradeProfileId}}/review",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "profiles",
+            "{{tradeProfileId}}",
+            "review"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"APPROVED\",\n  \"tierId\": \"{{tradeTierId}}\",\n  \"creditLimit\": 50000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Companies",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/companies",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "companies"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Company Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/companies/{{companyId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "companies",
+            "{{companyId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Company",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/companies",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "companies"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Hackney Interiors Studio Ltd\",\n  \"country\": \"United Kingdom\",\n  \"taxNumber\": \"GB-TAX-998877\",\n  \"registrationNumber\": \"12345678\",\n  \"website\": \"https://hackneyinteriors.co.uk\",\n  \"email\": \"contact@hackneyinteriors.co.uk\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Company",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/companies/{{companyId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "companies",
+            "{{companyId}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Hackney Design Studio Ltd\",\n  \"website\": \"https://hackneydesign.co.uk\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Company",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/companies/{{companyId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "companies",
+            "{{companyId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Trade Tiers",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/tiers",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "tiers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Trade Tier Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/tiers/{{tradeTierId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "tiers",
+            "{{tradeTierId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Seed Default Tiers (Admin)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/tiers/seed",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "tiers",
+            "seed"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Trade Tier",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/tiers",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "tiers"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"GOLD\",\n  \"discountPercentage\": 25,\n  \"creditLimit\": 25000,\n  \"paymentTerm\": \"NET_30\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Trade Tier",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/tiers/{{tradeTierId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "tiers",
+            "{{tradeTierId}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"discountPercentage\": 30\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Trade Pricing by Product",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/pricing/product/{{productId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "pricing",
+            "product",
+            "{{productId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Set Trade Tier Pricing (Admin)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/pricing",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "pricing"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productId\": \"{{productId}}\",\n  \"tradeTierId\": \"{{tradeTierId}}\",\n  \"price\": 105,\n  \"minQuantity\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Customer Quotations",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/quotations",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "quotations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Quotation Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/quotations/{{quotationId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "quotations",
+            "{{quotationId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request Bulk Quotation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/quotations/request",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "quotations",
+            "request"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"items\": [\n    {\n      \"product\": \"{{productId}}\",\n      \"quantity\": 50\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Approve Quotation",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/quotations/{{quotationId}}/approve",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "quotations",
+            "{{quotationId}}",
+            "approve"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"notes\": \"Approved by client\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Convert Quotation to Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/quotations/{{quotationId}}/convert",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "quotations",
+            "{{quotationId}}",
+            "convert"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"shippingAddressId\": \"{{addressId}}\",\n  \"paymentMethod\": \"INVOICE_NET30\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Negotiate Quotation (Admin)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/quotations/{{quotationId}}/negotiate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "quotations",
+            "{{quotationId}}",
+            "negotiate"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"discount\": 15\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get My Credit Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/credits/me",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "credits",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Set Credit Limit (Admin)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trade/credits",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "trade",
+            "credits"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"userId\": \"{{userId}}\",\n  \"totalCredit\": 50000,\n  \"paymentTerm\": \"NET_30\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    }
+  ]
+}
