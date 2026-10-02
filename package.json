@@ -10,8 +10,7 @@
     "seed": "node src/seed.js",
     "seed:images": "node src/seed_images_catalog.js",
     "upload:cloudinary": "node src/upload_images_to_cloudinary.js",
-    "swagger:generate": "node src/docs/generateSwagger.js",
-    "build": "echo 'Build completed'"
+    "swagger:generate": "node src/docs/generateSwagger.js"
   },
   "dependencies": {
     "@scalar/express-api-reference": "^0.10.16",
