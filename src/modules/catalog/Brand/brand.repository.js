@@ -1,10 +1,11 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Brand from "./brand.model.js";
+import { BRAND_POPULATE } from "../../../shared/populate/catalog.populate.js";
 
 class BrandRepository extends BaseRepository {
 
     constructor() {
-        super(Brand);
+        super(Brand, BRAND_POPULATE);
     }
 
 // Find By Slug

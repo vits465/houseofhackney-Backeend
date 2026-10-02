@@ -37,7 +37,12 @@ const productMediaSchema = new mongoose.Schema(
             default: null,
         },
 
-        gallery: [galleryItemSchema],
+        gallery: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Media",
+            },
+        ],
 
         videos: [
             {

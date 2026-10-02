@@ -4,13 +4,13 @@ const specificationItemSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: true,
+            default: "Specification",
             trim: true,
         },
 
         value: {
             type: String,
-            required: true,
+            default: "Standard",
             trim: true,
         },
 

@@ -12,6 +12,13 @@ const router = Router();
 // All credit limit operations require authentication
 router.use(authMiddleware);
 
+// Admin: Get all company credit limits
+router.get(
+    "/",
+    authorize(["ADMIN", "SUPER_ADMIN"]),
+    creditLimitController.getAllCredits
+);
+
 // Get current user credit details
 router.get(
     "/me",

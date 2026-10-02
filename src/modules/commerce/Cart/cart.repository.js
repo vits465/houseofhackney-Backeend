@@ -1,10 +1,11 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Cart from "./cart.model.js";
+import { CART_POPULATE } from "../../../shared/populate/cart.populate.js";
 
 class CartRepository extends BaseRepository {
 
     constructor() {
-        super(Cart);
+        super(Cart, CART_POPULATE);
     }
 
     async findByUser(userId) {
@@ -12,9 +13,7 @@ class CartRepository extends BaseRepository {
         return await this.model.findOne({
             user: userId,
             deletedAt: null,
-        })
-            .populate("items.product", "name slug sku thumbnail productType")
-            .populate("items.variant", "name sku attributes");
+        }).populate(CART_POPULATE);
 
     }
 
@@ -45,7 +44,7 @@ class CartRepository extends BaseRepository {
                 },
             },
             { new: true }
-        );
+        ).populate(CART_POPULATE);
 
     }
 

@@ -42,11 +42,10 @@ const attributeValueSchema = new mongoose.Schema(
   { _id: true }
 );
 
-attributeValueSchema.pre("validate", function (next) {
+attributeValueSchema.pre("validate", function () {
   if (!this.slug && this.label) {
     this.slug = slugify(this.label);
   }
-  next();
 });
 
 const attributeSchema = new mongoose.Schema(
@@ -118,11 +117,10 @@ const attributeSchema = new mongoose.Schema(
   }
 );
 
-attributeSchema.pre("validate", function (next) {
+attributeSchema.pre("validate", function () {
   if (!this.slug && this.name) {
     this.slug = slugify(this.name);
   }
-  next();
 });
 
 attributeSchema.index({ isVariant: 1 });

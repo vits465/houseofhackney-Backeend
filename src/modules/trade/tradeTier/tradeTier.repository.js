@@ -9,7 +9,7 @@ class TradeTierRepository extends BaseRepository {
 
     // Find trade tier by name
     async findByName(name) {
-        return await this.model.findOne({
+        return await this.findOne({
             name: name.trim().toUpperCase(),
             deletedAt: null,
         });
@@ -17,10 +17,10 @@ class TradeTierRepository extends BaseRepository {
 
     // Find all active trade tiers sorted by discount percentage
     async findActive() {
-        return await this.model.find({
+        return await this.findAll({
             status: "ACTIVE",
             deletedAt: null,
-        }).sort({ discountPercentage: 1 });
+        }, null, { sort: { discountPercentage: 1 } });
     }
 
 }

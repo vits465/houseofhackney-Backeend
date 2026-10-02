@@ -244,7 +244,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"metaTitle\": \"Luxury Artemis Velvet Fabric | House of Hackney\"\n}",
+          "raw": "{\n  \"metaTitle\": \"Artemis Midnight Black Velvet Wallpaper | House of Hackney\",\n  \"metaDescription\": \"Discover the iconic Artemis dark botanical wallpaper by House of Hackney. Hand-painted British flora crafted on eco non-woven paper.\",\n  \"keywords\": [\n    \"artemis wallpaper\",\n    \"dark botanical wallpaper\",\n    \"luxury wallpaper\",\n    \"house of hackney\"\n  ]\n}",
           "options": {
             "raw": {
               "language": "json"

@@ -1,10 +1,11 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Wishlist from "./wishlist.model.js";
+import { WISHLIST_POPULATE } from "../../../shared/populate/wishlist.populate.js";
 
 class WishlistRepository extends BaseRepository {
 
     constructor() {
-        super(Wishlist);
+        super(Wishlist, WISHLIST_POPULATE);
     }
 
     async findByUser(userId) {
@@ -12,9 +13,7 @@ class WishlistRepository extends BaseRepository {
         return await this.model.findOne({
             user: userId,
             deletedAt: null,
-        })
-            .populate("items.product", "name slug price thumbnail status")
-            .populate("items.variant", "name sku attributes");
+        }).populate(WISHLIST_POPULATE);
 
     }
 
@@ -33,9 +32,7 @@ class WishlistRepository extends BaseRepository {
                 runValidators: true,
                 upsert: true,
             }
-        )
-            .populate("items.product", "name slug price thumbnail status")
-            .populate("items.variant", "name sku attributes");
+        ).populate(WISHLIST_POPULATE);
 
     }
 
@@ -56,9 +53,7 @@ class WishlistRepository extends BaseRepository {
             {
                 new: true,
             }
-        )
-            .populate("items.product", "name slug price thumbnail status")
-            .populate("items.variant", "name sku attributes");
+        ).populate(WISHLIST_POPULATE);
 
     }
 
@@ -75,7 +70,7 @@ class WishlistRepository extends BaseRepository {
             {
                 new: true,
             }
-        );
+        ).populate(WISHLIST_POPULATE);
 
     }
 

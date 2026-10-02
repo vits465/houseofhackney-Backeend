@@ -19,6 +19,22 @@ class CreditLimitController {
         }
     }
 
+    // Get all credit limits (Admin)
+    async getAllCredits(req, res, next) {
+        try {
+            const credits = await creditLimitService.getAllCreditLimits();
+
+            return new ApiResponse(
+                res,
+                200,
+                "All credit accounts fetched successfully.",
+                credits
+            ).send();
+        } catch (error) {
+            next(error);
+        }
+    }
+
     // Get current user credit account
     async getMyCredit(req, res, next) {
         try {

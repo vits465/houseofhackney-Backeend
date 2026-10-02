@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 const brandSchema = new mongoose.Schema(
     {
-        
         // Basic information
         name: {
             type: String,
@@ -31,8 +30,7 @@ const brandSchema = new mongoose.Schema(
             maxlength: 300,
         },
 
-// Field definition
-        o: {
+        logo: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Media",
             default: null,
@@ -50,8 +48,7 @@ const brandSchema = new mongoose.Schema(
             default: null,
         },
 
-// Field definition
-        e: {
+        website: {
             type: String,
             default: "",
         },
@@ -63,74 +60,46 @@ const brandSchema = new mongoose.Schema(
 
         establishedYear: Number,
 
-// Field definition
-        o: {
-
+        seo: {
             metaTitle: String,
-
             metaDescription: String,
-
             metaKeywords: [String],
-
         },
 
-// Field definition
-        r: {
-
+        sortOrder: {
             type: Number,
-
             default: 0,
-
         },
 
         isFeatured: {
-
             type: Boolean,
-
             default: false,
-
         },
 
         status: {
-
             type: String,
-
             enum: ["ACTIVE", "INACTIVE"],
-
             default: "ACTIVE",
-
         },
 
-// Soft delete timestamp
+        // Soft delete timestamp
         deletedAt: {
-
             type: Date,
-
             default: null,
-
         },
 
-// Audit tracking fields
+        // Audit tracking fields
         createdBy: {
-
             type: mongoose.Schema.Types.ObjectId,
-
             ref: "User",
-
             default: null,
-
         },
 
         updatedBy: {
-
             type: mongoose.Schema.Types.ObjectId,
-
             ref: "User",
-
             default: null,
-
         },
-
     },
     {
         timestamps: true,
@@ -138,7 +107,6 @@ const brandSchema = new mongoose.Schema(
     }
 );
 
-// `slug` has unique:true on the schema path; avoid duplicate index declaration
 brandSchema.index({ status: 1 });
 brandSchema.index({ isFeatured: 1 });
 brandSchema.index({ sortOrder: 1 });

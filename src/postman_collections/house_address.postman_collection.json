@@ -230,7 +230,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"fullName\": \"Jane Doe\",\n  \"phone\": \"+447123456789\",\n  \"email\": \"jane.doe@example.com\",\n  \"country\": \"United Kingdom\",\n  \"state\": \"Greater London\",\n  \"city\": \"London\",\n  \"postalCode\": \"E2 8NA\",\n  \"addressLine1\": \"123 Hackney Road\",\n  \"addressLine2\": \"Apartment 4B\",\n  \"isDefault\": true\n}",
+          "raw": "{\n  \"fullName\": \"Aditya Chauhan\",\n  \"phone\": \"+447123456789\",\n  \"email\": \"adichauha465@gmail.com\",\n  \"addressLine1\": \"St. Michael's Alley, Cornhill\",\n  \"addressLine2\": \"Suite 4B\",\n  \"city\": \"London\",\n  \"state\": \"Greater London\",\n  \"postalCode\": \"EC3V 9DS\",\n  \"country\": \"United Kingdom\",\n  \"type\": \"SHIPPING\",\n  \"isDefault\": true\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -266,7 +266,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"addressLine2\": \"Suite 500\",\n  \"postalCode\": \"E2 8NB\"\n}",
+          "raw": "{\n  \"fullName\": \"Aditya Chauhan\",\n  \"phone\": \"+447987654321\",\n  \"email\": \"adichauha465@gmail.com\",\n  \"addressLine1\": \"St. Michael's Alley, Cornhill\",\n  \"addressLine2\": \"Penthouse 500\",\n  \"city\": \"London\",\n  \"state\": \"Greater London\",\n  \"postalCode\": \"EC3V 9DS\",\n  \"country\": \"United Kingdom\",\n  \"type\": \"SHIPPING\",\n  \"isDefault\": true\n}",
           "options": {
             "raw": {
               "language": "json"

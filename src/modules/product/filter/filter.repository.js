@@ -228,6 +228,41 @@ class FilterRepository extends BaseRepository {
               },
             },
             { $unwind: { path: "$brand", preserveNullAndEmptyArrays: true } },
+            {
+              $lookup: {
+                from: "collections",
+                localField: "collection",
+                foreignField: "_id",
+                as: "collection",
+              },
+            },
+            { $unwind: { path: "$collection", preserveNullAndEmptyArrays: true } },
+            {
+              $lookup: {
+                from: "materials",
+                localField: "material",
+                foreignField: "_id",
+                as: "material",
+              },
+            },
+            { $unwind: { path: "$material", preserveNullAndEmptyArrays: true } },
+            {
+              $lookup: {
+                from: "designers",
+                localField: "designer",
+                foreignField: "_id",
+                as: "designer",
+              },
+            },
+            { $unwind: { path: "$designer", preserveNullAndEmptyArrays: true } },
+            {
+              $lookup: {
+                from: "colours",
+                localField: "colours",
+                foreignField: "_id",
+                as: "colours",
+              },
+            },
           ],
         },
       },

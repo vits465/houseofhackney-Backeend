@@ -259,7 +259,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"orderId\": \"{{orderId}}\",\n  \"courier\": \"DHL_EXPRESS\",\n  \"trackingNumber\": \"HOH-TRK-987654321\",\n  \"estimatedDelivery\": \"2026-08-15T18:00:00.000Z\"\n}",
+          "raw": "{\n  \"orderId\": \"{{orderId}}\",\n  \"courierName\": \"DHL_EXPRESS\",\n  \"trackingNumber\": \"HOH-TRK-987654321\",\n  \"trackingUrl\": \"https://www.dhl.com/en/express/tracking.html?AWB=HOH-TRK-987654321\",\n  \"estimatedDelivery\": \"2026-08-20T17:00:00.000Z\",\n  \"status\": \"SHIPPED\",\n  \"location\": \"London Central Fulfillment Hub\",\n  \"comment\": \"Package picked up by courier and dispatched for air priority delivery.\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -296,7 +296,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"status\": \"IN_TRANSIT\",\n  \"location\": \"London Sorting Facility\",\n  \"comment\": \"Package scanned and in transit\"\n}",
+          "raw": "{\n  \"status\": \"IN_TRANSIT\",\n  \"location\": \"Heathrow Sorting Facility, London\",\n  \"comment\": \"Package scanned at sorting hub and loaded onto delivery vehicle.\"\n}",
           "options": {
             "raw": {
               "language": "json"

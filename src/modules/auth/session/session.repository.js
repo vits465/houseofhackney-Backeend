@@ -1,13 +1,14 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Session from "./session.model.js";
+import { SESSION_POPULATE } from "../../../shared/populate/auth.populate.js";
 
 class SessionRepository extends BaseRepository {
   constructor() {
-    super(Session);
+    super(Session, SESSION_POPULATE);
   }
 
   async findActiveByRefreshTokenHash(refreshTokenHash) {
-    return this.model.findOne({
+    return this.findOne({
       refreshTokenHash,
       isRevoked: false,
       expiresAt: { $gt: new Date() },
@@ -15,13 +16,11 @@ class SessionRepository extends BaseRepository {
   }
 
   async findActiveSessionsByUserId(userId) {
-    return this.model
-      .find({
-        user: userId,
-        isRevoked: false,
-        expiresAt: { $gt: new Date() },
-      })
-      .sort({ lastUsedAt: -1 });
+    return this.findAll({
+      user: userId,
+      isRevoked: false,
+      expiresAt: { $gt: new Date() },
+    }, null, { sort: { lastUsedAt: -1 } });
   }
 
   async revokeSessionById(sessionId, revokedBy = null) {
@@ -33,7 +32,7 @@ class SessionRepository extends BaseRepository {
         revokedBy,
       },
       { new: true }
-    );
+    ).populate(SESSION_POPULATE);
   }
 
   async revokeAllUserSessions(userId, revokedBy = null) {

@@ -1,45 +1,30 @@
+import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Permission from "./permission.model.js";
+import { PERMISSION_POPULATE } from "../../../shared/populate/auth.populate.js";
 
-class PermissionRepository {
+class PermissionRepository extends BaseRepository {
 
-  async create(data) {
-    return await Permission.create(data);
-  }
-
-  async findById(id) {
-    return await Permission.findById(id).populate("moduleId");
+  constructor() {
+    super(Permission, PERMISSION_POPULATE);
   }
 
   async findBySlug(slug) {
-    return await Permission.findOne({ slug });
+    return await this.findOne({ slug });
   }
 
   async findByModule(moduleId) {
-    return await Permission
-      .find({ moduleId })
-      .sort({ sortOrder: 1 });
-  }
-
-  async findAll(filter = {}) {
-    return await Permission
-      .find(filter)
-      .populate("moduleId")
-      .sort({ sortOrder: 1, createdAt: -1 });
-  }
-
-  async update(id, data) {
-    return await Permission.findByIdAndUpdate(
-      id,
-      data,
-      {
-        returnDocument: 'after',
-        runValidators: true,
-      }
+    return await this.findAll(
+      { moduleId },
+      null,
+      { sort: { sortOrder: 1 } }
     );
   }
 
-  async delete(id) {
-    return await Permission.findByIdAndDelete(id);
+  async findAll(filter = {}, projection = null, options = {}) {
+    return await super.findAll(filter, projection, {
+      sort: { sortOrder: 1, createdAt: -1 },
+      ...options,
+    });
   }
 
 }

@@ -4,70 +4,59 @@ import { USER_POPULATE } from "../../shared/populate/user.populate.js";
 
 class UserRepository extends BaseRepository {
   constructor() {
-    super(User);
+    super(User, USER_POPULATE);
   }
 
-// Find User By ID
-    async findById(userId) {
-    return this.model.findById(userId).populate(USER_POPULATE);
-  }
-  
   // Find User By Email
-    async findByEmail(email) {
+  async findByEmail(email) {
     return this.model
       .findOne({ email })
       .select("+password")
       .populate(USER_POPULATE);
   }
 
-// Find User By Phone
-    async findByPhone(phone) {
-    return this.model.findOne({ phone }).populate(USER_POPULATE);
+  // Find User By Phone
+  async findByPhone(phone) {
+    return this.findOne({ phone });
   }
 
-// Find Active Users
-    async findActiveUsers() {
-    return this.model
-      .find({
-        status: "ACTIVE",
-      })
-      .populate(USER_POPULATE);
+  // Find Active Users
+  async findActiveUsers() {
+    return this.findAll({
+      status: "ACTIVE",
+    });
   }
 
-// Find Trade Users
-    async findTradeUsers() {
-    return this.model
-      .find({
-        isTradeAccount: true,
-      })
-      .populate(USER_POPULATE);
+  // Find Trade Users
+  async findTradeUsers() {
+    return this.findAll({
+      isTradeAccount: true,
+    });
   }
 
-// Find Users By Role
-    async findByRole(roleId) {
-    return this.model
-      .find({
-        roles: roleId,
-      })
-      .populate(USER_POPULATE);
+  // Find Users By Role
+  async findByRole(roleId) {
+    return this.findAll({
+      roles: roleId,
+    });
   }
 
-// Check Email Exists
-    async existsByEmail(email) {
+  // Check Email Exists
+  async existsByEmail(email) {
     return this.exists({
       email,
     });
   }
 
-// Check Phone Exists
-    async existsByPhone(phone) {
+  // Check Phone Exists
+  async existsByPhone(phone) {
     return this.exists({
       phone,
     });
   }
 
-// Update Last Login
-    async updateLastLogin(userId) {
+  // Update Last Login
+  async updateLastLogin(userId) {
     return this.model.findByIdAndUpdate(
       userId,
       {
@@ -76,11 +65,11 @@ class UserRepository extends BaseRepository {
       {
         returnDocument: "after",
       },
-    );
+    ).populate(USER_POPULATE);
   }
 
-// Increase Login Attempts
-    async increaseLoginAttempts(userId) {
+  // Increase Login Attempts
+  async increaseLoginAttempts(userId) {
     return this.model.findByIdAndUpdate(
       userId,
       {
@@ -94,8 +83,8 @@ class UserRepository extends BaseRepository {
     );
   }
 
-// Reset Login Attempts
-    async resetLoginAttempts(userId) {
+  // Reset Login Attempts
+  async resetLoginAttempts(userId) {
     return this.model.findByIdAndUpdate(
       userId,
       {
@@ -109,8 +98,8 @@ class UserRepository extends BaseRepository {
     );
   }
 
-// Increment Token Version
-    async incrementTokenVersion(userId) {
+  // Increment Token Version
+  async incrementTokenVersion(userId) {
     return this.model.findByIdAndUpdate(
       userId,
       {
@@ -124,8 +113,8 @@ class UserRepository extends BaseRepository {
     );
   }
 
-// Soft Delete User
-    async softDelete(userId, deletedBy) {
+  // Soft Delete User
+  async softDelete(userId, deletedBy) {
     return this.model.findByIdAndUpdate(
       userId,
       {
@@ -136,7 +125,7 @@ class UserRepository extends BaseRepository {
       {
         returnDocument: "after",
       },
-    );
+    ).populate(USER_POPULATE);
   }
 }
 

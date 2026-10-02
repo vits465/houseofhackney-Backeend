@@ -42,6 +42,11 @@ class CreditLimitService extends BaseService {
         });
     }
 
+    // Get all credit limits (Admin)
+    async getAllCreditLimits() {
+        return await this.repository.findAll({});
+    }
+
     // Get user credit limit & usage
     async getUserCreditLimit(userId) {
         let credit = await this.repository.findByUser(userId);

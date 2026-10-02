@@ -230,7 +230,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Luxury Wallpaper\",\n  \"slug\": \"luxury-wallpaper\",\n  \"description\": \"Exquisite statement wallpapers crafted in England\",\n  \"isActive\": true\n}",
+          "raw": "{\n  \"name\": \"Luxury Wallpapers\",\n  \"description\": \"Hand-painted British heritage wallpapers and floral wallcoverings\",\n  \"showInMenu\": true,\n  \"isFeatured\": true,\n  \"sortOrder\": 1,\n  \"status\": \"ACTIVE\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -266,7 +266,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Luxury Wallpapers & Fabrics\",\n  \"description\": \"British luxury wall coverings and botanical prints\"\n}",
+          "raw": "{\n  \"name\": \"Heritage Luxury Wallpapers\",\n  \"description\": \"Opulent floral and botanical maximalist wallpapers crafted in England\",\n  \"showInMenu\": true,\n  \"isFeatured\": true,\n  \"sortOrder\": 1,\n  \"status\": \"ACTIVE\"\n}",
           "options": {
             "raw": {
               "language": "json"

@@ -1,16 +1,17 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Category from "./category.model.js";
+import { CATEGORY_POPULATE } from "../../../shared/populate/catalog.populate.js";
 
 class CategoryRepository extends BaseRepository {
 
     constructor() {
-        super(Category);
+        super(Category, CATEGORY_POPULATE);
     }
 
 // Find By Slug
     async findBySlug(slug) {
 
-        return this.model.findOne({
+        return this.findOne({
             slug,
             deletedAt: null,
         });
@@ -30,7 +31,7 @@ class CategoryRepository extends BaseRepository {
 // Find Root Categories
     async findRootCategories() {
 
-        return this.model.find({
+        return this.findAll({
             parentCategory: null,
             deletedAt: null,
             status: "ACTIVE",
@@ -41,7 +42,7 @@ class CategoryRepository extends BaseRepository {
 // Find Child Categories
     async findChildren(parentCategory) {
 
-        return this.model.find({
+        return this.findAll({
             parentCategory,
             deletedAt: null,
             status: "ACTIVE",
@@ -52,13 +53,15 @@ class CategoryRepository extends BaseRepository {
 // Find Menu Categories
     async findMenuCategories() {
 
-        return this.model.find({
+        return this.findAll({
             showInMenu: true,
             deletedAt: null,
             status: "ACTIVE",
-        }).sort({
-            sortOrder: 1,
-            name: 1,
+        }, null, {
+            sort: {
+                sortOrder: 1,
+                name: 1,
+            },
         });
 
     }
@@ -66,7 +69,7 @@ class CategoryRepository extends BaseRepository {
 // Find Featured Categories
     async findFeaturedCategories() {
 
-        return this.model.find({
+        return this.findAll({
             isFeatured: true,
             deletedAt: null,
             status: "ACTIVE",
@@ -86,7 +89,7 @@ class CategoryRepository extends BaseRepository {
             {
                 new: true,
             }
-        );
+        ).populate(CATEGORY_POPULATE);
 
     }
 

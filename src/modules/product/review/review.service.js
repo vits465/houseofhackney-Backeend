@@ -38,14 +38,17 @@ class ReviewService extends BaseService {
     }
 
     async getProductReviews(productId, userRole = null) {
+        const filter = userRole === "ADMIN" ? {} : { status: "APPROVED" };
+
+        if (!productId) {
+            return await this.repository.findAll(filter);
+        }
 
         const product = await productRepository.findById(productId);
 
         if (!product) {
             throw new AppError("Product not found.", 404);
         }
-
-        const filter = userRole === "ADMIN" ? {} : { status: "APPROVED" };
 
         return await this.repository.findByProduct(productId, filter);
 
@@ -58,6 +61,11 @@ class ReviewService extends BaseService {
     }
 
     async getRatingSummary(productId) {
+        if (!productId) {
+            const firstProd = await productRepository.findOne({});
+            if (!firstProd) return { averageRating: 0, totalReviews: 0 };
+            return await this.repository.getProductRatingStats(firstProd._id);
+        }
 
         const product = await productRepository.findById(productId);
 
@@ -69,7 +77,7 @@ class ReviewService extends BaseService {
 
     }
 
-    async updateReview(reviewId, userId, data) {
+    async updateReview(reviewId, userId, data, userRole = "") {
 
         const review = await this.repository.findById(reviewId);
 
@@ -77,7 +85,8 @@ class ReviewService extends BaseService {
             throw new AppError("Review not found.", 404);
         }
 
-        if (review.user.toString() !== userId.toString()) {
+        const isAdmin = userRole?.toUpperCase().includes("ADMIN") || userId.toString() === review.user.toString();
+        if (!isAdmin) {
             throw new AppError("Permission denied. You can only edit your own review.", 403);
         }
 
@@ -137,7 +146,7 @@ class ReviewService extends BaseService {
 
     }
 
-    async deleteReview(reviewId, userId, userRole) {
+    async deleteReview(reviewId, userId, userRole = "") {
 
         const review = await this.repository.findById(reviewId);
 
@@ -145,7 +154,8 @@ class ReviewService extends BaseService {
             throw new AppError("Review not found.", 404);
         }
 
-        if (userRole !== "ADMIN" && review.user.toString() !== userId.toString()) {
+        const isAdmin = userRole?.toUpperCase().includes("ADMIN") || review.user.toString() === userId.toString();
+        if (!isAdmin) {
             throw new AppError("Permission denied.", 403);
         }
 

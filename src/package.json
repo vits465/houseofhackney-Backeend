@@ -8,9 +8,11 @@
     "start": "node server.js",
     "seed": "node seed.js",
     "seed:images": "node seed_images_catalog.js",
-    "upload:cloudinary": "node upload_images_to_cloudinary.js"
+    "upload:cloudinary": "node upload_images_to_cloudinary.js",
+    "swagger:generate": "node docs/generateSwagger.js"
   },
   "dependencies": {
+    "@scalar/express-api-reference": "^0.10.16",
     "bcrypt": "^6.0.0",
     "cloudinary": "^2.10.0",
     "compression": "^1.8.1",
@@ -28,7 +30,8 @@
     "multer-storage-cloudinary": "^4.0.0",
     "nodemailer": "^9.0.5",
     "pdfkit": "^0.19.1",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.3",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

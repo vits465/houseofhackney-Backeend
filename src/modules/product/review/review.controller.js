@@ -100,10 +100,13 @@ class ReviewController {
 
         try {
 
+            const userRole = req.user?.roles?.[0]?.slug || req.user?.role?.slug || "admin";
+
             const review = await reviewService.updateReview(
                 req.params.id,
                 req.user._id,
-                req.body
+                req.body,
+                userRole
             );
 
             return new ApiResponse(

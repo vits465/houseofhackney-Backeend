@@ -244,7 +244,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"sellingPrice\": 135\n}",
+          "raw": "{\n  \"sellingPrice\": 145,\n  \"costPrice\": 45,\n  \"compareAtPrice\": 180,\n  \"tradePrice\": 105,\n  \"currency\": \"GBP\",\n  \"taxClass\": \"STANDARD\"\n}",
           "options": {
             "raw": {
               "language": "json"

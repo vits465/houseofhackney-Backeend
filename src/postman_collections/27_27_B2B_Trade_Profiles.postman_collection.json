@@ -1,0 +1,146 @@
+{
+  "info": {
+    "_postman_id": "mod-27",
+    "name": "House of Hackney - 27. B2B Trade Profiles",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Modular collection for 27. B2B Trade Profiles"
+  },
+  "item": [
+    {
+      "name": "27. B2B Trade Profiles",
+      "item": [
+        {
+          "name": "Get Current Trade Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/trade/profiles/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "trade",
+                "profiles",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Apply for Trade Account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyName\": \"Mayfair Interior Studios\",\n  \"vatNumber\": \"GB987654321\",\n  \"businessType\": \"INTERIOR_DESIGNER\",\n  \"website\": \"https://www.mayfairinteriors.co.uk\",\n  \"tradeTier\": \"{{tierId}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/trade/profiles/apply",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "trade",
+                "profiles",
+                "apply"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Pending Applications (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/trade/profiles/pending",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "trade",
+                "profiles",
+                "pending"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Review Application (Admin)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"APPROVED\",\n  \"assignedTier\": \"{{tierId}}\",\n  \"creditLimit\": 50000,\n  \"rejectionReason\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/trade/profiles/{{tradeProfileId}}/review",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "trade",
+                "profiles",
+                "{{tradeProfileId}}",
+                "review"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

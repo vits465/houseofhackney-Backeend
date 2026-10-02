@@ -15,7 +15,7 @@ class TokenService {
     const accessToken = this.#createToken(
       payload,
       jwtConfig.accessSecret,
-      jwtConfig.accessExpiresIn || "15m"
+      jwtConfig.accessExpiresIn || "1d"
     );
 
     const refreshToken = this.#createToken(

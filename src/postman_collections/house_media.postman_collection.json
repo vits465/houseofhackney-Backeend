@@ -230,7 +230,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"filename\": \"artemis-velvet-swatch.jpg\",\n  \"mimeType\": \"image/jpeg\",\n  \"size\": 1048576,\n  \"url\": \"https://storage.houseofhackney.com/media/artemis-velvet-swatch.jpg\"\n}",
+          "raw": "{\n  \"filename\": \"artemis-velvet-swatch-hq.jpg\",\n  \"mimeType\": \"image/jpeg\",\n  \"size\": 2048576,\n  \"url\": \"https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/artemis-swatch.jpg\"\n}",
           "options": {
             "raw": {
               "language": "json"

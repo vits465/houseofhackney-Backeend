@@ -52,6 +52,11 @@ class TradeProfileService extends BaseService {
         return profile;
     }
 
+    // Get all trade profiles (Admin)
+    async getAllProfiles() {
+        return await this.repository.findAll({});
+    }
+
     // Get pending applications (Admin)
     async getPendingApplications() {
         return await this.repository.findPendingApplications();

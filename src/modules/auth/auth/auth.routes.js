@@ -20,13 +20,13 @@ const router = Router();
 // Rate limiters for sensitive endpoints
 const loginLimiter = createRateLimiter({
   windowMs: 15 * 60 * 1000,
-  max: 10,
+  max: 1000,
   message: "Too many login attempts. Please try again after 15 minutes.",
 });
 
 const otpLimiter = createRateLimiter({
   windowMs: 10 * 60 * 1000,
-  max: 5,
+  max: 100,
   message: "Too many OTP requests. Please wait before requesting again.",
 });
 

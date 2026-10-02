@@ -99,22 +99,54 @@ const ensureAdminUser = async (adminRole) => {
   console.log(`✅ Admin user seeded: ${adminEmail}`);
 };
 
+let isConnecting = null;
+
 const connectDatabase = async () => {
-  try {
-    const connection = await mongoose.connect(process.env.MONGODB_URI);
-
-    console.log(
-      `✅ MongoDB Connected: ${connection.connection.host}/${connection.connection.name}`
-    );
-
-    const adminRole = await ensureAdminRole();
-    await ensureAdminUser(adminRole);
-  } catch (error) {
-    console.error("❌ Database Connection Failed");
-    console.error(error.message);
-
-    process.exit(1);
+  // If already connected, reuse connection
+  if (mongoose.connection.readyState >= 1) {
+    return mongoose.connection;
   }
+
+  // If connection is in progress, await the existing promise
+  if (isConnecting) {
+    return isConnecting;
+  }
+
+  const uri = process.env.MONGODB_URI;
+  if (!uri) {
+    console.warn("⚠️ Warning: MONGODB_URI environment variable is not defined!");
+    return null;
+  }
+
+  isConnecting = mongoose
+    .connect(uri, {
+      serverSelectionTimeoutMS: 5000,
+    })
+    .then(async (connection) => {
+      console.log(
+        `✅ MongoDB Connected: ${connection.connection.host}/${connection.connection.name}`
+      );
+
+      // Ensure admin role and user if needed
+      try {
+        const adminRole = await ensureAdminRole();
+        await ensureAdminUser(adminRole);
+      } catch (seedErr) {
+        console.warn("⚠️ Admin seeding note:", seedErr.message);
+      }
+
+      return connection;
+    })
+    .catch((error) => {
+      console.error("❌ Database Connection Failed:", error.message);
+      isConnecting = null;
+      if (process.env.NODE_ENV !== "production" && !process.env.VERCEL) {
+        process.exit(1);
+      }
+      throw error;
+    });
+
+  return isConnecting;
 };
 
 export default connectDatabase;

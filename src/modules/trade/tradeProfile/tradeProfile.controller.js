@@ -35,6 +35,22 @@ class TradeProfileController {
         }
     }
 
+    // Get all trade profiles (Admin)
+    async getAllProfiles(req, res, next) {
+        try {
+            const profiles = await tradeProfileService.getAllProfiles();
+
+            return new ApiResponse(
+                res,
+                200,
+                "All trade profiles fetched successfully.",
+                profiles
+            ).send();
+        } catch (error) {
+            next(error);
+        }
+    }
+
     // Get pending applications (Admin)
     async getPendingApplications(req, res, next) {
         try {

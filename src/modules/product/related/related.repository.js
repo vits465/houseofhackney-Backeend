@@ -1,24 +1,25 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import ProductRelated from "./related.model.js";
+import { RELATED_POPULATE } from "../../../shared/populate/product_sub.populate.js";
 
 class RelatedRepository extends BaseRepository {
 
     constructor() {
-        super(ProductRelated);
+        super(ProductRelated, RELATED_POPULATE);
     }
 
     async findByProduct(productId) {
 
-        return await this.model.findOne({
+        return await this.findOne({
             product: productId,
             deletedAt: null,
-        }).populate("relatedProducts.product");
+        });
 
     }
 
     async addRelatedProduct(productId, item) {
 
-        return await this.model.findOneAndUpdate(
+        const doc = await this.model.findOneAndUpdate(
             {
                 product: productId,
                 deletedAt: null,
@@ -30,13 +31,19 @@ class RelatedRepository extends BaseRepository {
                 new: true,
                 runValidators: true,
             }
-        ).populate("relatedProducts.product");
+        );
+
+        if (doc && doc._id) {
+            return await this.findById(doc._id);
+        }
+
+        return doc;
 
     }
 
     async removeRelatedProduct(productId, targetProductId) {
 
-        return await this.model.findOneAndUpdate(
+        const doc = await this.model.findOneAndUpdate(
             {
                 product: productId,
                 deletedAt: null,
@@ -49,7 +56,13 @@ class RelatedRepository extends BaseRepository {
             {
                 new: true,
             }
-        ).populate("relatedProducts.product");
+        );
+
+        if (doc && doc._id) {
+            return await this.findById(doc._id);
+        }
+
+        return doc;
 
     }
 

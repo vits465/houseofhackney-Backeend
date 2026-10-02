@@ -1,10 +1,11 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Attribute from "./attribute.model.js";
+import { ATTRIBUTE_POPULATE } from "../../../shared/populate/product_sub.populate.js";
 
 class AttributeRepository extends BaseRepository {
 
     constructor() {
-        super(Attribute);
+        super(Attribute, ATTRIBUTE_POPULATE);
     }
 
     async findBySlug(slug) {
@@ -54,7 +55,7 @@ class AttributeRepository extends BaseRepository {
                 deletedAt: null,
             },
             { values: 1 }
-        );
+        ).populate(ATTRIBUTE_POPULATE);
 
         return attribute?.values || [];
 
@@ -70,18 +71,16 @@ class AttributeRepository extends BaseRepository {
                 deletedAt: null,
             },
             { "values.$": 1 }
-        );
+        ).populate(ATTRIBUTE_POPULATE);
 
         return attribute?.values?.[0] || null;
 
     }
 
-// Add V alue($push)
-
-    
+// Add Value ($push)
     async addValue(attributeId, value) {
 
-        return await this.model.findOneAndUpdate(
+        const doc = await this.model.findOneAndUpdate(
             {
                 _id: attributeId,
                 deletedAt: null,
@@ -93,13 +92,13 @@ class AttributeRepository extends BaseRepository {
                 new: true,
                 runValidators: true,
             }
-        );
+        ).populate(ATTRIBUTE_POPULATE);
+
+        return doc;
 
     }
 
-// Update V alue($set with positional operator)
-
-    
+// Update Value ($set with positional operator)
     async updateValue(attributeId, valueId, data) {
 
         const updateFields = {};
@@ -108,7 +107,7 @@ class AttributeRepository extends BaseRepository {
             updateFields[`values.$.${key}`] = val;
         }
 
-        return await this.model.findOneAndUpdate(
+        const doc = await this.model.findOneAndUpdate(
             {
                 _id: attributeId,
                 "values._id": valueId,
@@ -121,16 +120,16 @@ class AttributeRepository extends BaseRepository {
                 new: true,
                 runValidators: true,
             }
-        );
+        ).populate(ATTRIBUTE_POPULATE);
+
+        return doc;
 
     }
 
-// Delete V alue($pull)
-
-    
+// Delete Value ($pull)
     async deleteValue(attributeId, valueId) {
 
-        return await this.model.findOneAndUpdate(
+        const doc = await this.model.findOneAndUpdate(
             {
                 _id: attributeId,
                 deletedAt: null,
@@ -143,7 +142,9 @@ class AttributeRepository extends BaseRepository {
             {
                 new: true,
             }
-        );
+        ).populate(ATTRIBUTE_POPULATE);
+
+        return doc;
 
     }
 

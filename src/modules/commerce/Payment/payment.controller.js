@@ -38,7 +38,10 @@ class PaymentController {
     // Get user payments list
     async getUserPayments(req, res, next) {
         try {
-            const payments = await paymentService.getUserPayments(req.user._id);
+            const isAdmin = req.user.roles?.some(r => r.slug === "admin" || r.slug === "super_admin" || r.slug === "super-admin");
+            const payments = isAdmin
+                ? await paymentService.repository.findAll({})
+                : await paymentService.getUserPayments(req.user._id);
 
             return new ApiResponse(
                 res,

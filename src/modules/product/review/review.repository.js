@@ -1,42 +1,35 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Review from "./review.model.js";
+import { REVIEW_POPULATE } from "../../../shared/populate/product_sub.populate.js";
 
 class ReviewRepository extends BaseRepository {
 
     constructor() {
-        super(Review);
+        super(Review, REVIEW_POPULATE);
     }
 
     async findByProduct(productId, filter = {}) {
 
-        return await this.model.find({
+        return await this.findAll({
             product: productId,
             deletedAt: null,
             ...filter,
-        })
-            .populate("user", "firstName lastName avatar")
-            .populate("variant", "name sku")
-            .populate("images")
-            .populate("adminReply.repliedBy", "firstName lastName")
-            .sort({ createdAt: -1 });
+        }, null, { sort: { createdAt: -1 } });
 
     }
 
     async findByUser(userId) {
 
-        return await this.model.find({
+        return await this.findAll({
             user: userId,
             deletedAt: null,
-        })
-            .populate("product", "name slug thumbnail")
-            .populate("variant", "name sku")
-            .sort({ createdAt: -1 });
+        }, null, { sort: { createdAt: -1 } });
 
     }
 
     async findUserProductReview(userId, productId) {
 
-        return await this.model.findOne({
+        return await this.findOne({
             user: userId,
             product: productId,
             deletedAt: null,
@@ -55,7 +48,7 @@ class ReviewRepository extends BaseRepository {
                 $inc: { likes: 1 },
             },
             { new: true }
-        );
+        ).populate(REVIEW_POPULATE);
 
     }
 
@@ -70,7 +63,7 @@ class ReviewRepository extends BaseRepository {
                 $inc: { dislikes: 1 },
             },
             { new: true }
-        );
+        ).populate(REVIEW_POPULATE);
 
     }
 
@@ -82,7 +75,7 @@ class ReviewRepository extends BaseRepository {
                 deletedAt: null,
             },
             {
-                adminReply: {
+                reply: {
                     message,
                     repliedBy,
                     repliedAt: new Date(),
@@ -90,7 +83,7 @@ class ReviewRepository extends BaseRepository {
                 updatedBy: repliedBy,
             },
             { new: true }
-        ).populate("adminReply.repliedBy", "firstName lastName");
+        ).populate(REVIEW_POPULATE);
 
     }
 
@@ -106,7 +99,7 @@ class ReviewRepository extends BaseRepository {
                 updatedBy,
             },
             { new: true }
-        );
+        ).populate(REVIEW_POPULATE);
 
     }
 

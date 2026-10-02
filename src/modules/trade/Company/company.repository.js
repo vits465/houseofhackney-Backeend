@@ -9,7 +9,7 @@ class CompanyRepository extends BaseRepository {
 
     // Find company by tax/registration number
     async findByTaxNumber(taxNumber) {
-        return await this.model.findOne({
+        return await this.findOne({
             taxNumber: taxNumber.trim(),
             deletedAt: null,
         });
@@ -17,10 +17,10 @@ class CompanyRepository extends BaseRepository {
 
     // Find active companies
     async findActive() {
-        return await this.model.find({
+        return await this.findAll({
             status: "ACTIVE",
             deletedAt: null,
-        }).sort({ name: 1 });
+        }, null, { sort: { name: 1 } });
     }
 
 }

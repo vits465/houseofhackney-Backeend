@@ -1,23 +1,24 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Order from "./order.model.js";
+import { ORDER_POPULATE } from "../../../shared/populate/order.populate.js";
 
 class OrderRepository extends BaseRepository {
 
     constructor() {
-        super(Order);
+        super(Order, ORDER_POPULATE);
     }
 
     // Find all orders for a specific user
     async findByUser(userId) {
-        return await this.model.find({
+        return await this.findAll({
             user: userId,
             deletedAt: null,
-        }).sort({ createdAt: -1 });
+        }, null, { sort: { createdAt: -1 } });
     }
 
     // Find order by unique order number
     async findByOrderNumber(orderNumber) {
-        return await this.model.findOne({
+        return await this.findOne({
             orderNumber: orderNumber.trim().toUpperCase(),
             deletedAt: null,
         });
@@ -34,7 +35,7 @@ class OrderRepository extends BaseRepository {
                 },
             },
             { new: true }
-        );
+        ).populate(ORDER_POPULATE);
     }
 
     // Update payment status
@@ -43,7 +44,7 @@ class OrderRepository extends BaseRepository {
             { _id: orderId, deletedAt: null },
             { $set: { paymentStatus } },
             { new: true }
-        );
+        ).populate(ORDER_POPULATE);
     }
 
 }

@@ -178,7 +178,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"orderId\": \"{{orderId}}\",\n  \"amount\": 425.5,\n  \"currency\": \"INR\",\n  \"paymentGateway\": \"STRIPE\"\n}",
+          "raw": "{\n  \"orderId\": \"{{orderId}}\",\n  \"provider\": \"STRIPE\",\n  \"paymentMethod\": \"CREDIT_CARD\",\n  \"paymentId\": \"pi_3MtwB2LkdIwHu7ix08bXyZ12\",\n  \"gatewayTransactionId\": \"txn_987654321\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -214,7 +214,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"paymentId\": \"{{paymentId}}\",\n  \"signature\": \"sig_abc123xyz789\"\n}",
+          "raw": "{\n  \"paymentId\": \"{{paymentId}}\",\n  \"gatewayTransactionId\": \"txn_987654321\",\n  \"signature\": \"sig_abc123xyz7890qwerty\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -304,7 +304,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"refundAmount\": 100,\n  \"reason\": \"Partial refund requested by customer\"\n}",
+          "raw": "{\n  \"refundAmount\": 50,\n  \"reason\": \"Customer returned partial order items\"\n}",
           "options": {
             "raw": {
               "language": "json"

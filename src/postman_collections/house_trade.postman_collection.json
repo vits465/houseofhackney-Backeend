@@ -207,7 +207,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"phone\": \"+442079460912\",\n  \"businessType\": \"INTERIOR_DESIGNER\",\n  \"gstNumber\": \"GST-GB-987654321\",\n  \"vatNumber\": \"GB123456789\"\n}",
+          "raw": "{\n  \"phone\": \"+442079460912\",\n  \"businessType\": \"INTERIOR_DESIGNER\",\n  \"gstNumber\": \"GST-GB-987654321\",\n  \"vatNumber\": \"GB987654321\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -273,7 +273,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"status\": \"APPROVED\",\n  \"tierId\": \"{{tradeTierId}}\",\n  \"creditLimit\": 50000\n}",
+          "raw": "{\n  \"status\": \"APPROVED\",\n  \"tierId\": \"{{tradeTierId}}\",\n  \"creditLimit\": 50000,\n  \"rejectionReason\": \"\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -364,7 +364,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Hackney Interiors Studio Ltd\",\n  \"country\": \"United Kingdom\",\n  \"taxNumber\": \"GB-TAX-998877\",\n  \"registrationNumber\": \"12345678\",\n  \"website\": \"https://hackneyinteriors.co.uk\",\n  \"email\": \"contact@hackneyinteriors.co.uk\"\n}",
+          "raw": "{\n  \"name\": \"Hackney Interiors Studio Ltd\",\n  \"country\": \"United Kingdom\",\n  \"taxNumber\": \"GB-TAX-998877\",\n  \"registrationNumber\": \"REG-12345678\",\n  \"website\": \"https://hackneyinteriors.co.uk\",\n  \"email\": \"contact@hackneyinteriors.co.uk\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -401,7 +401,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Hackney Design Studio Ltd\",\n  \"website\": \"https://hackneydesign.co.uk\"\n}",
+          "raw": "{\n  \"name\": \"Hackney Design & Interiors Studio Ltd\",\n  \"country\": \"United Kingdom\",\n  \"taxNumber\": \"GB-TAX-998877\",\n  \"registrationNumber\": \"REG-12345678\",\n  \"website\": \"https://hackneyinteriors.co.uk\",\n  \"email\": \"info@hackneyinteriors.co.uk\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -521,7 +521,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{}",
+          "raw": "{\n  \"forceReseed\": true\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -557,7 +557,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"GOLD\",\n  \"discountPercentage\": 25,\n  \"creditLimit\": 25000,\n  \"paymentTerm\": \"NET_30\"\n}",
+          "raw": "{\n  \"name\": \"PLATINUM_DESIGNER\",\n  \"discountPercentage\": 35,\n  \"creditLimit\": 100000,\n  \"paymentTerm\": \"NET_60\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -594,7 +594,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"discountPercentage\": 30\n}",
+          "raw": "{\n  \"name\": \"GOLD_DESIGNER\",\n  \"discountPercentage\": 25,\n  \"creditLimit\": 50000,\n  \"paymentTerm\": \"NET_30\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -789,7 +789,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"notes\": \"Approved by client\"\n}",
+          "raw": "{\n  \"discount\": 10\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -827,7 +827,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"shippingAddressId\": \"{{addressId}}\",\n  \"paymentMethod\": \"INVOICE_NET30\"\n}",
+          "raw": "{\n  \"shippingAddressId\": \"{{addressId}}\",\n  \"billingAddressId\": \"{{addressId}}\",\n  \"paymentMethod\": \"TRADE_CREDIT\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -929,7 +929,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"userId\": \"{{userId}}\",\n  \"totalCredit\": 50000,\n  \"paymentTerm\": \"NET_30\"\n}",
+          "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"userId\": \"{{userId}}\",\n  \"totalCredit\": 75000,\n  \"paymentTerm\": \"NET_45\"\n}",
           "options": {
             "raw": {
               "language": "json"

@@ -5,11 +5,7 @@ class CounterController {
 
     async generateSku(req, res, next) {
         try {
-            const { productType } = req.body;
-            if (!productType) {
-                return new ApiResponse(res, 400, "productType is required").send();
-            }
-
+            const productType = req.body.productType || "WALLPAPER";
             const sku = await counterService.generateSku(productType);
 
             return new ApiResponse(res, 200, "SKU generated successfully.", { sku }).send();

@@ -257,7 +257,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"product\": \"{{productId}}\",\n  \"rating\": 5,\n  \"title\": \"Stunning Velvet!\",\n  \"comment\": \"The color depth and texture of this Artemis velvet exceeded my expectations.\"\n}",
+          "raw": "{\n  \"rating\": 5,\n  \"title\": \"Breathtaking quality and vivid colors!\",\n  \"comment\": \"Installed the Artemis wallpaper in our master bedroom. The depth of color and velvet texture exceeded our expectations. Highly recommended!\",\n  \"variant\": \"{{variantId}}\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -330,7 +330,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{}",
+          "raw": "{\n  \"userId\": \"{{userId}}\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -367,7 +367,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{}",
+          "raw": "{\n  \"userId\": \"{{userId}}\"\n}",
           "options": {
             "raw": {
               "language": "json"

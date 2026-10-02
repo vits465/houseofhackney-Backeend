@@ -1,23 +1,24 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Address from "./address.model.js";
+import { ADDRESS_POPULATE } from "../../../shared/populate/commerce.populate.js";
 
 class AddressRepository extends BaseRepository {
 
     constructor() {
-        super(Address);
+        super(Address, ADDRESS_POPULATE);
     }
 
     // Find all addresses for a specific user
     async findByUser(userId) {
-        return await this.model.find({
+        return await this.findAll({
             user: userId,
             deletedAt: null,
-        }).sort({ isDefault: -1, createdAt: -1 });
+        }, null, { sort: { isDefault: -1, createdAt: -1 } });
     }
 
     // Find default address for a specific user
     async findDefault(userId) {
-        return await this.model.findOne({
+        return await this.findOne({
             user: userId,
             isDefault: true,
             deletedAt: null,
@@ -40,7 +41,7 @@ class AddressRepository extends BaseRepository {
             { _id: addressId, user: userId, deletedAt: null },
             { $set: { isDefault: true } },
             { new: true }
-        );
+        ).populate(ADDRESS_POPULATE);
     }
 
 }

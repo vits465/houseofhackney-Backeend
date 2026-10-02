@@ -267,7 +267,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"firstName\": \"Jane\",\n  \"lastName\": \"Smith Updated\",\n  \"phone\": \"+9876543210\"\n}",
+          "raw": "{\n  \"firstName\": \"Eleanor\",\n  \"lastName\": \"Vance-Roy\",\n  \"phone\": \"+447987654321\",\n  \"countryCode\": \"+44\",\n  \"gender\": \"FEMALE\",\n  \"language\": \"en\",\n  \"currency\": \"GBP\",\n  \"timezone\": \"Europe/London\"\n}",
           "options": {
             "raw": {
               "language": "json"

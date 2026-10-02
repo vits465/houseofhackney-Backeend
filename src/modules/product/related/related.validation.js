@@ -29,7 +29,6 @@ export const updateRelatedValidation = [
 
 export const addItemValidation = [
     validateMongoId("productId", "param", "Invalid product id"),
-    validateMongoId("product", "body", "Invalid target product id"),
     body("relationType")
         .optional()
         .isIn(["RELATED", "UPSELL", "CROSS_SELL", "SIMILAR"])

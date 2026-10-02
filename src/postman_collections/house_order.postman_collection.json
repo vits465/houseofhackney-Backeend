@@ -230,7 +230,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"shippingAddressId\": \"{{addressId}}\",\n  \"billingAddressId\": \"{{addressId}}\",\n  \"paymentMethod\": \"COD\",\n  \"notes\": \"Please deliver during business hours\"\n}",
+          "raw": "{\n  \"shippingAddressId\": \"{{addressId}}\",\n  \"billingAddressId\": \"{{addressId}}\",\n  \"paymentMethod\": \"STRIPE\",\n  \"couponCode\": \"SPRING15\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -267,7 +267,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"cancellationReason\": \"Customer requested cancellation before dispatch\"\n}",
+          "raw": "{\n  \"reason\": \"Customer requested cancellation before shipment dispatch\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -304,7 +304,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"orderStatus\": \"PROCESSING\"\n}",
+          "raw": "{\n  \"status\": \"PROCESSING\"\n}",
           "options": {
             "raw": {
               "language": "json"

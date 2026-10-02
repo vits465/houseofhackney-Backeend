@@ -1,30 +1,27 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import TradeProfile from "./tradeProfile.model.js";
+import { TRADE_PROFILE_POPULATE } from "../../../shared/populate/trade.populate.js";
 
 class TradeProfileRepository extends BaseRepository {
 
     constructor() {
-        super(TradeProfile);
+        super(TradeProfile, TRADE_PROFILE_POPULATE);
     }
 
     // Find trade profile by user ID
     async findByUser(userId) {
-        return await this.model.findOne({
+        return await this.findOne({
             user: userId,
             deletedAt: null,
-        })
-            .populate("company")
-            .populate("tier");
+        });
     }
 
     // Find pending trade applications
     async findPendingApplications() {
-        return await this.model.find({
+        return await this.findAll({
             status: { $in: ["PENDING", "UNDER_REVIEW"] },
             deletedAt: null,
-        })
-            .populate("user", "fullName email")
-            .populate("company");
+        });
     }
 
     // Update trade application approval status
@@ -38,9 +35,7 @@ class TradeProfileRepository extends BaseRepository {
                 },
             },
             { new: true }
-        )
-            .populate("company")
-            .populate("tier");
+        ).populate(TRADE_PROFILE_POPULATE);
     }
 
 }

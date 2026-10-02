@@ -230,7 +230,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"COMMERCE\",\n  \"code\": \"COMMERCE_ENGINE\",\n  \"description\": \"B2C Commerce and Order Engine\"\n}",
+          "raw": "{\n  \"name\": \"Order Management Module\",\n  \"description\": \"System module handling customer cart, checkout, fulfillment, and invoices\",\n  \"sortOrder\": 5,\n  \"displayInSidebar\": true,\n  \"isSystem\": false,\n  \"status\": \"ACTIVE\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -266,7 +266,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"description\": \"Updated commerce engine module description\"\n}",
+          "raw": "{\n  \"name\": \"Advanced Order & Fulfillment Module\",\n  \"description\": \"Core system module for order lifecycle, tracking, and tax invoices\",\n  \"sortOrder\": 4,\n  \"displayInSidebar\": true,\n  \"status\": \"ACTIVE\"\n}",
           "options": {
             "raw": {
               "language": "json"

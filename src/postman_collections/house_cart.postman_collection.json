@@ -203,7 +203,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"productId\": \"{{productId}}\",\n  \"variantId\": \"{{variantId}}\",\n  \"quantity\": 3\n}",
+          "raw": "{\n  \"product\": \"{{productId}}\",\n  \"variant\": \"{{variantId}}\",\n  \"quantity\": 3\n}",
           "options": {
             "raw": {
               "language": "json"

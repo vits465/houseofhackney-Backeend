@@ -1,23 +1,24 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Payment from "./payment.model.js";
+import { PAYMENT_POPULATE } from "../../../shared/populate/commerce.populate.js";
 
 class PaymentRepository extends BaseRepository {
 
     constructor() {
-        super(Payment);
+        super(Payment, PAYMENT_POPULATE);
     }
 
     // Find all payments for an order
     async findByOrder(orderId) {
-        return await this.model.find({
+        return await this.findAll({
             order: orderId,
             deletedAt: null,
-        }).sort({ createdAt: -1 });
+        }, null, { sort: { createdAt: -1 } });
     }
 
     // Find payment by unique transaction ID
     async findByTransactionId(transactionId) {
-        return await this.model.findOne({
+        return await this.findOne({
             transactionId: transactionId.trim().toUpperCase(),
             deletedAt: null,
         });
@@ -34,7 +35,7 @@ class PaymentRepository extends BaseRepository {
                 },
             },
             { new: true }
-        );
+        ).populate(PAYMENT_POPULATE);
     }
 
 }

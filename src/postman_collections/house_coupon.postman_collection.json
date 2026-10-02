@@ -178,7 +178,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"code\": \"SPRING15\",\n  \"cartTotal\": 300\n}",
+          "raw": "{\n  \"code\": \"SPRING15\",\n  \"subtotal\": 350\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -266,7 +266,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"code\": \"SPRING15\",\n  \"description\": \"Spring 15% discount\",\n  \"discountType\": \"PERCENTAGE\",\n  \"discountValue\": 15,\n  \"minOrderAmount\": 100,\n  \"maxDiscountAmount\": 50\n}",
+          "raw": "{\n  \"code\": \"SPRING15\",\n  \"discountType\": \"PERCENTAGE\",\n  \"discountValue\": 15,\n  \"minOrderAmount\": 100,\n  \"maxDiscountAmount\": 50,\n  \"usageLimit\": 1000,\n  \"perUserLimit\": 1,\n  \"expiryDate\": \"2026-12-31T23:59:59.000Z\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -302,7 +302,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"discountValue\": 20\n}",
+          "raw": "{\n  \"discountValue\": 20,\n  \"minOrderAmount\": 150,\n  \"maxDiscountAmount\": 75,\n  \"usageLimit\": 500,\n  \"perUserLimit\": 2\n}",
           "options": {
             "raw": {
               "language": "json"

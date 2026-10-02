@@ -11,18 +11,17 @@ class InventoryService extends BaseService {
         super(inventoryRepository);
     }
 
-// Calculate Available S
-    tockcalculateAvailableStock(stock, reservedStock) {
+// Calculate Available Stock
+    calculateAvailableStock(stock, reservedStock = 0) {
         return Math.max(stock - reservedStock, 0);
     }
 
-// Calculate Stock S
-    tatuscalculateStockStatus(
+// Calculate Stock Status
+    calculateStockStatus(
         stock,
-        minimumStock,
-        allowBackorder
+        minimumStock = 10,
+        allowBackorder = false
     ) {
-
         if (stock <= 0) {
             return allowBackorder
                 ? "PREORDER"
@@ -34,7 +33,6 @@ class InventoryService extends BaseService {
         }
 
         return "IN_STOCK";
-
     }
 
 // Create Inventory
@@ -65,13 +63,13 @@ class InventoryService extends BaseService {
 
         inventoryData.availableStock =
             this.calculateAvailableStock(
-                inventoryData.stock,
-                inventoryData.reservedStock
+                inventoryData.stock || inventoryData.totalStock || 0,
+                inventoryData.reservedStock || 0
             );
 
         inventoryData.stockStatus =
             this.calculateStockStatus(
-                inventoryData.stock,
+                inventoryData.stock || inventoryData.totalStock || 0,
                 inventoryData.minimumStock,
                 inventoryData.allowBackorder
             );
@@ -107,19 +105,19 @@ class InventoryService extends BaseService {
         }
 
         const stock =
-            updateData.stock ?? inventory.stock;
+            updateData.stock ?? updateData.totalStock ?? inventory.totalStock ?? inventory.stock ?? 0;
 
         const reservedStock =
             updateData.reservedStock ??
-            inventory.reservedStock;
+            inventory.reservedStock ?? 0;
 
         const minimumStock =
             updateData.minimumStock ??
-            inventory.minimumStock;
+            inventory.minimumStock ?? 10;
 
         const allowBackorder =
             updateData.allowBackorder ??
-            inventory.allowBackorder;
+            inventory.allowBackorder ?? false;
 
         updateData.availableStock =
             this.calculateAvailableStock(

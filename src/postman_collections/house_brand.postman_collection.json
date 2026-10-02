@@ -230,7 +230,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"House of Hackney\",\n  \"slug\": \"house-of-hackney\",\n  \"description\": \"Iconic British luxury interior design brand\",\n  \"website\": \"https://houseofhackney.com\",\n  \"isActive\": true\n}",
+          "raw": "{\n  \"name\": \"House of Hackney\",\n  \"description\": \"Iconic British luxury interiors brand pioneering maximalist botanical prints\",\n  \"shortDescription\": \"British Heritage Luxury Interiors\",\n  \"website\": \"https://www.houseofhackney.com\",\n  \"country\": \"United Kingdom\",\n  \"establishedYear\": 2011,\n  \"sortOrder\": 1,\n  \"isFeatured\": true,\n  \"status\": \"ACTIVE\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -266,7 +266,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"description\": \"Updated House of Hackney luxury brand description\"\n}",
+          "raw": "{\n  \"name\": \"House of Hackney London\",\n  \"description\": \"Award-winning British luxury brand celebrating nature, art, and maximalism\",\n  \"shortDescription\": \"Luxury Botanical Interiors\",\n  \"website\": \"https://www.houseofhackney.com\",\n  \"country\": \"United Kingdom\",\n  \"establishedYear\": 2011,\n  \"sortOrder\": 1,\n  \"isFeatured\": true,\n  \"status\": \"ACTIVE\"\n}",
           "options": {
             "raw": {
               "language": "json"

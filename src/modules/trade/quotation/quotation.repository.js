@@ -1,30 +1,27 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Quotation from "./quotation.model.js";
+import { QUOTATION_POPULATE } from "../../../shared/populate/trade.populate.js";
 
 class QuotationRepository extends BaseRepository {
 
     constructor() {
-        super(Quotation);
+        super(Quotation, QUOTATION_POPULATE);
     }
 
     // Find all quotes for a user
     async findByUser(userId) {
-        return await this.model.find({
+        return await this.findAll({
             user: userId,
             deletedAt: null,
-        })
-            .populate("company")
-            .sort({ createdAt: -1 });
+        }, null, { sort: { createdAt: -1 } });
     }
 
     // Find quote by quote number
     async findByQuoteNumber(quoteNumber) {
-        return await this.model.findOne({
+        return await this.findOne({
             quoteNumber: quoteNumber.trim().toUpperCase(),
             deletedAt: null,
-        })
-            .populate("user", "fullName email")
-            .populate("company");
+        });
     }
 
     // Update quotation status
@@ -38,7 +35,7 @@ class QuotationRepository extends BaseRepository {
                 },
             },
             { new: true }
-        );
+        ).populate(QUOTATION_POPULATE);
     }
 
 }

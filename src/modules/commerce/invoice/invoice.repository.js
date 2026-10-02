@@ -1,31 +1,32 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Invoice from "./invoice.model.js";
+import { INVOICE_POPULATE } from "../../../shared/populate/commerce.populate.js";
 
 class InvoiceRepository extends BaseRepository {
 
     constructor() {
-        super(Invoice);
+        super(Invoice, INVOICE_POPULATE);
     }
 
     // Find invoice by order ID
     async findByOrder(orderId) {
-        return await this.model.findOne({
+        return await this.findOne({
             order: orderId,
             deletedAt: null,
-        }).populate("order", "orderNumber orderStatus grandTotal");
+        });
     }
 
     // Find all invoices for a specific user
     async findByUser(userId) {
-        return await this.model.find({
+        return await this.findAll({
             user: userId,
             deletedAt: null,
-        }).sort({ createdAt: -1 });
+        }, null, { sort: { createdAt: -1 } });
     }
 
     // Find invoice by unique invoice number
     async findByInvoiceNumber(invoiceNumber) {
-        return await this.model.findOne({
+        return await this.findOne({
             invoiceNumber: invoiceNumber.trim().toUpperCase(),
             deletedAt: null,
         });
@@ -42,7 +43,7 @@ class InvoiceRepository extends BaseRepository {
                 },
             },
             { new: true }
-        );
+        ).populate(INVOICE_POPULATE);
     }
 
 }

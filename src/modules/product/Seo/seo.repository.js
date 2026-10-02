@@ -1,10 +1,11 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import ProductSEO from "./seo.model.js";
+import { SEO_POPULATE } from "../../../shared/populate/product_sub.populate.js";
 
 class SeoRepository extends BaseRepository {
 
     constructor() {
-        super(ProductSEO);
+        super(ProductSEO, SEO_POPULATE);
     }
 
 // Find By Product

@@ -1,10 +1,11 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import ProductMedia from "./productMedia.model.js";
+import { PRODUCT_MEDIA_POPULATE } from "../../../shared/populate/product_sub.populate.js";
 
 class ProductMediaRepository extends BaseRepository {
 
     constructor() {
-        super(ProductMedia);
+        super(ProductMedia, PRODUCT_MEDIA_POPULATE);
     }
 
 // Find By Product

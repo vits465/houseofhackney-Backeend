@@ -1,10 +1,11 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import ProductPricing from "./pricing.model.js";
+import { PRICING_POPULATE } from "../../../shared/populate/product_sub.populate.js";
 
 class PricingRepository extends BaseRepository {
 
     constructor() {
-        super(ProductPricing);
+        super(ProductPricing, PRICING_POPULATE);
     }
 
 // Find By Product

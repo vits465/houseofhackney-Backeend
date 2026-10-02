@@ -284,7 +284,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Material Composition\",\n  \"code\": \"material_comp\",\n  \"type\": \"SELECT\",\n  \"status\": \"ACTIVE\"\n}",
+          "raw": "{\n  \"name\": \"Color Shade\",\n  \"label\": \"Color Shade Palette\",\n  \"inputType\": \"SELECT\",\n  \"values\": [\n    {\n      \"name\": \"Midnight Black\",\n      \"code\": \"#121212\"\n    },\n    {\n      \"name\": \"Emerald Green\",\n      \"code\": \"#1B4D3E\"\n    }\n  ]\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -320,7 +320,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Material Composition Updated\"\n}",
+          "raw": "{\n  \"name\": \"Luxury Color Palette\",\n  \"label\": \"Color Palette\",\n  \"inputType\": \"COLOR\"\n}",
           "options": {
             "raw": {
               "language": "json"

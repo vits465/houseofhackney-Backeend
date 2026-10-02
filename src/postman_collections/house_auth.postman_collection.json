@@ -178,7 +178,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"firstName\": \"Jane\",\n  \"lastName\": \"Doe\",\n  \"email\": \"jane.doe@example.com\",\n  \"password\": \"Password123!\",\n  \"phone\": \"+1234567890\",\n  \"countryCode\": \"+91\"\n}",
+          "raw": "{\n  \"firstName\": \"Aditya\",\n  \"lastName\": \"Chauhan\",\n  \"email\": \"adichauha465@gmail.com\",\n  \"password\": \"Password@123\",\n  \"phone\": \"+447911123456\",\n  \"countryCode\": \"+44\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -214,7 +214,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"email\": \"jane.doe@example.com\",\n  \"otp\": \"123456\"\n}",
+          "raw": "{\n  \"email\": \"adichauha465@gmail.com\",\n  \"otp\": \"123456\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -250,7 +250,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"email\": \"jane.doe@example.com\",\n  \"purpose\": \"EMAIL_VERIFICATION\"\n}",
+          "raw": "{\n  \"email\": \"adichauha465@gmail.com\",\n  \"purpose\": \"EMAIL_VERIFICATION\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -286,7 +286,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"email\": \"jane.doe@example.com\",\n  \"password\": \"Password123!\"\n}",
+          "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"AdminExp\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -358,7 +358,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"email\": \"jane.doe@example.com\"\n}",
+          "raw": "{\n  \"email\": \"adichauha465@gmail.com\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -394,7 +394,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"email\": \"jane.doe@example.com\",\n  \"otp\": \"654321\"\n}",
+          "raw": "{\n  \"email\": \"adichauha465@gmail.com\",\n  \"otp\": \"123456\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -430,7 +430,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"email\": \"jane.doe@example.com\",\n  \"otp\": \"654321\",\n  \"newPassword\": \"NewPassword456!\"\n}",
+          "raw": "{\n  \"email\": \"adichauha465@gmail.com\",\n  \"otp\": \"123456\",\n  \"newPassword\": \"NewSecurePassword@123\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -502,7 +502,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"currentPassword\": \"Password123!\",\n  \"newPassword\": \"NewSecurePass456!\"\n}",
+          "raw": "{\n  \"currentPassword\": \"Password@123\",\n  \"newPassword\": \"NewSecurePassword@123\"\n}",
           "options": {
             "raw": {
               "language": "json"

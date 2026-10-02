@@ -1,156 +1,10 @@
 {
   "info": {
+    "_postman_id": "156d2a38-76ad-4967-8163-b1a57739307b",
     "name": "House of Hackney - Master API Collection (178 Endpoints)",
     "description": "100% Complete Master Postman collection covering all 178 RESTful API endpoints across Authentication, RBAC, Catalog Taxonomy, Product Engine, Faceted Filters, B2C Commerce, B2B Trade, Media & System Utilities.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "http://localhost:5000/api/v1",
-      "type": "string"
-    },
-    {
-      "key": "accessToken",
-      "value": "",
-      "type": "string"
-    },
-    {
-      "key": "refreshToken",
-      "value": "",
-      "type": "string"
-    },
-    {
-      "key": "categoryId",
-      "value": "67a76d010b4a90fc1d5c9b10",
-      "type": "string"
-    },
-    {
-      "key": "brandId",
-      "value": "67a76d010b4a90fc1d5c9b14",
-      "type": "string"
-    },
-    {
-      "key": "productId",
-      "value": "67a76d010b4a90fc1d5c9b1b",
-      "type": "string"
-    },
-    {
-      "key": "variantId",
-      "value": "67a76d010b4a90fc1d5c9b20",
-      "type": "string"
-    },
-    {
-      "key": "inventoryId",
-      "value": "67a76d010b4a90fc1d5c9b25",
-      "type": "string"
-    },
-    {
-      "key": "attributeId",
-      "value": "67a76d010b4a90fc1d5c9b28",
-      "type": "string"
-    },
-    {
-      "key": "valueId",
-      "value": "67a76d010b4a90fc1d5c9b29",
-      "type": "string"
-    },
-    {
-      "key": "reviewId",
-      "value": "67a76d010b4a90fc1d5c9b2c",
-      "type": "string"
-    },
-    {
-      "key": "orderId",
-      "value": "67a76d010b4a90fc1d5c9b30",
-      "type": "string"
-    },
-    {
-      "key": "addressId",
-      "value": "67a76d010b4a90fc1d5c9b33",
-      "type": "string"
-    },
-    {
-      "key": "couponId",
-      "value": "67a76d010b4a90fc1d5c9b36",
-      "type": "string"
-    },
-    {
-      "key": "paymentId",
-      "value": "67a76d010b4a90fc1d5c9b38",
-      "type": "string"
-    },
-    {
-      "key": "shipmentId",
-      "value": "67a76d010b4a90fc1d5c9b3a",
-      "type": "string"
-    },
-    {
-      "key": "invoiceId",
-      "value": "67a76d010b4a90fc1d5c9b3c",
-      "type": "string"
-    },
-    {
-      "key": "companyId",
-      "value": "67a76d010b4a90fc1d5c9b40",
-      "type": "string"
-    },
-    {
-      "key": "tradeProfileId",
-      "value": "67a76d010b4a90fc1d5c9b50",
-      "type": "string"
-    },
-    {
-      "key": "tradeTierId",
-      "value": "67a76d010b4a90fc1d5c9b55",
-      "type": "string"
-    },
-    {
-      "key": "quotationId",
-      "value": "67a76d010b4a90fc1d5c9b60",
-      "type": "string"
-    },
-    {
-      "key": "userId",
-      "value": "67a76d010b4a90fc1d5c9b01",
-      "type": "string"
-    },
-    {
-      "key": "roleId",
-      "value": "67a76d010b4a90fc1d5c9b02",
-      "type": "string"
-    },
-    {
-      "key": "permissionId",
-      "value": "67a76d010b4a90fc1d5c9b03",
-      "type": "string"
-    },
-    {
-      "key": "moduleId",
-      "value": "67a76d010b4a90fc1d5c9b04",
-      "type": "string"
-    },
-    {
-      "key": "mediaId",
-      "value": "67a76d010b4a90fc1d5c9b70",
-      "type": "string"
-    },
-    {
-      "key": "itemId",
-      "value": "67a76d010b4a90fc1d5c9b80",
-      "type": "string"
-    },
-    {
-      "key": "trackingNumber",
-      "value": "HOH-TRK-987654321",
-      "type": "string"
-    },
-    {
-      "key": "targetProductId",
-      "value": "67a76d010b4a90fc1d5c9b1e",
-      "type": "string"
-    }
-  ],
   "item": [
     {
       "name": "01. Authentication & Security",
@@ -169,6 +23,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Aditya\",\n  \"lastName\": \"Chauhan\",\n  \"email\": \"adichauha465@gmail.com\",\n  \"password\": \"Password@123\",\n  \"phone\": \"+447911123456\",\n  \"countryCode\": \"+44\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/register",
               "host": [
@@ -178,18 +41,26 @@
                 "auth",
                 "register"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"firstName\": \"Jane\",\n  \"lastName\": \"Doe\",\n  \"email\": \"jane.doe@example.com\",\n  \"password\": \"Password123!\",\n  \"phone\": \"+1234567890\",\n  \"countryCode\": \"+91\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data.accessToken) pm.environment.set(\"accessToken\", data.accessToken);",
+                  "    if (data.refreshToken) pm.environment.set(\"refreshToken\", data.refreshToken);",
+                  "    if (data.user ? data.user._id : (data._id || null)) pm.environment.set(\"userId\", data.user ? data.user._id : (data._id || null));",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Verify Email OTP",
@@ -205,6 +76,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"adichauha465@gmail.com\",\n  \"otp\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/verify-email",
               "host": [
@@ -214,15 +94,6 @@
                 "auth",
                 "verify-email"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"email\": \"jane.doe@example.com\",\n  \"otp\": \"123456\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -241,6 +112,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"adichauha465@gmail.com\",\n  \"purpose\": \"EMAIL_VERIFICATION\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/resend-otp",
               "host": [
@@ -250,15 +130,6 @@
                 "auth",
                 "resend-otp"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"email\": \"jane.doe@example.com\",\n  \"purpose\": \"EMAIL_VERIFICATION\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -277,6 +148,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"AdminExp\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/login",
               "host": [
@@ -286,18 +166,26 @@
                 "auth",
                 "login"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"email\": \"jane.doe@example.com\",\n  \"password\": \"Password123!\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data.accessToken) pm.environment.set(\"accessToken\", data.accessToken);",
+                  "    if (data.refreshToken) pm.environment.set(\"refreshToken\", data.refreshToken);",
+                  "    if (data.user ? data.user._id : (data._id || null)) pm.environment.set(\"userId\", data.user ? data.user._id : (data._id || null));",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Refresh JWT Tokens",
@@ -313,6 +201,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/refresh",
               "host": [
@@ -322,18 +219,26 @@
                 "auth",
                 "refresh"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data.accessToken) pm.environment.set(\"accessToken\", data.accessToken);",
+                  "    if (data.refreshToken) pm.environment.set(\"refreshToken\", data.refreshToken);",
+                  "    if (data.user ? data.user._id : (data._id || null)) pm.environment.set(\"userId\", data.user ? data.user._id : (data._id || null));",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Forgot Password",
@@ -349,6 +254,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"adichauha465@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/forgot-password",
               "host": [
@@ -358,15 +272,6 @@
                 "auth",
                 "forgot-password"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"email\": \"jane.doe@example.com\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -385,6 +290,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"adichauha465@gmail.com\",\n  \"otp\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/verify-reset-otp",
               "host": [
@@ -394,15 +308,6 @@
                 "auth",
                 "verify-reset-otp"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"email\": \"jane.doe@example.com\",\n  \"otp\": \"654321\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -421,6 +326,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"adichauha465@gmail.com\",\n  \"otp\": \"123456\",\n  \"newPassword\": \"NewSecurePassword@123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/reset-password",
               "host": [
@@ -430,15 +344,6 @@
                 "auth",
                 "reset-password"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"email\": \"jane.doe@example.com\",\n  \"otp\": \"654321\",\n  \"newPassword\": \"NewPassword456!\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -457,6 +362,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/logout",
               "host": [
@@ -466,15 +380,6 @@
                 "auth",
                 "logout"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -493,6 +398,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"currentPassword\": \"Password@123\",\n  \"newPassword\": \"NewSecurePassword@123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/change-password",
               "host": [
@@ -502,15 +416,6 @@
                 "auth",
                 "change-password"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"currentPassword\": \"Password123!\",\n  \"newPassword\": \"NewSecurePass456!\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -583,6 +488,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"67a76d010b4a90fc1d5c9b05\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/sessions/revoke",
               "host": [
@@ -593,15 +507,6 @@
                 "sessions",
                 "revoke"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"sessionId\": \"67a76d010b4a90fc1d5c9b05\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -620,6 +525,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/auth/sessions/revoke-others",
               "host": [
@@ -630,15 +544,6 @@
                 "sessions",
                 "revoke-others"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -715,6 +620,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"email\": \"john.smith@example.com\",\n  \"password\": \"Password123!\",\n  \"phone\": \"+1987654321\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/users/register",
               "host": [
@@ -724,18 +638,26 @@
                 "users",
                 "register"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"email\": \"john.smith@example.com\",\n  \"password\": \"Password123!\",\n  \"phone\": \"+1987654321\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data.accessToken) pm.environment.set(\"accessToken\", data.accessToken);",
+                  "    if (data.refreshToken) pm.environment.set(\"refreshToken\", data.refreshToken);",
+                  "    if (data.user ? data.user._id : (data._id || null)) pm.environment.set(\"userId\", data.user ? data.user._id : (data._id || null));",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update User Profile",
@@ -751,6 +673,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Eleanor\",\n  \"lastName\": \"Vance-Roy\",\n  \"phone\": \"+447987654321\",\n  \"countryCode\": \"+44\",\n  \"gender\": \"FEMALE\",\n  \"language\": \"en\",\n  \"currency\": \"GBP\",\n  \"timezone\": \"Europe/London\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/users/{{userId}}",
               "host": [
@@ -760,15 +691,6 @@
                 "users",
                 "{{userId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"firstName\": \"Jane\",\n  \"lastName\": \"Smith Updated\",\n  \"phone\": \"+9876543210\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -872,15 +794,6 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
-            "url": {
-              "raw": "{{baseUrl}}/roles",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "roles"
-              ]
-            },
             "body": {
               "mode": "raw",
               "raw": "{\n  \"name\": \"STORE_MANAGER\",\n  \"displayName\": \"Store Manager\",\n  \"slug\": \"store-manager\",\n  \"description\": \"Store manager with catalog and inventory access\",\n  \"permissions\": [\n    \"{{permissionId}}\"\n  ]\n}",
@@ -889,6 +802,15 @@
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/roles",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "roles"
+              ]
             }
           },
           "response": []
@@ -907,6 +829,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Updated store manager access rights\",\n  \"permissions\": [\n    \"{{permissionId}}\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/roles/{{roleId}}",
               "host": [
@@ -916,15 +847,6 @@
                 "roles",
                 "{{roleId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"description\": \"Updated store manager access rights\",\n  \"permissions\": [\n    \"{{permissionId}}\"\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -1028,15 +950,6 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
-            "url": {
-              "raw": "{{baseUrl}}/permissions",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "permissions"
-              ]
-            },
             "body": {
               "mode": "raw",
               "raw": "{\n  \"name\": \"MANAGE_INVENTORY\",\n  \"slug\": \"manage-inventory\",\n  \"module\": \"{{moduleId}}\",\n  \"action\": \"WRITE\",\n  \"description\": \"Allows updating stock levels\"\n}",
@@ -1045,6 +958,15 @@
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/permissions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "permissions"
+              ]
             }
           },
           "response": []
@@ -1063,6 +985,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"Create & Modify Catalog Products\",\n  \"action\": \"UPDATE\",\n  \"description\": \"Grants permission to add and edit catalog products\",\n  \"sortOrder\": 2,\n  \"status\": \"ACTIVE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/permissions/{{permissionId}}",
               "host": [
@@ -1072,15 +1003,6 @@
                 "permissions",
                 "{{permissionId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"description\": \"Allows managing full inventory lifecycle\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -1184,6 +1106,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Order Management Module\",\n  \"description\": \"System module handling customer cart, checkout, fulfillment, and invoices\",\n  \"sortOrder\": 5,\n  \"displayInSidebar\": true,\n  \"isSystem\": false,\n  \"status\": \"ACTIVE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/modules",
               "host": [
@@ -1192,15 +1123,6 @@
               "path": [
                 "modules"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"COMMERCE\",\n  \"code\": \"COMMERCE_ENGINE\",\n  \"description\": \"B2C Commerce and Order Engine\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -1219,6 +1141,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Advanced Order & Fulfillment Module\",\n  \"description\": \"Core system module for order lifecycle, tracking, and tax invoices\",\n  \"sortOrder\": 4,\n  \"displayInSidebar\": true,\n  \"status\": \"ACTIVE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/modules/{{moduleId}}",
               "host": [
@@ -1228,15 +1159,6 @@
                 "modules",
                 "{{moduleId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"description\": \"Updated commerce engine module description\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -1340,6 +1262,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Luxury Wallpapers\",\n  \"description\": \"Hand-painted British heritage wallpapers and floral wallcoverings\",\n  \"showInMenu\": true,\n  \"isFeatured\": true,\n  \"sortOrder\": 1,\n  \"status\": \"ACTIVE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/categories",
               "host": [
@@ -1348,18 +1279,24 @@
               "path": [
                 "categories"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Luxury Wallpaper\",\n  \"slug\": \"luxury-wallpaper\",\n  \"description\": \"Exquisite statement wallpapers crafted in England\",\n  \"isActive\": true\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"categoryId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Category",
@@ -1375,6 +1312,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Heritage Luxury Wallpapers\",\n  \"description\": \"Opulent floral and botanical maximalist wallpapers crafted in England\",\n  \"showInMenu\": true,\n  \"isFeatured\": true,\n  \"sortOrder\": 1,\n  \"status\": \"ACTIVE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/categories/{{categoryId}}",
               "host": [
@@ -1384,15 +1330,6 @@
                 "categories",
                 "{{categoryId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Luxury Wallpapers & Fabrics\",\n  \"description\": \"British luxury wall coverings and botanical prints\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -1496,6 +1433,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"House of Hackney\",\n  \"description\": \"Iconic British luxury interiors brand pioneering maximalist botanical prints\",\n  \"shortDescription\": \"British Heritage Luxury Interiors\",\n  \"website\": \"https://www.houseofhackney.com\",\n  \"country\": \"United Kingdom\",\n  \"establishedYear\": 2011,\n  \"sortOrder\": 1,\n  \"isFeatured\": true,\n  \"status\": \"ACTIVE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/brands",
               "host": [
@@ -1504,18 +1450,24 @@
               "path": [
                 "brands"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"House of Hackney\",\n  \"slug\": \"house-of-hackney\",\n  \"description\": \"Iconic British luxury interior design brand\",\n  \"website\": \"https://houseofhackney.com\",\n  \"isActive\": true\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"brandId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Brand",
@@ -1531,6 +1483,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"House of Hackney London\",\n  \"description\": \"Award-winning British luxury brand celebrating nature, art, and maximalism\",\n  \"shortDescription\": \"Luxury Botanical Interiors\",\n  \"website\": \"https://www.houseofhackney.com\",\n  \"country\": \"United Kingdom\",\n  \"establishedYear\": 2011,\n  \"sortOrder\": 1,\n  \"isFeatured\": true,\n  \"status\": \"ACTIVE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/brands/{{brandId}}",
               "host": [
@@ -1540,15 +1501,6 @@
                 "brands",
                 "{{brandId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"description\": \"Updated House of Hackney luxury brand description\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -1652,6 +1604,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Artemis Velvet Wallpaper\",\n  \"productType\": \"WALLPAPER\",\n  \"shortDescription\": \"Signature dark botanical wallpaper with lush blush pink blooms\",\n  \"description\": \"The Artemis wallpaper features iconic wild flowers painted on a dramatic dark ground. Crafted with eco-friendly non-woven paper in the UK.\",\n  \"category\": \"{{categoryId}}\",\n  \"brand\": \"{{brandId}}\",\n  \"isFeatured\": true,\n  \"isBestSeller\": true,\n  \"isNewArrival\": true,\n  \"isTradeAvailable\": true,\n  \"status\": \"PUBLISHED\",\n  \"visibility\": \"PUBLIC\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products",
               "host": [
@@ -1660,18 +1621,24 @@
               "path": [
                 "products"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Artemis Velvet Fabric\",\n  \"slug\": \"artemis-velvet-fabric\",\n  \"sku\": \"HOH-ART-001\",\n  \"productType\": \"FABRIC\",\n  \"category\": \"{{categoryId}}\",\n  \"brand\": \"{{brandId}}\",\n  \"shortDescription\": \"Wild floral print on heavy velvet for upholstery\",\n  \"description\": \"Full description of Artemis Velvet Fabric\",\n  \"status\": \"DRAFT\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"productId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Product",
@@ -1687,6 +1654,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Artemis Midnight Velvet Wallpaper\",\n  \"productType\": \"WALLPAPER\",\n  \"shortDescription\": \"Award-winning dark botanical wallpaper featuring British wild flora\",\n  \"description\": \"Immerse your sanctuary in maximalist luxury with Artemis Midnight Velvet Wallpaper, sustainably produced in England.\",\n  \"category\": \"{{categoryId}}\",\n  \"brand\": \"{{brandId}}\",\n  \"isFeatured\": true,\n  \"isBestSeller\": true,\n  \"status\": \"PUBLISHED\",\n  \"visibility\": \"PUBLIC\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}",
               "host": [
@@ -1696,15 +1672,6 @@
                 "products",
                 "{{productId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Artemis Luxury Velvet Fabric\",\n  \"status\": \"PUBLISHED\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -1783,15 +1750,6 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
-            "url": {
-              "raw": "{{baseUrl}}/variants",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "variants"
-              ]
-            },
             "body": {
               "mode": "raw",
               "raw": "{\n  \"product\": \"{{productId}}\",\n  \"sku\": \"HOH-ART-001-BLU\",\n  \"title\": \"Artemis Velvet - Midnight Blue\",\n  \"price\": 155,\n  \"attributes\": [\n    {\n      \"attribute\": \"Color\",\n      \"value\": \"Midnight Blue\"\n    }\n  ]\n}",
@@ -1800,9 +1758,33 @@
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/variants",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "variants"
+              ]
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"variantId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Variant",
@@ -1818,6 +1800,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Artemis Velvet - Royal Midnight Blue\",\n  \"price\": 160\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/variants/{{variantId}}",
               "host": [
@@ -1827,15 +1818,6 @@
                 "variants",
                 "{{variantId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"title\": \"Artemis Velvet - Royal Midnight Blue\",\n  \"price\": 160\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -1913,15 +1895,6 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
-            "url": {
-              "raw": "{{baseUrl}}/inventories",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "inventories"
-              ]
-            },
             "body": {
               "mode": "raw",
               "raw": "{\n  \"product\": \"{{productId}}\",\n  \"totalStock\": 250,\n  \"reservedStock\": 10,\n  \"warehouse\": \"WH-UK-LONDON-A1\"\n}",
@@ -1930,6 +1903,15 @@
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/inventories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "inventories"
+              ]
             }
           },
           "response": []
@@ -1948,6 +1930,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"totalStock\": 300\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/inventories/{{productId}}",
               "host": [
@@ -1957,15 +1948,6 @@
                 "inventories",
                 "{{productId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"totalStock\": 300\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -2123,6 +2105,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Color Shade\",\n  \"label\": \"Color Shade Palette\",\n  \"inputType\": \"SELECT\",\n  \"values\": [\n    {\n      \"name\": \"Midnight Black\",\n      \"code\": \"#121212\"\n    },\n    {\n      \"name\": \"Emerald Green\",\n      \"code\": \"#1B4D3E\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/attributes",
               "host": [
@@ -2131,18 +2122,25 @@
               "path": [
                 "attributes"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Material Composition\",\n  \"code\": \"material_comp\",\n  \"type\": \"SELECT\",\n  \"status\": \"ACTIVE\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"attributeId\", data._id);",
+                  "    if ((data.values && data.values[0]) ? data.values[0]._id : null) pm.environment.set(\"valueId\", (data.values && data.values[0]) ? data.values[0]._id : null);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Attribute",
@@ -2158,6 +2156,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Luxury Color Palette\",\n  \"label\": \"Color Palette\",\n  \"inputType\": \"COLOR\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/attributes/{{attributeId}}",
               "host": [
@@ -2167,15 +2174,6 @@
                 "attributes",
                 "{{attributeId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Material Composition Updated\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -2249,6 +2247,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"label\": \"100% Cotton Velvet\",\n  \"slug\": \"100-cotton-velvet\",\n  \"colorCode\": \"#121212\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/attributes/{{attributeId}}/values",
               "host": [
@@ -2259,18 +2266,25 @@
                 "{{attributeId}}",
                 "values"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"label\": \"100% Cotton Velvet\",\n  \"slug\": \"100-cotton-velvet\",\n  \"colorCode\": \"#121212\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"attributeId\", data._id);",
+                  "    if ((data.values && data.values[0]) ? data.values[0]._id : null) pm.environment.set(\"valueId\", (data.values && data.values[0]) ? data.values[0]._id : null);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Attribute Value",
@@ -2286,6 +2300,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"label\": \"100% English Silk Velvet\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/attributes/{{attributeId}}/values/{{valueId}}",
               "host": [
@@ -2297,15 +2320,6 @@
                 "values",
                 "{{valueId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"label\": \"100% English Silk Velvet\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -2386,6 +2400,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"basePrice\": 65,\n  \"sellingPrice\": 145,\n  \"compareAtPrice\": 165,\n  \"tradePrice\": 105,\n  \"currency\": \"INR\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/pricing",
               "host": [
@@ -2396,18 +2419,24 @@
                 "{{productId}}",
                 "pricing"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"basePrice\": 65,\n  \"sellingPrice\": 145,\n  \"compareAtPrice\": 165,\n  \"tradePrice\": 105,\n  \"currency\": \"INR\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"productId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Product Pricing",
@@ -2423,6 +2452,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sellingPrice\": 145,\n  \"costPrice\": 45,\n  \"compareAtPrice\": 180,\n  \"tradePrice\": 105,\n  \"currency\": \"GBP\",\n  \"taxClass\": \"STANDARD\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/pricing",
               "host": [
@@ -2433,15 +2471,6 @@
                 "{{productId}}",
                 "pricing"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"sellingPrice\": 135\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -2521,6 +2550,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"thumbnail\": \"{{mediaId}}\",\n  \"gallery\": [\n    \"{{mediaId}}\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/media",
               "host": [
@@ -2531,15 +2569,6 @@
                 "{{productId}}",
                 "media"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"thumbnail\": \"{{mediaId}}\",\n  \"gallery\": [\n    \"{{mediaId}}\"\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -2558,6 +2587,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"thumbnail\": \"{{mediaId}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/media",
               "host": [
@@ -2568,15 +2606,6 @@
                 "{{productId}}",
                 "media"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"thumbnail\": \"{{mediaId}}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -2656,6 +2685,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"specifications\": [\n    {\n      \"key\": \"Roll Width\",\n      \"value\": \"180 cm\"\n    },\n    {\n      \"key\": \"Pattern Repeat\",\n      \"value\": \"70 cm\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/specifications",
               "host": [
@@ -2666,15 +2704,6 @@
                 "{{productId}}",
                 "specifications"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"specifications\": [\n    {\n      \"key\": \"Roll Width\",\n      \"value\": \"180 cm\"\n    },\n    {\n      \"key\": \"Pattern Repeat\",\n      \"value\": \"70 cm\"\n    }\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -2693,6 +2722,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"specifications\": [\n    {\n      \"key\": \"Roll Width\",\n      \"value\": \"182 cm\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/specifications",
               "host": [
@@ -2703,15 +2741,6 @@
                 "{{productId}}",
                 "specifications"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"specifications\": [\n    {\n      \"key\": \"Roll Width\",\n      \"value\": \"182 cm\"\n    }\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -2791,6 +2820,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"metaTitle\": \"Artemis Velvet Fabric | House of Hackney\",\n  \"metaDescription\": \"Discover Artemis Velvet Fabric in Midnight Blue.\",\n  \"canonicalUrl\": \"https://houseofhackney.com/products/artemis-velvet\",\n  \"keywords\": [\n    \"velvet fabric\",\n    \"house of hackney\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/seo",
               "host": [
@@ -2801,18 +2839,24 @@
                 "{{productId}}",
                 "seo"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"metaTitle\": \"Artemis Velvet Fabric | House of Hackney\",\n  \"metaDescription\": \"Discover Artemis Velvet Fabric in Midnight Blue.\",\n  \"canonicalUrl\": \"https://houseofhackney.com/products/artemis-velvet\",\n  \"keywords\": [\n    \"velvet fabric\",\n    \"house of hackney\"\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"productId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Product SEO",
@@ -2828,6 +2872,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"metaTitle\": \"Artemis Midnight Black Velvet Wallpaper | House of Hackney\",\n  \"metaDescription\": \"Discover the iconic Artemis dark botanical wallpaper by House of Hackney. Hand-painted British flora crafted on eco non-woven paper.\",\n  \"keywords\": [\n    \"artemis wallpaper\",\n    \"dark botanical wallpaper\",\n    \"luxury wallpaper\",\n    \"house of hackney\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/seo",
               "host": [
@@ -2838,15 +2891,6 @@
                 "{{productId}}",
                 "seo"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"metaTitle\": \"Luxury Artemis Velvet Fabric | House of Hackney\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -2926,6 +2970,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"relatedProducts\": [\n    \"67a76d010b4a90fc1d5c9b1c\",\n    \"67a76d010b4a90fc1d5c9b1d\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/related",
               "host": [
@@ -2936,15 +2989,6 @@
                 "{{productId}}",
                 "related"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"relatedProducts\": [\n    \"67a76d010b4a90fc1d5c9b1c\",\n    \"67a76d010b4a90fc1d5c9b1d\"\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -2963,6 +3007,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"relatedProducts\": [\n    \"67a76d010b4a90fc1d5c9b1c\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/related",
               "host": [
@@ -2973,15 +3026,6 @@
                 "{{productId}}",
                 "related"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"relatedProducts\": [\n    \"67a76d010b4a90fc1d5c9b1c\"\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -3000,6 +3044,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"relatedProductId\": \"67a76d010b4a90fc1d5c9b1e\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/products/{{productId}}/related/items",
               "host": [
@@ -3011,15 +3064,6 @@
                 "related",
                 "items"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"relatedProductId\": \"67a76d010b4a90fc1d5c9b1e\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -3181,6 +3225,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 5,\n  \"title\": \"Breathtaking quality and vivid colors!\",\n  \"comment\": \"Installed the Artemis wallpaper in our master bedroom. The depth of color and velvet texture exceeded our expectations. Highly recommended!\",\n  \"variant\": \"{{variantId}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/reviews",
               "host": [
@@ -3189,18 +3242,24 @@
               "path": [
                 "reviews"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"product\": \"{{productId}}\",\n  \"rating\": 5,\n  \"title\": \"Stunning Velvet!\",\n  \"comment\": \"The color depth and texture of this Artemis velvet exceeded my expectations.\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"reviewId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Review",
@@ -3216,6 +3275,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 5,\n  \"comment\": \"Updated review comment: Absolutely top-tier quality!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/reviews/{{reviewId}}",
               "host": [
@@ -3225,15 +3293,6 @@
                 "reviews",
                 "{{reviewId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"rating\": 5,\n  \"comment\": \"Updated review comment: Absolutely top-tier quality!\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -3252,6 +3311,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"{{userId}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/reviews/{{reviewId}}/like",
               "host": [
@@ -3262,15 +3330,6 @@
                 "{{reviewId}}",
                 "like"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -3289,6 +3348,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"{{userId}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/reviews/{{reviewId}}/dislike",
               "host": [
@@ -3299,15 +3367,6 @@
                 "{{reviewId}}",
                 "dislike"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -3353,6 +3412,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"replyText\": \"Thank you for your review! We are delighted you love the fabric.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/reviews/{{reviewId}}/reply",
               "host": [
@@ -3363,15 +3431,6 @@
                 "{{reviewId}}",
                 "reply"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"replyText\": \"Thank you for your review! We are delighted you love the fabric.\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -3390,6 +3449,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"APPROVED\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/reviews/{{reviewId}}/status",
               "host": [
@@ -3400,15 +3468,6 @@
                 "{{reviewId}}",
                 "status"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"status\": \"APPROVED\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -3433,7 +3492,7 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/filters/facets?category={{categoryId}}&minPrice=50&maxPrice=500",
+              "raw": "{{baseUrl}}/filters/facets",
               "host": [
                 "{{baseUrl}}"
               ],
@@ -3460,7 +3519,7 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/filters/products?category={{categoryId}}",
+              "raw": "{{baseUrl}}/filters/products",
               "host": [
                 "{{baseUrl}}"
               ],
@@ -3512,15 +3571,6 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
-            "url": {
-              "raw": "{{baseUrl}}/filters",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "filters"
-              ]
-            },
             "body": {
               "mode": "raw",
               "raw": "{\n  \"name\": \"Price Range Filter\",\n  \"code\": \"price_range\",\n  \"type\": \"RANGE\",\n  \"displayOrder\": 1,\n  \"isActive\": true\n}",
@@ -3529,6 +3579,15 @@
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/filters",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "filters"
+              ]
             }
           },
           "response": []
@@ -3547,6 +3606,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Luxury Wallpaper Faceted Filters\",\n  \"code\": \"WALLPAPER_FILTERS\",\n  \"type\": \"FACETED\",\n  \"options\": [\n    {\n      \"label\": \"Color\",\n      \"value\": \"color\"\n    },\n    {\n      \"label\": \"Room Type\",\n      \"value\": \"room\"\n    },\n    {\n      \"label\": \"Pattern Style\",\n      \"value\": \"pattern\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/filters/{{categoryId}}",
               "host": [
@@ -3556,15 +3624,6 @@
                 "filters",
                 "{{categoryId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Price Range & Currency Filter\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -3641,6 +3700,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product\": \"{{productId}}\",\n  \"variant\": \"{{variantId}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/wishlist",
               "host": [
@@ -3649,15 +3717,6 @@
               "path": [
                 "wishlist"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"productId\": \"{{productId}}\",\n  \"variantId\": \"{{variantId}}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -3760,6 +3819,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product\": \"{{productId}}\",\n  \"variant\": \"{{variantId}}\",\n  \"quantity\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/cart",
               "host": [
@@ -3768,18 +3836,24 @@
               "path": [
                 "cart"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"productId\": \"{{productId}}\",\n  \"variantId\": \"{{variantId}}\",\n  \"quantity\": 3\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if ((data.items && data.items[0]) ? data.items[0]._id : null) pm.environment.set(\"itemId\", (data.items && data.items[0]) ? data.items[0]._id : null);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Cart Item Quantity",
@@ -3795,6 +3869,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/cart/item/{{itemId}}",
               "host": [
@@ -3805,15 +3888,6 @@
                 "item",
                 "{{itemId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"quantity\": 5\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -3886,6 +3960,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"couponCode\": \"SPRING15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/cart/coupon",
               "host": [
@@ -3895,15 +3978,6 @@
                 "cart",
                 "coupon"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"couponCode\": \"SPRING15\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4007,6 +4081,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Aditya Chauhan\",\n  \"phone\": \"+447123456789\",\n  \"email\": \"adichauha465@gmail.com\",\n  \"addressLine1\": \"St. Michael's Alley, Cornhill\",\n  \"addressLine2\": \"Suite 4B\",\n  \"city\": \"London\",\n  \"state\": \"Greater London\",\n  \"postalCode\": \"EC3V 9DS\",\n  \"country\": \"United Kingdom\",\n  \"type\": \"SHIPPING\",\n  \"isDefault\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/addresses",
               "host": [
@@ -4015,18 +4098,24 @@
               "path": [
                 "addresses"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"fullName\": \"Jane Doe\",\n  \"phone\": \"+447123456789\",\n  \"email\": \"jane.doe@example.com\",\n  \"country\": \"United Kingdom\",\n  \"state\": \"Greater London\",\n  \"city\": \"London\",\n  \"postalCode\": \"E2 8NA\",\n  \"addressLine1\": \"123 Hackney Road\",\n  \"addressLine2\": \"Apartment 4B\",\n  \"isDefault\": true\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"addressId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Address",
@@ -4042,6 +4131,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Aditya Chauhan\",\n  \"phone\": \"+447987654321\",\n  \"email\": \"adichauha465@gmail.com\",\n  \"addressLine1\": \"St. Michael's Alley, Cornhill\",\n  \"addressLine2\": \"Penthouse 500\",\n  \"city\": \"London\",\n  \"state\": \"Greater London\",\n  \"postalCode\": \"EC3V 9DS\",\n  \"country\": \"United Kingdom\",\n  \"type\": \"SHIPPING\",\n  \"isDefault\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/addresses/{{addressId}}",
               "host": [
@@ -4051,15 +4149,6 @@
                 "addresses",
                 "{{addressId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"addressLine2\": \"Suite 500\",\n  \"postalCode\": \"E2 8NB\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4078,6 +4167,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"isDefault\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/addresses/{{addressId}}/default",
               "host": [
@@ -4088,15 +4186,6 @@
                 "{{addressId}}",
                 "default"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"isDefault\": true\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4147,6 +4236,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"SPRING15\",\n  \"subtotal\": 350\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/coupons/validate",
               "host": [
@@ -4156,15 +4254,6 @@
                 "coupons",
                 "validate"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"code\": \"SPRING15\",\n  \"cartTotal\": 300\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4236,6 +4325,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"SPRING15\",\n  \"discountType\": \"PERCENTAGE\",\n  \"discountValue\": 15,\n  \"minOrderAmount\": 100,\n  \"maxDiscountAmount\": 50,\n  \"usageLimit\": 1000,\n  \"perUserLimit\": 1,\n  \"expiryDate\": \"2026-12-31T23:59:59.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/coupons",
               "host": [
@@ -4244,18 +4342,24 @@
               "path": [
                 "coupons"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"code\": \"SPRING15\",\n  \"description\": \"Spring 15% discount\",\n  \"discountType\": \"PERCENTAGE\",\n  \"discountValue\": 15,\n  \"minOrderAmount\": 100,\n  \"maxDiscountAmount\": 50\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"couponId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Coupon",
@@ -4271,6 +4375,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"discountValue\": 20,\n  \"minOrderAmount\": 150,\n  \"maxDiscountAmount\": 75,\n  \"usageLimit\": 500,\n  \"perUserLimit\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/coupons/{{couponId}}",
               "host": [
@@ -4280,15 +4393,6 @@
                 "coupons",
                 "{{couponId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"discountValue\": 20\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4392,6 +4496,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"shippingAddressId\": \"{{addressId}}\",\n  \"billingAddressId\": \"{{addressId}}\",\n  \"paymentMethod\": \"STRIPE\",\n  \"couponCode\": \"SPRING15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/orders",
               "host": [
@@ -4400,18 +4513,24 @@
               "path": [
                 "orders"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"shippingAddressId\": \"{{addressId}}\",\n  \"billingAddressId\": \"{{addressId}}\",\n  \"paymentMethod\": \"COD\",\n  \"notes\": \"Please deliver during business hours\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"orderId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Cancel Order",
@@ -4427,6 +4546,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reason\": \"Customer requested cancellation before shipment dispatch\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/orders/{{orderId}}/cancel",
               "host": [
@@ -4437,15 +4565,6 @@
                 "{{orderId}}",
                 "cancel"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"cancellationReason\": \"Customer requested cancellation before dispatch\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4464,6 +4583,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"PROCESSING\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/orders/{{orderId}}/status",
               "host": [
@@ -4474,15 +4602,6 @@
                 "{{orderId}}",
                 "status"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"orderStatus\": \"PROCESSING\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4506,6 +4625,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"{{orderId}}\",\n  \"provider\": \"STRIPE\",\n  \"paymentMethod\": \"CREDIT_CARD\",\n  \"paymentId\": \"pi_3MtwB2LkdIwHu7ix08bXyZ12\",\n  \"gatewayTransactionId\": \"txn_987654321\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/payments/initiate",
               "host": [
@@ -4515,15 +4643,6 @@
                 "payments",
                 "initiate"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"orderId\": \"{{orderId}}\",\n  \"amount\": 425.5,\n  \"currency\": \"INR\",\n  \"paymentGateway\": \"STRIPE\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4542,6 +4661,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentId\": \"{{paymentId}}\",\n  \"gatewayTransactionId\": \"txn_987654321\",\n  \"signature\": \"sig_abc123xyz7890qwerty\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/payments/verify",
               "host": [
@@ -4551,15 +4679,6 @@
                 "payments",
                 "verify"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"paymentId\": \"{{paymentId}}\",\n  \"signature\": \"sig_abc123xyz789\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4631,6 +4750,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refundAmount\": 50,\n  \"reason\": \"Customer returned partial order items\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/payments/{{paymentId}}/refund",
               "host": [
@@ -4641,15 +4769,6 @@
                 "{{paymentId}}",
                 "refund"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"refundAmount\": 100,\n  \"reason\": \"Partial refund requested by customer\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4755,6 +4874,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"{{orderId}}\",\n  \"courierName\": \"DHL_EXPRESS\",\n  \"trackingNumber\": \"HOH-TRK-987654321\",\n  \"trackingUrl\": \"https://www.dhl.com/en/express/tracking.html?AWB=HOH-TRK-987654321\",\n  \"estimatedDelivery\": \"2026-08-20T17:00:00.000Z\",\n  \"status\": \"SHIPPED\",\n  \"location\": \"London Central Fulfillment Hub\",\n  \"comment\": \"Package picked up by courier and dispatched for air priority delivery.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/shipments",
               "host": [
@@ -4763,18 +4891,25 @@
               "path": [
                 "shipments"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"orderId\": \"{{orderId}}\",\n  \"courier\": \"DHL_EXPRESS\",\n  \"trackingNumber\": \"HOH-TRK-987654321\",\n  \"estimatedDelivery\": \"2026-08-15T18:00:00.000Z\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"shipmentId\", data._id);",
+                  "    if (data.trackingNumber) pm.environment.set(\"trackingNumber\", data.trackingNumber);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Shipment Status",
@@ -4790,6 +4925,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"IN_TRANSIT\",\n  \"location\": \"Heathrow Sorting Facility, London\",\n  \"comment\": \"Package scanned at sorting hub and loaded onto delivery vehicle.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/shipments/{{shipmentId}}/status",
               "host": [
@@ -4800,15 +4944,6 @@
                 "{{shipmentId}}",
                 "status"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"status\": \"IN_TRANSIT\",\n  \"location\": \"London Sorting Facility\",\n  \"comment\": \"Package scanned and in transit\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4913,6 +5048,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"{{orderId}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/invoices/generate",
               "host": [
@@ -4922,15 +5066,6 @@
                 "invoices",
                 "generate"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"orderId\": \"{{orderId}}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -4949,6 +5084,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"PAID\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/invoices/{{invoiceId}}/status",
               "host": [
@@ -4959,15 +5103,6 @@
                 "{{invoiceId}}",
                 "status"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"status\": \"PAID\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5019,6 +5154,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone\": \"+442079460912\",\n  \"businessType\": \"INTERIOR_DESIGNER\",\n  \"gstNumber\": \"GST-GB-987654321\",\n  \"vatNumber\": \"GB987654321\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/profiles/apply",
               "host": [
@@ -5029,15 +5173,6 @@
                 "profiles",
                 "apply"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"phone\": \"+442079460912\",\n  \"businessType\": \"INTERIOR_DESIGNER\",\n  \"gstNumber\": \"GST-GB-987654321\",\n  \"vatNumber\": \"GB123456789\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5084,6 +5219,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"APPROVED\",\n  \"tierId\": \"{{tradeTierId}}\",\n  \"creditLimit\": 50000,\n  \"rejectionReason\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/profiles/{{tradeProfileId}}/review",
               "host": [
@@ -5095,15 +5239,6 @@
                 "{{tradeProfileId}}",
                 "review"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"status\": \"APPROVED\",\n  \"tierId\": \"{{tradeTierId}}\",\n  \"creditLimit\": 50000\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5182,6 +5317,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Hackney Interiors Studio Ltd\",\n  \"country\": \"United Kingdom\",\n  \"taxNumber\": \"GB-TAX-998877\",\n  \"registrationNumber\": \"REG-12345678\",\n  \"website\": \"https://hackneyinteriors.co.uk\",\n  \"email\": \"contact@hackneyinteriors.co.uk\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/companies",
               "host": [
@@ -5191,18 +5335,24 @@
                 "trade",
                 "companies"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Hackney Interiors Studio Ltd\",\n  \"country\": \"United Kingdom\",\n  \"taxNumber\": \"GB-TAX-998877\",\n  \"registrationNumber\": \"12345678\",\n  \"website\": \"https://hackneyinteriors.co.uk\",\n  \"email\": \"contact@hackneyinteriors.co.uk\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"companyId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Company",
@@ -5218,6 +5368,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Hackney Design & Interiors Studio Ltd\",\n  \"country\": \"United Kingdom\",\n  \"taxNumber\": \"GB-TAX-998877\",\n  \"registrationNumber\": \"REG-12345678\",\n  \"website\": \"https://hackneyinteriors.co.uk\",\n  \"email\": \"info@hackneyinteriors.co.uk\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/companies/{{companyId}}",
               "host": [
@@ -5228,15 +5387,6 @@
                 "companies",
                 "{{companyId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Hackney Design Studio Ltd\",\n  \"website\": \"https://hackneydesign.co.uk\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5343,6 +5493,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"forceReseed\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/tiers/seed",
               "host": [
@@ -5353,15 +5512,6 @@
                 "tiers",
                 "seed"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5380,6 +5530,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"PLATINUM_DESIGNER\",\n  \"discountPercentage\": 35,\n  \"creditLimit\": 100000,\n  \"paymentTerm\": \"NET_60\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/tiers",
               "host": [
@@ -5389,18 +5548,24 @@
                 "trade",
                 "tiers"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"GOLD\",\n  \"discountPercentage\": 25,\n  \"creditLimit\": 25000,\n  \"paymentTerm\": \"NET_30\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
-          "response": []
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code >= 200 && pm.response.code < 300) {",
+                  "    var res = pm.response.json();",
+                  "    var data = res.data || res;",
+                  "    if (data._id) pm.environment.set(\"tradeTierId\", data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
         },
         {
           "name": "Update Trade Tier",
@@ -5416,6 +5581,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"GOLD_DESIGNER\",\n  \"discountPercentage\": 25,\n  \"creditLimit\": 50000,\n  \"paymentTerm\": \"NET_30\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/tiers/{{tradeTierId}}",
               "host": [
@@ -5426,15 +5600,6 @@
                 "tiers",
                 "{{tradeTierId}}"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"discountPercentage\": 30\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5487,6 +5652,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": \"{{productId}}\",\n  \"tradeTierId\": \"{{tradeTierId}}\",\n  \"price\": 105,\n  \"minQuantity\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/pricing",
               "host": [
@@ -5496,15 +5670,6 @@
                 "trade",
                 "pricing"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"productId\": \"{{productId}}\",\n  \"tradeTierId\": \"{{tradeTierId}}\",\n  \"price\": 105,\n  \"minQuantity\": 10\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5583,6 +5748,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    {\n      \"product\": \"{{productId}}\",\n      \"quantity\": 50\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/quotations/request",
               "host": [
@@ -5593,15 +5767,6 @@
                 "quotations",
                 "request"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"items\": [\n    {\n      \"product\": \"{{productId}}\",\n      \"quantity\": 50\n    }\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5620,6 +5785,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"discount\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/quotations/{{quotationId}}/approve",
               "host": [
@@ -5631,15 +5805,6 @@
                 "{{quotationId}}",
                 "approve"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"notes\": \"Approved by client\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5658,6 +5823,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"shippingAddressId\": \"{{addressId}}\",\n  \"billingAddressId\": \"{{addressId}}\",\n  \"paymentMethod\": \"TRADE_CREDIT\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/quotations/{{quotationId}}/convert",
               "host": [
@@ -5669,15 +5843,6 @@
                 "{{quotationId}}",
                 "convert"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"shippingAddressId\": \"{{addressId}}\",\n  \"paymentMethod\": \"INVOICE_NET30\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5696,6 +5861,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"discount\": 15\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/quotations/{{quotationId}}/negotiate",
               "host": [
@@ -5707,15 +5881,6 @@
                 "{{quotationId}}",
                 "negotiate"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"discount\": 15\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5767,6 +5932,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"userId\": \"{{userId}}\",\n  \"totalCredit\": 75000,\n  \"paymentTerm\": \"NET_45\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/trade/credits",
               "host": [
@@ -5776,15 +5950,6 @@
                 "trade",
                 "credits"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"companyId\": \"{{companyId}}\",\n  \"userId\": \"{{userId}}\",\n  \"totalCredit\": 50000,\n  \"paymentTerm\": \"NET_30\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5861,6 +6026,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filename\": \"artemis-velvet-swatch-hq.jpg\",\n  \"mimeType\": \"image/jpeg\",\n  \"size\": 2048576,\n  \"url\": \"https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/artemis-swatch.jpg\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/media",
               "host": [
@@ -5869,15 +6043,6 @@
               "path": [
                 "media"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"filename\": \"artemis-velvet-swatch.jpg\",\n  \"mimeType\": \"image/jpeg\",\n  \"size\": 1048576,\n  \"url\": \"https://storage.houseofhackney.com/media/artemis-velvet-swatch.jpg\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -5928,6 +6093,15 @@
                 "value": "Bearer {{accessToken}}"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"modelName\": \"ORDER\",\n  \"prefix\": \"HOH-ORD-\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/counter/generate",
               "host": [
@@ -5937,20 +6111,129 @@
                 "counter",
                 "generate"
               ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"modelName\": \"ORDER\",\n  \"prefix\": \"HOH-ORD-\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
         }
       ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api/v1"
+    },
+    {
+      "key": "accessToken",
+      "value": ""
+    },
+    {
+      "key": "refreshToken",
+      "value": ""
+    },
+    {
+      "key": "categoryId",
+      "value": "67a76d010b4a90fc1d5c9b10"
+    },
+    {
+      "key": "brandId",
+      "value": "67a76d010b4a90fc1d5c9b14"
+    },
+    {
+      "key": "productId",
+      "value": "67a76d010b4a90fc1d5c9b1b"
+    },
+    {
+      "key": "variantId",
+      "value": "67a76d010b4a90fc1d5c9b20"
+    },
+    {
+      "key": "inventoryId",
+      "value": "67a76d010b4a90fc1d5c9b25"
+    },
+    {
+      "key": "attributeId",
+      "value": "67a76d010b4a90fc1d5c9b28"
+    },
+    {
+      "key": "valueId",
+      "value": "67a76d010b4a90fc1d5c9b29"
+    },
+    {
+      "key": "reviewId",
+      "value": "67a76d010b4a90fc1d5c9b2c"
+    },
+    {
+      "key": "orderId",
+      "value": "67a76d010b4a90fc1d5c9b30"
+    },
+    {
+      "key": "addressId",
+      "value": "67a76d010b4a90fc1d5c9b33"
+    },
+    {
+      "key": "couponId",
+      "value": "67a76d010b4a90fc1d5c9b36"
+    },
+    {
+      "key": "paymentId",
+      "value": "67a76d010b4a90fc1d5c9b38"
+    },
+    {
+      "key": "shipmentId",
+      "value": "67a76d010b4a90fc1d5c9b3a"
+    },
+    {
+      "key": "invoiceId",
+      "value": "67a76d010b4a90fc1d5c9b3c"
+    },
+    {
+      "key": "companyId",
+      "value": "67a76d010b4a90fc1d5c9b40"
+    },
+    {
+      "key": "tradeProfileId",
+      "value": "67a76d010b4a90fc1d5c9b50"
+    },
+    {
+      "key": "tradeTierId",
+      "value": "67a76d010b4a90fc1d5c9b55"
+    },
+    {
+      "key": "quotationId",
+      "value": "67a76d010b4a90fc1d5c9b60"
+    },
+    {
+      "key": "userId",
+      "value": "67a76d010b4a90fc1d5c9b01"
+    },
+    {
+      "key": "roleId",
+      "value": "67a76d010b4a90fc1d5c9b02"
+    },
+    {
+      "key": "permissionId",
+      "value": "67a76d010b4a90fc1d5c9b03"
+    },
+    {
+      "key": "moduleId",
+      "value": "67a76d010b4a90fc1d5c9b04"
+    },
+    {
+      "key": "mediaId",
+      "value": "67a76d010b4a90fc1d5c9b70"
+    },
+    {
+      "key": "itemId",
+      "value": "67a76d010b4a90fc1d5c9b80"
+    },
+    {
+      "key": "trackingNumber",
+      "value": "HOH-TRK-987654321"
+    },
+    {
+      "key": "targetProductId",
+      "value": "67a76d010b4a90fc1d5c9b1e"
     }
   ]
 }

@@ -230,7 +230,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Artemis Velvet Fabric\",\n  \"slug\": \"artemis-velvet-fabric\",\n  \"sku\": \"HOH-ART-001\",\n  \"productType\": \"FABRIC\",\n  \"category\": \"{{categoryId}}\",\n  \"brand\": \"{{brandId}}\",\n  \"shortDescription\": \"Wild floral print on heavy velvet for upholstery\",\n  \"description\": \"Full description of Artemis Velvet Fabric\",\n  \"status\": \"DRAFT\"\n}",
+          "raw": "{\n  \"name\": \"Artemis Velvet Wallpaper\",\n  \"productType\": \"WALLPAPER\",\n  \"shortDescription\": \"Signature dark botanical wallpaper with lush blush pink blooms\",\n  \"description\": \"The Artemis wallpaper features iconic wild flowers painted on a dramatic dark ground. Crafted with eco-friendly non-woven paper in the UK.\",\n  \"category\": \"{{categoryId}}\",\n  \"brand\": \"{{brandId}}\",\n  \"isFeatured\": true,\n  \"isBestSeller\": true,\n  \"isNewArrival\": true,\n  \"isTradeAvailable\": true,\n  \"status\": \"PUBLISHED\",\n  \"visibility\": \"PUBLIC\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -266,7 +266,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Artemis Luxury Velvet Fabric\",\n  \"status\": \"PUBLISHED\"\n}",
+          "raw": "{\n  \"name\": \"Artemis Midnight Velvet Wallpaper\",\n  \"productType\": \"WALLPAPER\",\n  \"shortDescription\": \"Award-winning dark botanical wallpaper featuring British wild flora\",\n  \"description\": \"Immerse your sanctuary in maximalist luxury with Artemis Midnight Velvet Wallpaper, sustainably produced in England.\",\n  \"category\": \"{{categoryId}}\",\n  \"brand\": \"{{brandId}}\",\n  \"isFeatured\": true,\n  \"isBestSeller\": true,\n  \"status\": \"PUBLISHED\",\n  \"visibility\": \"PUBLIC\"\n}",
           "options": {
             "raw": {
               "language": "json"

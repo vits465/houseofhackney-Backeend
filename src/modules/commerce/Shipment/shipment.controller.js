@@ -79,7 +79,10 @@ class ShipmentController {
     // Get user shipments list
     async getUserShipments(req, res, next) {
         try {
-            const shipments = await shipmentService.getUserShipments(req.user._id);
+            const isAdmin = req.user.roles?.some(r => r.slug === "admin" || r.slug === "super_admin" || r.slug === "super-admin");
+            const shipments = isAdmin
+                ? await shipmentService.repository.findAll({})
+                : await shipmentService.getUserShipments(req.user._id);
 
             return new ApiResponse(
                 res,

@@ -15,6 +15,13 @@ const router = Router();
 // All trade profile operations require authentication
 router.use(authMiddleware);
 
+// Get all trade profiles (Admin)
+router.get(
+    "/",
+    authorize(["ADMIN", "SUPER_ADMIN"]),
+    tradeProfileController.getAllProfiles
+);
+
 // Get current user trade profile
 router.get(
     "/me",

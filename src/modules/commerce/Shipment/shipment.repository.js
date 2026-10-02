@@ -1,23 +1,24 @@
 import BaseRepository from "../../../shared/database/BaseRepository.js";
 import Shipment from "./shipment.model.js";
+import { SHIPMENT_POPULATE } from "../../../shared/populate/commerce.populate.js";
 
 class ShipmentRepository extends BaseRepository {
 
     constructor() {
-        super(Shipment);
+        super(Shipment, SHIPMENT_POPULATE);
     }
 
     // Find shipment by order ID
     async findByOrder(orderId) {
-        return await this.model.findOne({
+        return await this.findOne({
             order: orderId,
             deletedAt: null,
-        }).populate("order", "orderNumber orderStatus grandTotal");
+        });
     }
 
     // Find shipment by AWB tracking number
     async findByTracking(trackingNumber) {
-        return await this.model.findOne({
+        return await this.findOne({
             trackingNumber: trackingNumber.trim(),
             deletedAt: null,
         });
@@ -40,7 +41,7 @@ class ShipmentRepository extends BaseRepository {
             { _id: shipmentId, deletedAt: null },
             updatePayload,
             { new: true }
-        );
+        ).populate(SHIPMENT_POPULATE);
     }
 
 }

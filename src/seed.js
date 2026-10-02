@@ -91,6 +91,7 @@ async function seedMasterDatabase() {
   await ProductPricing.collection.dropIndexes().catch(() => {});
   await Variant.collection.dropIndexes().catch(() => {});
   await Media.collection.dropIndexes().catch(() => {});
+  await Attribute.collection.dropIndexes().catch(() => {});
 
   // RBAC Modules, Permissions & Roles
   console.log("-> Seeding RBAC Modules, Permissions & Roles...");
@@ -151,6 +152,22 @@ async function seedMasterDatabase() {
       email: "adichauha465@gmail.com",
       password: "Password123!",
       phone: "+919876543210",
+      roles: [adminRole._id],
+      isEmailVerified: true,
+      emailVerifiedAt: new Date(),
+      status: "ACTIVE",
+    },
+    { upsert: true, returnDocument: "after" }
+  );
+
+  const defaultAdmin = await User.findOneAndUpdate(
+    { email: "admin@example.com" },
+    {
+      firstName: "Super",
+      lastName: "Admin",
+      email: "admin@example.com",
+      password: "AdminExp",
+      phone: "+919876543211",
       roles: [adminRole._id],
       isEmailVerified: true,
       emailVerifiedAt: new Date(),
@@ -282,8 +299,17 @@ async function seedMasterDatabase() {
   console.log("-> Seeding Products with Cloudinary Images & Complete Metadata...");
   const imgDir = path.resolve(__dirname, "images");
   if (!fs.existsSync(imgDir)) {
-    console.error("❌ Directory /src/images not found!");
-    process.exit(1);
+    console.log("ℹ️ /src/images directory not found. Creating sample seed image folders...");
+    const sampleFolders = [
+      "Wallpaper/Artemis___Midnight_Black",
+      "Wallpaper/Bambusa___Blush_Pink",
+      "Fabric/Gothic_Garden___Emerald_Green",
+      "Furnishings/Luxe_Velvet_Cushion___Onyx"
+    ];
+    sampleFolders.forEach((folder) => {
+      const p = path.join(imgDir, folder);
+      fs.mkdirSync(p, { recursive: true });
+    });
   }
 
   const topDirs = fs.readdirSync(imgDir).filter((f) => fs.statSync(path.join(imgDir, f)).isDirectory());
@@ -475,7 +501,7 @@ async function seedMasterDatabase() {
 
   // Attributes, Specs, SEO, Reviews, Filters & Related Products
   console.log("-> Seeding Attributes, Specifications, SEO, Reviews, Filters & Related Products...");
-  await Attribute.findOneAndUpdate(
+  const finishAttr = await Attribute.findOneAndUpdate(
     { slug: "surface-finish" },
     {
       name: "Surface Finish",
@@ -483,13 +509,54 @@ async function seedMasterDatabase() {
       displayName: "Surface Finish",
       description: "Tactile surface finish quality",
       type: "SELECT",
+      isVariant: true,
       isFilterable: true,
+      status: "ACTIVE",
       values: [
-        { label: "Matte Velvet", slug: "matte-velvet", colorCode: "#000000" },
-        { label: "Satin Gloss", slug: "satin-gloss", colorCode: "#ffffff" },
+        { label: "Matte Velvet", slug: "matte-velvet", colorCode: "#121212", isDefault: true, status: "ACTIVE" },
+        { label: "Satin Gloss", slug: "satin-gloss", colorCode: "#ffffff", isDefault: false, status: "ACTIVE" },
       ],
     },
-    { upsert: true }
+    { upsert: true, returnDocument: "after" }
+  );
+
+  const sizeAttr = await Attribute.findOneAndUpdate(
+    { slug: "roll-size" },
+    {
+      name: "Roll Size",
+      slug: "roll-size",
+      displayName: "Roll Size",
+      description: "Standard wallpaper roll dimensions",
+      type: "SELECT",
+      isVariant: true,
+      isFilterable: true,
+      status: "ACTIVE",
+      values: [
+        { label: "Standard Roll (10m x 52cm)", slug: "standard-roll", isDefault: true, status: "ACTIVE" },
+        { label: "Wide Roll (10m x 70cm)", slug: "wide-roll", isDefault: false, status: "ACTIVE" },
+      ],
+    },
+    { upsert: true, returnDocument: "after" }
+  );
+
+  const colorAttr = await Attribute.findOneAndUpdate(
+    { slug: "color-palette" },
+    {
+      name: "Color Palette",
+      slug: "color-palette",
+      displayName: "Color Palette",
+      description: "Luxury color palette choices",
+      type: "COLOR",
+      isVariant: true,
+      isFilterable: true,
+      status: "ACTIVE",
+      values: [
+        { label: "Midnight Black", slug: "midnight-black", colorCode: "#121212", isDefault: true, status: "ACTIVE" },
+        { label: "Emerald Green", slug: "emerald-green", colorCode: "#1b4d3e", isDefault: false, status: "ACTIVE" },
+        { label: "Dusky Pink", slug: "dusky-pink", colorCode: "#e8c3c5", isDefault: false, status: "ACTIVE" },
+      ],
+    },
+    { upsert: true, returnDocument: "after" }
   );
 
   if (firstCreatedProduct) {
@@ -518,29 +585,51 @@ async function seedMasterDatabase() {
       { upsert: true }
     );
 
-    const relatedProducts = await Product.find({ _id: { $ne: firstCreatedProduct._id } }).limit(4);
-    await Related.findOneAndUpdate(
-      { product: firstCreatedProduct._id },
-      {
-        product: firstCreatedProduct._id,
-        relatedProducts: relatedProducts.map((p) => p._id),
-      },
-      { upsert: true }
-    );
+    // Seed Related Products for ALL products
+    const allProdsForRelated = await Product.find({}).limit(10);
+    for (const p of allProdsForRelated) {
+      const otherProds = allProdsForRelated.filter((x) => !x._id.equals(p._id)).slice(0, 3);
+      await Related.findOneAndUpdate(
+        { product: p._id },
+        {
+          product: p._id,
+          relatedProducts: otherProds.map((op, idx) => ({
+            product: op._id,
+            relationType: idx === 0 ? "CROSS_SELL" : idx === 1 ? "UPSELL" : "RELATED",
+            sortOrder: idx + 1,
+          })),
+        },
+        { upsert: true }
+      );
+    }
 
-    await Review.findOneAndUpdate(
-      { product: firstCreatedProduct._id, user: adminUser._id },
-      {
-        product: firstCreatedProduct._id,
-        user: adminUser._id,
-        rating: 5,
-        title: "Stunning Victorian Floral Design",
-        comment: "Exquisite print quality, vivid colors, and luxury texture!",
-        status: "APPROVED",
-        verifiedPurchase: true,
-      },
-      { upsert: true }
-    );
+    // Seed 4 Reviews & Ratings for both admin users
+    const reviewProds = await Product.find({}).limit(4);
+    const sampleReviews = [
+      { rating: 5, title: "Stunning Victorian Floral Design", comment: "Exquisite print quality, vivid colors, and luxury texture!" },
+      { rating: 5, title: "Unmatched Velvet Quality & Rich Pigments", comment: "Installed this in our master bedroom. Depth of color is breathtaking." },
+      { rating: 4, title: "Transformed our Living Room Sanctuary", comment: "Top tier craftsmanship! Easy installation and eco non-woven paper." },
+      { rating: 5, title: "Iconic British Heritage Masterpiece", comment: "Pure British maximalist luxury. Received endless compliments!" },
+    ];
+    for (const usr of [adminUser, defaultAdmin]) {
+      for (let i = 0; i < Math.min(reviewProds.length, sampleReviews.length); i++) {
+        const p = reviewProds[i];
+        const r = sampleReviews[i];
+        await Review.findOneAndUpdate(
+          { product: p._id, user: usr._id },
+          {
+            product: p._id,
+            user: usr._id,
+            rating: r.rating,
+            title: r.title,
+            comment: r.comment,
+            status: "APPROVED",
+            verifiedPurchase: true,
+          },
+          { upsert: true }
+        );
+      }
+    }
   }
 
   await FilterGroup.findOneAndUpdate(
@@ -560,42 +649,93 @@ async function seedMasterDatabase() {
 
   // Commerce (Wishlist, Cart, Address, Coupon, Order, Payment, Shipment, Invoice)
   console.log("-> Seeding B2C Commerce (Wishlist, Cart, Address, Coupon, Order, Payment, Shipment & Invoice)...");
-  if (firstCreatedProduct) {
-    await Wishlist.findOneAndUpdate(
-      { user: adminUser._id },
-      { user: adminUser._id, items: [{ product: firstCreatedProduct._id }] },
-      { upsert: true }
-    );
+  const allProdsCommerce = await Product.find({}).limit(4);
+  const allVarsCommerce = await Variant.find({}).limit(4);
 
-    const variantSample = await Variant.findOne({ product: firstCreatedProduct._id });
-    await Cart.findOneAndUpdate(
-      { user: adminUser._id },
-      {
-        user: adminUser._id,
-        items: [{ product: firstCreatedProduct._id, variant: variantSample ? variantSample._id : null, quantity: 2 }],
-        expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
-      },
-      { upsert: true }
-    );
+  for (const usr of [adminUser, defaultAdmin]) {
+    if (allProdsCommerce.length > 0) {
+      // Seed Wishlist with at least 3 items
+      const wishlistItems = allProdsCommerce.slice(0, 3).map((prod, idx) => ({
+        product: prod._id,
+        variant: allVarsCommerce[idx] ? allVarsCommerce[idx]._id : null,
+        addedAt: new Date(),
+      }));
+
+      await Wishlist.findOneAndUpdate(
+        { user: usr._id },
+        { user: usr._id, items: wishlistItems },
+        { upsert: true }
+      );
+
+      // Seed Cart with at least 3 items
+      const cartItems = allProdsCommerce.slice(0, 3).map((prod, idx) => {
+        const uPrice = 135.0;
+        const qty = idx + 1;
+        return {
+          product: prod._id,
+          variant: allVarsCommerce[idx] ? allVarsCommerce[idx]._id : null,
+          quantity: qty,
+          unitPrice: uPrice,
+          discount: 0,
+          tax: 15.0,
+          total: qty * uPrice,
+          addedAt: new Date(),
+        };
+      });
+      const subtotalCalc = cartItems.reduce((acc, item) => acc + item.total, 0);
+
+      await Cart.findOneAndUpdate(
+        { user: usr._id },
+        {
+          user: usr._id,
+          items: cartItems,
+          subtotal: subtotalCalc,
+          discount: 0,
+          tax: 45.0,
+          shipping: 15.0,
+          grandTotal: subtotalCalc + 45.0 + 15.0,
+          currency: "GBP",
+          status: "ACTIVE",
+          expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+        },
+        { upsert: true }
+      );
+    }
   }
 
-  const address = await Address.findOneAndUpdate(
-    { user: adminUser._id, isDefault: true },
-    {
-      user: adminUser._id,
-      name: "Aditya Chauhan",
-      email: "adichauha465@gmail.com",
-      phone: "+919876543210",
-      street: "123 Hackney Road",
-      addressLine2: "Suite 404",
-      city: "London",
-      state: "Greater London",
-      postalCode: "E2 8NA",
-      country: "United Kingdom",
-      isDefault: true,
-    },
-    { upsert: true, returnDocument: "after" }
-  );
+  // Seed 3 Delivery Addresses for both admin users
+  const addressList = [];
+  const addressSamplesData = [
+    { name: "Aditya Chauhan", email: "adichauha465@gmail.com", phone: "+919876543210", street: "123 Hackney Road", addressLine2: "Suite 404", city: "London", state: "Greater London", postalCode: "E2 8NA", country: "United Kingdom", type: "SHIPPING", isDefault: true },
+    { name: "Aditya Chauhan", email: "adichauha465@gmail.com", phone: "+442079460912", street: "45 Mayfair High Street", addressLine2: "Penthouse 5B", city: "London", state: "Westminster", postalCode: "W1J 8AJ", country: "United Kingdom", type: "BILLING", isDefault: false },
+    { name: "Super Admin", email: "admin@example.com", phone: "+919876543211", street: "88 St. Vincent Street", addressLine2: "Floor 3", city: "Glasgow", state: "Lanarkshire", postalCode: "G2 5UB", country: "United Kingdom", type: "OFFICE", isDefault: false },
+  ];
+
+  for (const usr of [adminUser, defaultAdmin]) {
+    for (let i = 0; i < addressSamplesData.length; i++) {
+      const a = addressSamplesData[i];
+      const addrObj = await Address.findOneAndUpdate(
+        { user: usr._id, addressLine1: a.street },
+        {
+          user: usr._id,
+          fullName: a.name,
+          email: a.email,
+          phone: a.phone,
+          addressLine1: a.street,
+          addressLine2: a.addressLine2,
+          city: a.city,
+          state: a.state,
+          postalCode: a.postalCode,
+          country: a.country,
+          type: a.type,
+          isDefault: i === 0,
+          status: "ACTIVE",
+        },
+        { upsert: true, returnDocument: "after" }
+      );
+      if (addressList.length < 3) addressList.push(addrObj);
+    }
+  }
 
   const coupon = await Coupon.findOneAndUpdate(
     { code: "WELCOME10" },
@@ -612,65 +752,145 @@ async function seedMasterDatabase() {
     { upsert: true, returnDocument: "after" }
   );
 
-  if (firstCreatedProduct) {
-    const order = await Order.findOneAndUpdate(
-      { orderNumber: "ORD-2026-0001" },
-      {
-        orderNumber: "ORD-2026-0001",
-        user: adminUser._id,
-        items: [{ product: firstCreatedProduct._id, quantity: 2, price: 13500 }],
-        subtotal: 27000,
-        discountAmount: 2000,
-        totalAmount: 25000,
-        shippingAddress: address._id,
-        orderStatus: "PROCESSING",
-        paymentStatus: "PAID",
-        notes: "Priority dispatch requested",
-      },
-      { upsert: true, returnDocument: "after" }
-    );
+  // Seed 3 Orders for both admin users
+  const createdOrdersList = [];
+  const sampleOrdersData = [
+    { num: "ORD-2026-0001", status: "PROCESSING", payStatus: "PAID", method: "CARD", notes: "Priority dispatch requested" },
+    { num: "ORD-2026-0002", status: "SHIPPED", payStatus: "PAID", method: "STRIPE", notes: "Fragile luxury wallpaper packaging" },
+    { num: "ORD-2026-0003", status: "DELIVERED", payStatus: "PAID", method: "COD", notes: "Signed upon customer delivery" },
+  ];
 
-    const payment = await Payment.findOneAndUpdate(
-      { transactionId: "TXN-2026-9901" },
+  const addrSnapshot = {
+    fullName: "Aditya Chauhan",
+    phone: "+447123456789",
+    email: "adichauha465@gmail.com",
+    country: "United Kingdom",
+    state: "Greater London",
+    city: "London",
+    postalCode: "E2 8NA",
+    addressLine1: "123 Hackney Road",
+    addressLine2: "Suite 404",
+  };
+
+  for (const usr of [adminUser, defaultAdmin]) {
+    for (let i = 0; i < sampleOrdersData.length; i++) {
+      const oData = sampleOrdersData[i];
+      const orderNum = usr._id.equals(defaultAdmin._id) ? `${oData.num}-ADM` : oData.num;
+      const targetProd = allProdsCommerce[i % allProdsCommerce.length] || firstCreatedProduct;
+      const orderObj = await Order.findOneAndUpdate(
+        { orderNumber: orderNum },
+        {
+          orderNumber: orderNum,
+          user: usr._id,
+          items: [
+            {
+              product: targetProd._id,
+              variant: allVarsCommerce[i % allVarsCommerce.length] ? allVarsCommerce[i % allVarsCommerce.length]._id : null,
+              name: targetProd.name,
+              sku: targetProd.sku || `SKU-${i + 100}`,
+              unitPrice: 135.0,
+              quantity: 2,
+              discount: 0,
+              tax: 15.0,
+              total: 270.0,
+            },
+          ],
+          shippingAddress: addrSnapshot,
+          billingAddress: addrSnapshot,
+          subtotal: 270.0,
+          discount: 20.0,
+          tax: 25.0,
+          shippingFee: 10.0,
+          grandTotal: 285.0,
+          currency: "GBP",
+          paymentStatus: oData.payStatus,
+          paymentMethod: oData.method,
+          orderStatus: oData.status,
+          notes: oData.notes,
+        },
+        { upsert: true, returnDocument: "after" }
+      );
+      createdOrdersList.push(orderObj);
+    }
+  }
+
+  // Seed 3 Payments
+  const createdPaymentsList = [];
+  const paymentSamplesData = [
+    { txnId: "TXN-2026-9901", gatewayId: "GATEWAY-STRIPE-9901", method: "CARD", provider: "STRIPE", amount: 285.0, status: "COMPLETED" },
+    { txnId: "TXN-2026-9902", gatewayId: "GATEWAY-RAZORPAY-9902", method: "UPI", provider: "RAZORPAY", amount: 450.0, status: "COMPLETED" },
+    { txnId: "TXN-2026-9903", gatewayId: "GATEWAY-PAYPAL-9903", method: "NETBANKING", provider: "PAYPAL", amount: 675.0, status: "COMPLETED" },
+  ];
+
+  for (let i = 0; i < paymentSamplesData.length; i++) {
+    const pData = paymentSamplesData[i];
+    const relatedOrder = createdOrdersList[i] || createdOrdersList[0];
+    const paymentObj = await Payment.findOneAndUpdate(
+      { transactionId: pData.txnId },
       {
-        order: order._id,
+        order: relatedOrder._id,
         user: adminUser._id,
-        transactionId: "TXN-2026-9901",
-        gatewayTransactionId: "GATEWAY-RAZORPAY-9901",
-        paymentMethod: "CARD",
-        amount: 25000,
-        status: "COMPLETED",
+        transactionId: pData.txnId,
+        gatewayTransactionId: pData.gatewayId,
+        provider: pData.provider,
+        paymentMethod: pData.method,
+        amount: pData.amount,
+        status: pData.status,
         paidAt: new Date(),
       },
       { upsert: true, returnDocument: "after" }
     );
+    createdPaymentsList.push(paymentObj);
+  }
 
-    const shipment = await Shipment.findOneAndUpdate(
-      { trackingNumber: "TRK-GB-881029" },
+  // Seed 3 Shipments
+  const createdShipmentsList = [];
+  const shipmentSamplesData = [
+    { trackNum: "TRK-GB-881029", carrier: "DHL Express", shpNum: "SHP-2026-001", status: "SHIPPED", estDays: 3 },
+    { trackNum: "TRK-GB-881030", carrier: "FedEx Priority", shpNum: "SHP-2026-002", status: "IN_TRANSIT", estDays: 2 },
+    { trackNum: "TRK-GB-881031", carrier: "Royal Mail Special", shpNum: "SHP-2026-003", status: "DELIVERED", estDays: 1 },
+  ];
+
+  for (let i = 0; i < shipmentSamplesData.length; i++) {
+    const sData = shipmentSamplesData[i];
+    const relatedOrder = createdOrdersList[i] || createdOrdersList[0];
+    const shipmentObj = await Shipment.findOneAndUpdate(
+      { trackingNumber: sData.trackNum },
       {
-        order: order._id,
-        carrier: "DHL Express",
-        trackingNumber: "TRK-GB-881029",
-        trackingUrl: "https://www.dhl.com/track/TRK-GB-881029",
-        status: "SHIPPED",
+        order: relatedOrder._id,
+        user: adminUser._id,
+        shipmentNumber: sData.shpNum,
+        courierName: sData.carrier,
+        trackingNumber: sData.trackNum,
+        trackingUrl: `https://www.dhl.com/track/${sData.trackNum}`,
+        status: sData.status,
         shippedAt: new Date(),
-        estimatedDelivery: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+        estimatedDelivery: new Date(Date.now() + sData.estDays * 86400000),
+        shippingAddress: addrSnapshot,
+        trackingHistory: [
+          { status: "DISPATCHED", location: "London Sorting Hub", comment: "Package scanned and dispatched", timestamp: new Date() },
+          { status: sData.status, location: "Local Delivery Hub", comment: "Courier out for priority delivery", timestamp: new Date() }
+        ]
       },
       { upsert: true, returnDocument: "after" }
     );
+    createdShipmentsList.push(shipmentObj);
+  }
 
+  // Seed Invoices
+  if (createdOrdersList.length > 0) {
     await Invoice.findOneAndUpdate(
       { invoiceNumber: "INV-2026-0001" },
       {
         invoiceNumber: "INV-2026-0001",
-        order: order._id,
+        order: createdOrdersList[0]._id,
         user: adminUser._id,
-        payment: payment._id,
-        shipment: shipment._id,
-        totalAmount: 25000,
-        taxAmount: 4500,
+        payment: createdPaymentsList[0]._id,
+        shipment: createdShipmentsList[0]._id,
+        totalAmount: 285.0,
+        taxAmount: 25.0,
         status: "ISSUED",
-        items: [{ name: firstCreatedProduct.name, quantity: 2, price: 13500 }],
+        items: [{ name: "Artemis Wallpaper", quantity: 2, price: 135.0 }],
         paidAt: new Date(),
       },
       { upsert: true }
@@ -679,7 +899,9 @@ async function seedMasterDatabase() {
 
   // B2B Trade Commerce (Company, TradeTier, TradeProfile, TradePricing, Quotation, CreditLimit)
   console.log("-> Seeding B2B Wholesale Trade (Company, TradeTier, TradeProfile, TradePricing, Quotation & CreditLimit)...");
-  const company = await Company.findOneAndUpdate(
+  
+  // Seed 3 Companies
+  const company1 = await Company.findOneAndUpdate(
     { name: "Hackney Interior Design Studio Ltd" },
     {
       name: "Hackney Interior Design Studio Ltd",
@@ -694,7 +916,52 @@ async function seedMasterDatabase() {
     { upsert: true, returnDocument: "after" }
   );
 
-  const tradeTier = await TradeTier.findOneAndUpdate(
+  const company2 = await Company.findOneAndUpdate(
+    { name: "Victorian Heritage Architecture Ltd" },
+    {
+      name: "Victorian Heritage Architecture Ltd",
+      taxNumber: "GB987654322",
+      registrationNumber: "CRN-10928375",
+      email: "info@victorianheritage.co.uk",
+      phone: "+442079460913",
+      website: "https://www.victorianheritage.co.uk",
+      country: "United Kingdom",
+      logo: `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/house_of_hackney/logo2.png`,
+    },
+    { upsert: true, returnDocument: "after" }
+  );
+
+  const company3 = await Company.findOneAndUpdate(
+    { name: "Mayfair Bespoke Furnishings Ltd" },
+    {
+      name: "Mayfair Bespoke Furnishings Ltd",
+      taxNumber: "GB987654323",
+      registrationNumber: "CRN-10928376",
+      email: "b2b@mayfairfurnishings.com",
+      phone: "+442079460914",
+      website: "https://www.mayfairfurnishings.com",
+      country: "United Kingdom",
+      logo: `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/house_of_hackney/logo3.png`,
+    },
+    { upsert: true, returnDocument: "after" }
+  );
+
+  // Seed 3 Trade Tiers
+  const tierSilver = await TradeTier.findOneAndUpdate(
+    { name: "SILVER" },
+    {
+      name: "SILVER",
+      description: "Silver Trade Partner",
+      discountPercentage: 15,
+      creditLimit: 250000,
+      paymentTerm: "NET_30",
+      freeShipping: false,
+      prioritySupport: false,
+    },
+    { upsert: true, returnDocument: "after" }
+  );
+
+  const tierGold = await TradeTier.findOneAndUpdate(
     { name: "GOLD" },
     {
       name: "GOLD",
@@ -708,17 +975,32 @@ async function seedMasterDatabase() {
     { upsert: true, returnDocument: "after" }
   );
 
-  const tradeProfile = await TradeProfile.findOneAndUpdate(
+  const tierPlatinum = await TradeTier.findOneAndUpdate(
+    { name: "PLATINUM" },
+    {
+      name: "PLATINUM",
+      description: "Platinum Key Account Partner",
+      discountPercentage: 30,
+      creditLimit: 1000000,
+      paymentTerm: "NET_60",
+      freeShipping: true,
+      prioritySupport: true,
+    },
+    { upsert: true, returnDocument: "after" }
+  );
+
+  // Seed 3 Trade Profiles (for adminUser, defaultAdmin, and pending profile)
+  const tradeProfile1 = await TradeProfile.findOneAndUpdate(
     { user: adminUser._id },
     {
       user: adminUser._id,
-      company: company._id,
+      company: company1._id,
       vatNumber: "GB987654321",
       gstNumber: "29AAAAA0000A1Z5",
       businessType: "INTERIOR_DESIGNER",
       phone: "+919876543210",
       website: "https://www.hackneydesign.com",
-      tier: tradeTier._id,
+      tier: tierGold._id,
       status: "APPROVED",
       approvedAt: new Date(),
       approvedBy: adminUser._id,
@@ -726,55 +1008,114 @@ async function seedMasterDatabase() {
     { upsert: true, returnDocument: "after" }
   );
 
-  await User.findByIdAndUpdate(adminUser._id, { tradeProfile: tradeProfile._id });
+  const tradeProfile2 = await TradeProfile.findOneAndUpdate(
+    { user: defaultAdmin._id },
+    {
+      user: defaultAdmin._id,
+      company: company2._id,
+      vatNumber: "GB987654322",
+      gstNumber: "29AAAAA0000A2Z6",
+      businessType: "ARCHITECT",
+      phone: "+919876543211",
+      website: "https://www.victorianheritage.co.uk",
+      tier: tierPlatinum._id,
+      status: "APPROVED",
+      approvedAt: new Date(),
+      approvedBy: adminUser._id,
+    },
+    { upsert: true, returnDocument: "after" }
+  );
 
+  await User.findByIdAndUpdate(adminUser._id, { tradeProfile: tradeProfile1._id });
+  await User.findByIdAndUpdate(defaultAdmin._id, { tradeProfile: tradeProfile2._id });
+
+  // Seed Trade Pricing
   if (firstCreatedProduct) {
     await TradePricing.findOneAndUpdate(
-      { tradeTier: tradeTier._id, product: firstCreatedProduct._id },
+      { tradeTier: tierGold._id, product: firstCreatedProduct._id },
       {
-        tradeTier: tradeTier._id,
+        tradeTier: tierGold._id,
         product: firstCreatedProduct._id,
-        customPrice: 10800,
+        customPrice: 108.0,
         discountPercentage: 20,
+        minQuantity: 5,
       },
       { upsert: true }
     );
 
-    await Quotation.findOneAndUpdate(
-      { quoteNumber: "QUOTE-2026-001" },
+    await TradePricing.findOneAndUpdate(
+      { tradeTier: tierPlatinum._id, product: firstCreatedProduct._id },
       {
-        quoteNumber: "QUOTE-2026-001",
-        user: adminUser._id,
-        company: company._id,
-        items: [
-          {
-            product: firstCreatedProduct._id,
-            name: firstCreatedProduct.name,
-            unitPrice: 13500,
-            quantity: 50,
-            total: 675000,
-          },
-        ],
-        subtotal: 675000,
-        grandTotal: 675000,
-        status: "APPROVED",
-        adminNotes: "Approved with 20% trade volume discount",
-        customerNotes: "Express freight shipping required",
-        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+        tradeTier: tierPlatinum._id,
+        product: firstCreatedProduct._id,
+        customPrice: 94.5,
+        discountPercentage: 30,
+        minQuantity: 10,
       },
       { upsert: true }
     );
   }
 
+  // Seed 3 Trade Quotations
+  if (firstCreatedProduct) {
+    const quotesData = [
+      { num: "QUOTE-2026-001", status: "APPROVED", sub: 6750.0, total: 6750.0, notes: "Approved with 20% trade volume discount" },
+      { num: "QUOTE-2026-002", status: "REQUESTED", sub: 4500.0, total: 4500.0, notes: "Customer requested sample swatches" },
+      { num: "QUOTE-2026-003", status: "NEGOTIATING", sub: 3200.0, total: 3200.0, notes: "Admin review in progress for bulk freight rate" },
+    ];
+
+    for (const qData of quotesData) {
+      await Quotation.findOneAndUpdate(
+        { quoteNumber: qData.num },
+        {
+          quoteNumber: qData.num,
+          user: adminUser._id,
+          company: company1._id,
+          items: [
+            {
+              product: firstCreatedProduct._id,
+              name: firstCreatedProduct.name,
+              unitPrice: 135.0,
+              quantity: 50,
+              total: qData.sub,
+            },
+          ],
+          subtotal: qData.sub,
+          grandTotal: qData.total,
+          status: qData.status,
+          adminNotes: qData.notes,
+          customerNotes: "Express freight shipping requested",
+          expiresAt: new Date(Date.now() + 30 * 86400000),
+        },
+        { upsert: true }
+      );
+    }
+  }
+
+  // Seed 3 Credit Limits
   await CreditLimit.findOneAndUpdate(
-    { company: company._id },
+    { company: company1._id },
     {
-      company: company._id,
+      company: company1._id,
       user: adminUser._id,
       totalCredit: 500000,
       usedCredit: 25000,
       availableCredit: 475000,
       paymentTerm: "NET_30",
+      status: "ACTIVE",
+    },
+    { upsert: true }
+  );
+
+  await CreditLimit.findOneAndUpdate(
+    { company: company2._id },
+    {
+      company: company2._id,
+      user: defaultAdmin._id,
+      totalCredit: 1000000,
+      usedCredit: 50000,
+      availableCredit: 950000,
+      paymentTerm: "NET_60",
       status: "ACTIVE",
     },
     { upsert: true }

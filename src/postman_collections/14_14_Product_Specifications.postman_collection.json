@@ -1,0 +1,145 @@
+{
+  "info": {
+    "_postman_id": "mod-14",
+    "name": "House of Hackney - 14. Product Specifications",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Modular collection for 14. Product Specifications"
+  },
+  "item": [
+    {
+      "name": "14. Product Specifications",
+      "item": [
+        {
+          "name": "Get Specifications",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}/specifications",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "{{productId}}",
+                "specifications"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Specification",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product\": \"{{productId}}\",\n  \"specifications\": [\n    {\n      \"name\": \"Roll Dimensions\",\n      \"value\": \"10.05m x 52cm\",\n      \"unit\": \"m\",\n      \"group\": \"Dimensions\",\n      \"sortOrder\": 1\n    },\n    {\n      \"name\": \"Pattern Repeat\",\n      \"value\": \"76cm\",\n      \"unit\": \"cm\",\n      \"group\": \"Pattern\",\n      \"sortOrder\": 2\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}/specifications",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "{{productId}}",
+                "specifications"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Specification",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"specifications\": [\n    {\n      \"name\": \"Roll Dimensions\",\n      \"value\": \"10.05m x 53cm\",\n      \"unit\": \"m\",\n      \"group\": \"Dimensions\",\n      \"sortOrder\": 1\n    },\n    {\n      \"name\": \"Paper Weight\",\n      \"value\": \"180 GSM\",\n      \"unit\": \"GSM\",\n      \"group\": \"Material\",\n      \"sortOrder\": 2\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}/specifications",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "{{productId}}",
+                "specifications"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Specification",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}/specifications",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "{{productId}}",
+                "specifications"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

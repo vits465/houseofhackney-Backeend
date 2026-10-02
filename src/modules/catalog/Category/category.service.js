@@ -17,8 +17,7 @@ class CategoryService extends BaseService {
         categoryData.slug = slugify(categoryData.name);
 
         // Check Slug Exists
-    const
-    slugExists = await this.repository.existsBySlug(
+        const slugExists = await this.repository.existsBySlug(
             categoryData.slug
         );
 
@@ -30,7 +29,7 @@ class CategoryService extends BaseService {
         }
 
         // Root Category
-    if (!categoryData.parentCategory) {
+        if (!categoryData.parentCategory) {
 
             categoryData.level = 1;
             categoryData.path = categoryData.slug;
@@ -98,7 +97,7 @@ class CategoryService extends BaseService {
             }
 
             // Update Path
-    if (!category.parentCategory) {
+            if (!category.parentCategory) {
 
                 updateData.path = updateData.slug;
 
@@ -186,7 +185,7 @@ class CategoryService extends BaseService {
 // Get Category Tree
     async getCategoryTree(parentCategory = null) {
 
-        return await this.repository.find({
+        return await this.repository.findAll({
             parentCategory,
             deletedAt: null,
             status: "ACTIVE",

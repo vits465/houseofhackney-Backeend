@@ -1,10 +1,11 @@
 import BaseRepository from "../../shared/database/BaseRepository.js";
 import UserToken from "./userToken.model.js";
+import { USER_TOKEN_POPULATE } from "../../shared/populate/auth.populate.js";
 
 class UserTokenRepository extends BaseRepository {
 
     constructor() {
-        super(UserToken);
+        super(UserToken, USER_TOKEN_POPULATE);
     }
 
 // Create Session
@@ -21,14 +22,14 @@ class UserTokenRepository extends BaseRepository {
                 isRevoked: false,
             })
             .select("+refreshToken")
-            .populate("user");
+            .populate(USER_TOKEN_POPULATE);
 
     }
 
 // Find User Sessions
     async findByUser(userId) {
 
-        return this.model.find({
+        return this.findAll({
             user: userId,
             isRevoked: false,
         });
@@ -38,7 +39,7 @@ class UserTokenRepository extends BaseRepository {
 // Find By Device
     async findByDevice(userId, deviceId) {
 
-        return this.model.findOne({
+        return this.findOne({
             user: userId,
             deviceId,
             isRevoked: false,
@@ -49,7 +50,7 @@ class UserTokenRepository extends BaseRepository {
 // Find Active Session
     async findActiveSession(userId, deviceId) {
 
-        return this.model.findOne({
+        return this.findOne({
             user: userId,
             deviceId,
             isRevoked: false,
@@ -74,7 +75,7 @@ class UserTokenRepository extends BaseRepository {
             {
                 returnDocument: 'after',
             }
-        );
+        ).populate(USER_TOKEN_POPULATE);
 
     }
 

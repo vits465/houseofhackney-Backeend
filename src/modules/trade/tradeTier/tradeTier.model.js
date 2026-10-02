@@ -9,7 +9,6 @@ const tradeTierSchema = new mongoose.Schema(
             unique: true,
             uppercase: true,
             trim: true,
-            enum: ["BRONZE", "SILVER", "GOLD", "PLATINUM"],
         },
 
         // Tier description
