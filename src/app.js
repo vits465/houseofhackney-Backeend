@@ -58,10 +58,7 @@ app.use(async (req, res, next) => {
     return res.status(500).json({
       success: false,
       message: "Database connection failed",
-      error:
-        process.env.NODE_ENV === "development"
-          ? error.message
-          : "Please check MONGODB_URI connection string",
+      error: error.message,
     });
   }
 });

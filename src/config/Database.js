@@ -114,8 +114,17 @@ const connectDatabase = async () => {
 
   const uri = process.env.MONGODB_URI;
   if (!uri) {
-    console.warn("⚠️ Warning: MONGODB_URI environment variable is not defined!");
-    return null;
+    const errorMsg =
+      "MONGODB_URI is not set. Please add your MongoDB Atlas connection string in Vercel Project Settings > Environment Variables.";
+    console.error(`❌ ${errorMsg}`);
+    throw new Error(errorMsg);
+  }
+
+  if (process.env.VERCEL && (uri.includes("127.0.0.1") || uri.includes("localhost"))) {
+    const errorMsg =
+      "MONGODB_URI points to localhost. Vercel cloud serverless functions cannot reach your local machine. Please add a MongoDB Atlas cloud URI to your Vercel Environment Variables.";
+    console.error(`❌ ${errorMsg}`);
+    throw new Error(errorMsg);
   }
 
   isConnecting = mongoose
