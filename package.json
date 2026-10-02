@@ -38,5 +38,10 @@
   "devDependencies": {
     "@vercel/node": "^17.0.0",
     "nodemon": "^3.1.14"
+  },
+  "overrides": {
+    "multer-storage-cloudinary": {
+      "cloudinary": "$cloudinary"
+    }
   }
 }
