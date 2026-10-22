@@ -1,5 +1,43 @@
 import variantService from "./variant.service.js";
+import productService from "../product/product.service.js";
 import ApiResponse from "../../../shared/responses/ApiResponse.js";
+import AppError from "../../../shared/errors/AppError.js";
+
+function formatVariantItem(v) {
+    if (!v) return null;
+    const vObj = typeof v.toObject === "function" ? v.toObject() : { ...v };
+
+    const imagesSet = new Set();
+    if (vObj.image && typeof vObj.image === "string") imagesSet.add(vObj.image.trim());
+    const thumbUrl = vObj.thumbnail?.secureUrl || vObj.thumbnail?.url || (typeof vObj.thumbnail === "string" ? vObj.thumbnail : null);
+    if (thumbUrl) imagesSet.add(thumbUrl);
+
+    if (Array.isArray(vObj.images)) {
+        vObj.images.forEach((img) => {
+            if (typeof img === "string" && img.trim()) imagesSet.add(img.trim());
+            else if (img?.secureUrl || img?.url) imagesSet.add((img.secureUrl || img.url).trim());
+        });
+    }
+
+    const allImages = Array.from(imagesSet);
+    const primaryImg = vObj.image || thumbUrl || allImages[0] || null;
+
+    return {
+        _id: vObj._id,
+        id: vObj._id,
+        title: vObj.title || vObj.name || "Default Variant",
+        sku: vObj.sku || "",
+        attributes: vObj.attributes || [],
+        thumbnail: thumbUrl || primaryImg,
+        image: primaryImg,
+        images: allImages.length ? allImages : (primaryImg ? [primaryImg] : []),
+        price: vObj.price ?? vObj.sellingPrice ?? null,
+        isDefault: Boolean(vObj.isDefault),
+        isActive: vObj.isActive !== false,
+        stock: vObj.stockQuantity ?? 50,
+        createdAt: vObj.createdAt,
+    };
+}
 
 class VariantController {
 
@@ -14,7 +52,7 @@ class VariantController {
                 res,
                 201,
                 "Variant created successfully.",
-                variant
+                formatVariantItem(variant)
             ).send();
         } catch (error) {
             next(error);
@@ -23,19 +61,30 @@ class VariantController {
 
     async getAll(req, res, next) {
         try {
-            const productId = req.params.productId || req.query.productId || req.query.product;
-            const filter = { deletedAt: null };
-            if (productId) filter.product = productId;
+            const rawProductId = req.params.productId || req.query.productId || req.query.product;
+            let product = null;
 
-            const variants = productId
-                ? await variantService.getVariants(productId)
+            if (rawProductId) {
+                product = (await productService.findById(rawProductId)) || (await productService.getBySlug(rawProductId));
+                if (!product || product.deletedAt) {
+                    throw new AppError("Product not found.", 404);
+                }
+            }
+
+            const filter = { deletedAt: null };
+            if (product) filter.product = product._id;
+
+            const variants = product
+                ? await variantService.getVariants(product._id)
                 : await variantService.findAll(filter);
+
+            const formatted = (variants || []).map(formatVariantItem);
 
             return new ApiResponse(
                 res,
                 200,
                 "Variants fetched successfully.",
-                variants
+                formatted
             ).send();
         } catch (error) {
             next(error);
@@ -46,7 +95,7 @@ class VariantController {
         try {
             const variant = await variantService.findById(req.params.id);
 
-            if (!variant) {
+            if (!variant || variant.deletedAt) {
                 return new ApiResponse(res, 404, "Variant not found.").send();
             }
 
@@ -54,7 +103,7 @@ class VariantController {
                 res,
                 200,
                 "Variant fetched successfully.",
-                variant
+                formatVariantItem(variant)
             ).send();
         } catch (error) {
             next(error);
@@ -75,7 +124,7 @@ class VariantController {
                 res,
                 200,
                 "Variant updated successfully.",
-                variant
+                formatVariantItem(variant)
             ).send();
         } catch (error) {
             next(error);

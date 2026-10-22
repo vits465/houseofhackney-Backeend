@@ -10,12 +10,18 @@ class ProductRepository extends BaseRepository {
 
 // Find By Slug
     async findBySlug(slug) {
+        if (!slug || typeof slug !== "string") return null;
+        const normalized = slug.trim().toLowerCase();
+        const slugVariants = [
+            normalized,
+            normalized.replace(/-/g, "_"),
+            normalized.replace(/_/g, "-"),
+        ];
 
         return await this.findOne({
-            slug,
+            slug: { $in: slugVariants },
             deletedAt: null,
         });
-
     }
 
 // Find By SKU

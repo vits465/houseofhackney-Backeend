@@ -1,0 +1,1362 @@
+[
+  {
+    "id": "6a76d063b4a90fc1d5c9b1f4",
+    "name": "Zircon Paint",
+    "sku": "SKU-ZIRCON_PAINT",
+    "type": "WALLPAPER",
+    "cat": "Curtains & Blinds",
+    "catSlug": "curtains___blinds"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b293",
+    "name": "Wonder Garden Ceramic Mug",
+    "sku": "SKU-WONDER_GARDEN_CERAMIC_MUG",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b570",
+    "name": "Blackthorn Doormat",
+    "sku": "SKU-BLACKTHORN_DOORMAT",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b6e6",
+    "name": "Byzantine Paint",
+    "sku": "SKU-BYZANTINE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7a2",
+    "name": "Paint Sample Pack",
+    "sku": "SKU-PAINT_SAMPLE_PACK",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7be",
+    "name": "Prussian Blue Paint",
+    "sku": "SKU-PRUSSIAN_BLUE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d069b4a90fc1d5c9b865",
+    "name": "Babylon Wallpaper Dove",
+    "sku": "SKU-BABYLON_WALLPAPER_DOVE",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b273",
+    "name": "Sunseason Elixir",
+    "sku": "SKU-SUNSEASON_ELIXIR",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b2bf",
+    "name": "Artemis Velvet",
+    "sku": "SKU-ARTEMIS_VELVET",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b388",
+    "name": "Loddiges Cotton Linen",
+    "sku": "SKU-LODDIGES_COTTON_LINEN",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b415",
+    "name": "Artemis Cotton Linen Vesper Bottoman",
+    "sku": "SKU-ARTEMIS_COTTON_LINEN_VESPER_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b425",
+    "name": "Artemis Velvet Bottoman",
+    "sku": "SKU-ARTEMIS_VELVET_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b465",
+    "name": "Castle Wardrobe",
+    "sku": "SKU-CASTLE_WARDROBE",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b481",
+    "name": "Hollyhocks Cotton Linen Scalloped Headboard",
+    "sku": "SKU-HOLLYHOCKS_COTTON_LINEN_SCALLOPED_HEADBOARD",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b4de",
+    "name": "Silva Jacquard Bottoman",
+    "sku": "SKU-SILVA_JACQUARD_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b4e6",
+    "name": "Silva Jacquard Castle Chair Corner",
+    "sku": "SKU-SILVA_JACQUARD_CASTLE_CHAIR_CORNER",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b580",
+    "name": "Brunel Double Mirror",
+    "sku": "SKU-BRUNEL_DOUBLE_MIRROR",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b61d",
+    "name": "Mey Meh Velvet Tilia Lampshade",
+    "sku": "SKU-MEY_MEH_VELVET_TILIA_LAMPSHADE",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b65c",
+    "name": "Silva Jacquard Romily Lampshade",
+    "sku": "SKU-SILVA_JACQUARD_ROMILY_LAMPSHADE",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b71e",
+    "name": "Euphorbia Paint",
+    "sku": "SKU-EUPHORBIA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d06ab4a90fc1d5c9b8fe",
+    "name": "Stratus Wallpaper",
+    "sku": "SKU-STRATUS_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a7dc66929308231cb21bc81",
+    "name": "Gothic Garden",
+    "sku": "SKU-GOTHIC_GARDEN",
+    "type": "WALLPAPER",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b2fb",
+    "name": "Dinosauria Cotton Linen",
+    "sku": "SKU-DINOSAURIA_COTTON_LINEN",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b41d",
+    "name": "Artemis Cotton Linen Vesper Sofa",
+    "sku": "SKU-ARTEMIS_COTTON_LINEN_VESPER_SOFA",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b50d",
+    "name": "Wild Card Cloud Headboard",
+    "sku": "SKU-WILD_CARD_CLOUD_HEADBOARD",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b6ae",
+    "name": "Almond Paint 114",
+    "sku": "SKU-ALMOND_PAINT__114",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b6be",
+    "name": "Anise Paint",
+    "sku": "SKU-ANISE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b6ce",
+    "name": "Apple Paint",
+    "sku": "SKU-APPLE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b706",
+    "name": "Cerulean Paint",
+    "sku": "SKU-CERULEAN_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7fe",
+    "name": "Arborea Wallpaper",
+    "sku": "SKU-ARBOREA_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d069b4a90fc1d5c9b881",
+    "name": "Equus Wallpaper",
+    "sku": "SKU-EQUUS_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b25b",
+    "name": "Pride Wallpaper",
+    "sku": "SKU-PRIDE_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b29f",
+    "name": "Anaconda Cut Velvet",
+    "sku": "SKU-ANACONDA_CUT_VELVET",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b3b7",
+    "name": "Savanna Velvet",
+    "sku": "SKU-SAVANNA_VELVET",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b515",
+    "name": "Wild Card Jacquard Bottoman",
+    "sku": "SKU-WILD_CARD_JACQUARD_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b51d",
+    "name": "Wild Card Jacquard Wilton 3 Seater Sofa",
+    "sku": "SKU-WILD_CARD_JACQUARD_WILTON_3_SEATER_SOFA",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b78a",
+    "name": "Narcissus Paint",
+    "sku": "SKU-NARCISSUS_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7b6",
+    "name": "Petunia Paint",
+    "sku": "SKU-PETUNIA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d069b4a90fc1d5c9b895",
+    "name": "Gaia Wallpaper",
+    "sku": "SKU-GAIA_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d06ab4a90fc1d5c9b8da",
+    "name": "Quercus Wallpaper",
+    "sku": "SKU-QUERCUS_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b40d",
+    "name": "Anaconda Velvet Gascoigne Bedroom Chair",
+    "sku": "SKU-ANACONDA_VELVET_GASCOIGNE_BEDROOM_CHAIR",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b42d",
+    "name": "Artemis Velvet Castle Chair",
+    "sku": "SKU-ARTEMIS_VELVET_CASTLE_CHAIR",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b45d",
+    "name": "Castle Bookcase",
+    "sku": "SKU-CASTLE_BOOKCASE",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b4ee",
+    "name": "Silva Jacquard Castle Chair",
+    "sku": "SKU-SILVA_JACQUARD_CASTLE_CHAIR",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b5a1",
+    "name": "Floralia Cotton Sateen Quilt",
+    "sku": "SKU-FLORALIA_COTTON_SATEEN_QUILT",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b6de",
+    "name": "Bark Paint",
+    "sku": "SKU-BARK_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b6f6",
+    "name": "Celadon Paint",
+    "sku": "SKU-CELADON_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b70e",
+    "name": "Dahlia Paint",
+    "sku": "SKU-DAHLIA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7d6",
+    "name": "Sorrel Paint",
+    "sku": "SKU-SORREL_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7de",
+    "name": "Thistle Paint",
+    "sku": "SKU-THISTLE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d06bb4a90fc1d5c9b937",
+    "name": "Zanjan Wallpaper",
+    "sku": "SKU-ZANJAN_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d062b4a90fc1d5c9b1d4",
+    "name": "Cirrus Paint",
+    "sku": "SKU-CIRRUS_PAINT",
+    "type": "WALLPAPER",
+    "cat": "Curtains & Blinds",
+    "catSlug": "curtains___blinds"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b30f",
+    "name": "Floribunda Magna Velvet",
+    "sku": "SKU-FLORIBUNDA_MAGNA_VELVET",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b336",
+    "name": "Golden Lily Cotton Linen",
+    "sku": "SKU-GOLDEN_LILY_COTTON_LINEN",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b3de",
+    "name": "Wild Card Jacquard",
+    "sku": "SKU-WILD_CARD_JACQUARD",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b401",
+    "name": "Anaconda Cut Velvet Bottoman",
+    "sku": "SKU-ANACONDA_CUT_VELVET_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b4a5",
+    "name": "Hollyhocks Velvet Vesper Bottoman",
+    "sku": "SKU-HOLLYHOCKS_VELVET_VESPER_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b4d6",
+    "name": "Savanna Velvet Bottoman",
+    "sku": "SKU-SAVANNA_VELVET_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b505",
+    "name": "Vespertine Velvet Clovis Footstool",
+    "sku": "SKU-VESPERTINE_VELVET_CLOVIS_FOOTSTOOL",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b716",
+    "name": "Earth Paint",
+    "sku": "SKU-EARTH_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b307",
+    "name": "Flora Fantasia Jacquard",
+    "sku": "SKU-FLORA_FANTASIA_JACQUARD",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b342",
+    "name": "Heavenly Hemp",
+    "sku": "SKU-HEAVENLY_HEMP",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b435",
+    "name": "Brunel Double Side Table",
+    "sku": "SKU-BRUNEL_DOUBLE_SIDE_TABLE",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b611",
+    "name": "Mara Jacquard Romily Lampshade",
+    "sku": "SKU-MARA_JACQUARD_ROMILY_LAMPSHADE",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b673",
+    "name": "Taraxa Amphibia Hemp Medium Cushion",
+    "sku": "SKU-TARAXA_AMPHIBIA_HEMP_MEDIUM_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b69e",
+    "name": "Alabaster Paint",
+    "sku": "SKU-ALABASTER_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b742",
+    "name": "Hosta Paint",
+    "sku": "SKU-HOSTA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b772",
+    "name": "Moonstone Paint",
+    "sku": "SKU-MOONSTONE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d069b4a90fc1d5c9b855",
+    "name": "Babylon Wallpaper Blush",
+    "sku": "SKU-BABYLON_WALLPAPER_BLUSH",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d062b4a90fc1d5c9b1e4",
+    "name": "Opal Paint",
+    "sku": "SKU-OPAL_PAINT",
+    "type": "WALLPAPER",
+    "cat": "Curtains & Blinds",
+    "catSlug": "curtains___blinds"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b1fd",
+    "name": "Artemis Wallpaper",
+    "sku": "SKU-ARTEMIS_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b21e",
+    "name": "Gift Voucher",
+    "sku": "SKU-GIFT_VOUCHER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b26b",
+    "name": "Sunseason Drops",
+    "sku": "SKU-SUNSEASON_DROPS",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b2d7",
+    "name": "Artist S Stripe Cotton Linen",
+    "sku": "SKU-ARTIST_S_STRIPE_COTTON_LINEN",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b3ec",
+    "name": "Zeus Velvet",
+    "sku": "SKU-ZEUS_VELVET",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b74a",
+    "name": "Jadeite Paint",
+    "sku": "SKU-JADEITE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b762",
+    "name": "Millet Paint",
+    "sku": "SKU-MILLET_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7c6",
+    "name": "Sakura Paint",
+    "sku": "SKU-SAKURA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7f6",
+    "name": "Zinnia Paint",
+    "sku": "SKU-ZINNIA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b323",
+    "name": "Gaia Velvet",
+    "sku": "SKU-GAIA_VELVET",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b495",
+    "name": "Hollyhocks Velvet Loveseat",
+    "sku": "SKU-HOLLYHOCKS_VELVET_LOVESEAT",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b544",
+    "name": "Anaconda Large Tassel Cut Velvet Cushion",
+    "sku": "SKU-ANACONDA_LARGE_TASSEL_CUT_VELVET_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b5cf",
+    "name": "Hollyhocks Large Velvet Cushion",
+    "sku": "SKU-HOLLYHOCKS_LARGE_VELVET_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b654",
+    "name": "Serpentis Overhang Floor Lampstand",
+    "sku": "SKU-SERPENTIS_OVERHANG_FLOOR_LAMPSTAND",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b782",
+    "name": "Myrtle Paint",
+    "sku": "SKU-MYRTLE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d06ab4a90fc1d5c9b8ee",
+    "name": "Savanna Wallpaper",
+    "sku": "SKU-SAVANNA_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a7dc66a29308231cb21bc85",
+    "name": "Luxe Velvet Cushion",
+    "sku": "SKU-LUXE_VELVET_CUSHION",
+    "type": "WALLPAPER",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a7dc66a29308231cb21bc89",
+    "name": "Artemis",
+    "sku": "SKU-ARTEMIS",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b44d",
+    "name": "Camelot Bed",
+    "sku": "SKU-CAMELOT_BED",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b455",
+    "name": "Caspian Velvet Wilton 3 Seater Sofa",
+    "sku": "SKU-CASPIAN_VELVET_WILTON_3_SEATER_SOFA",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b4c3",
+    "name": "Mara Jacquard Large Nichol Ottoman",
+    "sku": "SKU-MARA_JACQUARD_LARGE_NICHOL_OTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b53c",
+    "name": "Alice In Wonderland Medium Fringed Jacquard Cushion",
+    "sku": "SKU-ALICE_IN_WONDERLAND_MEDIUM_FRINGED_JACQUARD_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b640",
+    "name": "Romily Silk Pleated Lampshade",
+    "sku": "SKU-ROMILY_SILK_PLEATED_LAMPSHADE",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b6b6",
+    "name": "Amanita Paint",
+    "sku": "SKU-AMANITA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b75a",
+    "name": "Laurustine Paint",
+    "sku": "SKU-LAURUSTINE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b76a",
+    "name": "Miscanthus Paint",
+    "sku": "SKU-MISCANTHUS_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b77a",
+    "name": "Moss Paint",
+    "sku": "SKU-MOSS_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d069b4a90fc1d5c9b889",
+    "name": "Floribunda Magna Wallpaper",
+    "sku": "SKU-FLORIBUNDA_MAGNA_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b1ec",
+    "name": "Phlox Paint",
+    "sku": "SKU-PHLOX_PAINT",
+    "type": "WALLPAPER",
+    "cat": "Curtains & Blinds",
+    "catSlug": "curtains___blinds"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b239",
+    "name": "In The Company Of Nature A Book By Frieda Gormley",
+    "sku": "SKU-IN_THE_COMPANY_OF_NATURE__A_BOOK_BY_FRIEDA_GORMLEY",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b247",
+    "name": "Plantasia Wallpaper",
+    "sku": "SKU-PLANTASIA_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b27b",
+    "name": "Sunseason Soap Bar",
+    "sku": "SKU-SUNSEASON_SOAP_BAR",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b3a4",
+    "name": "Plantasia Cotton Linen",
+    "sku": "SKU-PLANTASIA_COTTON_LINEN",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b609",
+    "name": "Mara Jacquard Romily Lampshade Tobacco",
+    "sku": "SKU-MARA_JACQUARD_ROMILY_LAMPSHADE__TOBACCO",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b64c",
+    "name": "Serpentis Floor Lampstand",
+    "sku": "SKU-SERPENTIS_FLOOR_LAMPSTAND",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b6fe",
+    "name": "Celosia Paint",
+    "sku": "SKU-CELOSIA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b72e",
+    "name": "Galaxias Paint",
+    "sku": "SKU-GALAXIAS_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b792",
+    "name": "Nephrite Paint",
+    "sku": "SKU-NEPHRITE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b79a",
+    "name": "Paint Chip Colour Card",
+    "sku": "SKU-PAINT_CHIP_COLOUR_CARD",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d069b4a90fc1d5c9b825",
+    "name": "Artist S Stripe Wallpaper",
+    "sku": "SKU-ARTIST_S_STRIPE_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d069b4a90fc1d5c9b85d",
+    "name": "Babylon Wallpaper Celestial Blue",
+    "sku": "SKU-BABYLON_WALLPAPER_CELESTIAL_BLUE",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d069b4a90fc1d5c9b875",
+    "name": "Caspian Wallpaper",
+    "sku": "SKU-CASPIAN_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d062b4a90fc1d5c9b1cc",
+    "name": "Astera Paint",
+    "sku": "SKU-ASTERA_PAINT",
+    "type": "WALLPAPER",
+    "cat": "Curtains & Blinds",
+    "catSlug": "curtains___blinds"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b36a",
+    "name": "Hollyhocks Cotton Linen",
+    "sku": "SKU-HOLLYHOCKS_COTTON_LINEN",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b445",
+    "name": "Brunel Triple Console Table",
+    "sku": "SKU-BRUNEL_TRIPLE_CONSOLE_TABLE",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b471",
+    "name": "Cobra Velvet Vesper 3 Seater Sofa",
+    "sku": "SKU-COBRA_VELVET_VESPER_3_SEATER_SOFA",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b4ad",
+    "name": "Hollyhocks Velvet Vesper Loveseat",
+    "sku": "SKU-HOLLYHOCKS_VELVET_VESPER_LOVESEAT",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b52d",
+    "name": "Wild Card Kenton Small Ottoman",
+    "sku": "SKU-WILD_CARD_KENTON_SMALL_OTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b5b8",
+    "name": "Hollyhocks Cotton Linen Medium Fringed Cushion",
+    "sku": "SKU-HOLLYHOCKS_COTTON_LINEN_MEDIUM_FRINGED_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b6a6",
+    "name": "Alchymist Paint",
+    "sku": "SKU-ALCHYMIST_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b6c6",
+    "name": "Apatite Paint",
+    "sku": "SKU-APATITE_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b726",
+    "name": "Galanthus Paint",
+    "sku": "SKU-GALANTHUS_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d06bb4a90fc1d5c9b943",
+    "name": "Zeus Wallpaper",
+    "sku": "SKU-ZEUS_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d062b4a90fc1d5c9b1dc",
+    "name": "Hollyhocks Wallpaper",
+    "sku": "SKU-HOLLYHOCKS_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b28b",
+    "name": "Wild Card Wallpaper",
+    "sku": "SKU-WILD_CARD_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b2f3",
+    "name": "Camelot Stripe Jacquard",
+    "sku": "SKU-CAMELOT_STRIPE_JACQUARD",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b43d",
+    "name": "Brunel Lamp Table",
+    "sku": "SKU-BRUNEL_LAMP_TABLE",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b479",
+    "name": "Foris Velvet Bottoman",
+    "sku": "SKU-FORIS_VELVET_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b49d",
+    "name": "Hollyhocks Velvet Vesper 3 Seater Sofa",
+    "sku": "SKU-HOLLYHOCKS_VELVET_VESPER_3_SEATER_SOFA",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b568",
+    "name": "Artemis Medium Tassel Velvet Cushion",
+    "sku": "SKU-ARTEMIS_MEDIUM_TASSEL_VELVET_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b578",
+    "name": "Bless This Acid House Jeremy Deller Wall Tapestry",
+    "sku": "SKU-BLESS_THIS_ACID_HOUSE_JEREMY_DELLER_WALL_TAPESTRY",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b58e",
+    "name": "Brunel Single Mirror",
+    "sku": "SKU-BRUNEL_SINGLE_MIRROR",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b5d7",
+    "name": "Hollyhocks Medium Piped Cotton Linen Cushion",
+    "sku": "SKU-HOLLYHOCKS_MEDIUM_PIPED_COTTON_LINEN_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b5f5",
+    "name": "Love Letter Medium Fringe Cushion",
+    "sku": "SKU-LOVE_LETTER_MEDIUM_FRINGE_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b696",
+    "name": "Acorn Paint",
+    "sku": "SKU-ACORN_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d06ab4a90fc1d5c9b91d",
+    "name": "Utopia Wallpaper",
+    "sku": "SKU-UTOPIA_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b3f9",
+    "name": "Amatoria Velvet Bottoman",
+    "sku": "SKU-AMATORIA_VELVET_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b489",
+    "name": "Hollyhocks Velvet Bottoman",
+    "sku": "SKU-HOLLYHOCKS_VELVET_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b554",
+    "name": "Ananas Lampstand",
+    "sku": "SKU-ANANAS_LAMPSTAND",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b5c4",
+    "name": "Hollyhocks Cotton Linen Medium Piped Cushion",
+    "sku": "SKU-HOLLYHOCKS_COTTON_LINEN_MEDIUM_PIPED_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b5ea",
+    "name": "How We Might Live Jeremy Deller Doormat",
+    "sku": "SKU-HOW_WE_MIGHT_LIVE_JEREMY_DELLER_DOORMAT",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b629",
+    "name": "Moon Garden Velvet Medium Fringed Cushion",
+    "sku": "SKU-MOON_GARDEN_VELVET_MEDIUM_FRINGED_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7e6",
+    "name": "Woad Paint",
+    "sku": "SKU-WOAD_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a7dc66a29308231cb21bc8d",
+    "name": "Bambusa",
+    "sku": "SKU-BAMBUSA",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b263",
+    "name": "Sunseason Ceramic Candle",
+    "sku": "SKU-SUNSEASON_CERAMIC_CANDLE",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b283",
+    "name": "Sunseason Tea Blend",
+    "sku": "SKU-SUNSEASON_TEA_BLEND",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d063b4a90fc1d5c9b2b3",
+    "name": "Aquifolia Cotton Linen",
+    "sku": "SKU-AQUIFOLIA_COTTON_LINEN",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b2eb",
+    "name": "Babylon Cotton Linen",
+    "sku": "SKU-BABYLON_COTTON_LINEN",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b390",
+    "name": "Mey Meh Velvet",
+    "sku": "SKU-MEY_MEH_VELVET",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b4bb",
+    "name": "Limerence Velvet Bottoman",
+    "sku": "SKU-LIMERENCE_VELVET_BOTTOMAN",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b4cb",
+    "name": "Mara Jacquard Loveseat",
+    "sku": "SKU-MARA_JACQUARD_LOVESEAT",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b525",
+    "name": "Wild Card Jacquard Toad Stool Medium",
+    "sku": "SKU-WILD_CARD_JACQUARD__TOAD__STOOL_MEDIUM",
+    "type": "FURNITURE",
+    "cat": "Furnishings",
+    "catSlug": "furnishings"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b599",
+    "name": "Cheetah Lampstand",
+    "sku": "SKU-CHEETAH_LAMPSTAND",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b631",
+    "name": "Opia Medium Fringed Velvet Cushion",
+    "sku": "SKU-OPIA_MEDIUM_FRINGED_VELVET_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b6d6",
+    "name": "Astrantia Paint",
+    "sku": "SKU-ASTRANTIA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b752",
+    "name": "Jet Paint",
+    "sku": "SKU-JET_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d069b4a90fc1d5c9b86d",
+    "name": "Babylon Wallpaper Papyrus",
+    "sku": "SKU-BABYLON_WALLPAPER_PAPYRUS",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b317",
+    "name": "Foris Velvet",
+    "sku": "SKU-FORIS_VELVET",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d064b4a90fc1d5c9b39c",
+    "name": "Nemor Recycled Performance",
+    "sku": "SKU-NEMOR_RECYCLED_PERFORMANCE",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d065b4a90fc1d5c9b3d6",
+    "name": "Trematon Stripe Jacquard",
+    "sku": "SKU-TREMATON_STRIPE_JACQUARD",
+    "type": "FABRIC",
+    "cat": "Fabric",
+    "catSlug": "fabric"
+  },
+  {
+    "id": "6a76d066b4a90fc1d5c9b5a9",
+    "name": "Galanthus Silk Standard Lampshade",
+    "sku": "SKU-GALANTHUS_SILK_STANDARD_LAMPSHADE",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b5e2",
+    "name": "How We Live Jeremy Deller Doormat",
+    "sku": "SKU-HOW_WE_LIVE_JEREMY_DELLER_DOORMAT",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b5fd",
+    "name": "Love Letter Medium Fringe Velvet Cushion",
+    "sku": "SKU-LOVE_LETTER_MEDIUM_FRINGE_VELVET_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b67f",
+    "name": "Vespertine Medium Fringed Velvet Cushion",
+    "sku": "SKU-VESPERTINE_MEDIUM_FRINGED_VELVET_CUSHION",
+    "type": "ACCESSORY",
+    "cat": "Home Decor",
+    "catSlug": "home_decor"
+  },
+  {
+    "id": "6a76d067b4a90fc1d5c9b68e",
+    "name": "Achillea Paint",
+    "sku": "SKU-ACHILLEA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b6ee",
+    "name": "Carex Paint",
+    "sku": "SKU-CAREX_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b73a",
+    "name": "Hedera Paint",
+    "sku": "SKU-HEDERA_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7ce",
+    "name": "Sap Paint",
+    "sku": "SKU-SAP_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d068b4a90fc1d5c9b7ee",
+    "name": "Yarrow Paint",
+    "sku": "SKU-YARROW_PAINT",
+    "type": "PAINT",
+    "cat": "Paint",
+    "catSlug": "paint"
+  },
+  {
+    "id": "6a76d069b4a90fc1d5c9b8ac",
+    "name": "Herbarium Wallpaper",
+    "sku": "SKU-HERBARIUM_WALLPAPER",
+    "type": "WALLPAPER",
+    "cat": "Wallpaper",
+    "catSlug": "wallpaper"
+  }
+]

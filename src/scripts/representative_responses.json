@@ -1,0 +1,1931 @@
+{
+  "wallpaper": {
+    "details": {
+      "success": true,
+      "message": "Product fetched successfully.",
+      "data": {
+        "specifications": {
+          "width": {
+            "value": 52,
+            "unit": "cm"
+          },
+          "verticalRepeat": {
+            "value": 76,
+            "unit": "cm"
+          },
+          "horizontalRepeat": {
+            "value": 52,
+            "unit": "cm"
+          },
+          "composition": "Non-woven paper (FSC certified)",
+          "careInstructions": [
+            "Wipe clean with a damp sponge",
+            "Paste the wall application"
+          ],
+          "countryOfOrigin": "United Kingdom",
+          "suitability": [
+            "Living Room",
+            "Bedroom",
+            "Dining Room",
+            "Hallway"
+          ],
+          "certifications": [
+            "FSC Certified Paper"
+          ]
+        },
+        "_id": "6a7dc66a29308231cb21bc8d",
+        "sku": "SKU-BAMBUSA",
+        "barcode": "BAR-BAMBUSA",
+        "brand": {
+          "logo": null,
+          "website": "",
+          "sortOrder": 0,
+          "_id": "6a76ce08b4a90fc1d5c9b1a8",
+          "slug": "house-of-hackney",
+          "banner": null,
+          "country": "",
+          "description": "British luxury interior brand",
+          "image": null,
+          "isFeatured": false,
+          "name": "House of Hackney",
+          "shortDescription": "",
+          "status": "ACTIVE",
+          "id": "6a76ce08b4a90fc1d5c9b1a8"
+        },
+        "category": {
+          "parentCategory": null,
+          "sortOrder": 0,
+          "_id": "6a76ce08b4a90fc1d5c9b1a7",
+          "slug": "wallpaper",
+          "banner": "6a76d820b4a90fc1d5c9bdf4",
+          "description": "House of Hackney Wallpaper Collection",
+          "isFeatured": true,
+          "name": "Wallpaper",
+          "showInMenu": true,
+          "status": "ACTIVE",
+          "image": "6a76d820b4a90fc1d5c9bdf4",
+          "id": "6a76ce08b4a90fc1d5c9b1a7"
+        },
+        "collection": {
+          "_id": "6a76db68b4a90fc1d5c9be8a",
+          "slug": "gothic-garden",
+          "description": "Dramatic dark botanical prints inspired by Victorian flora",
+          "image": "6a76d820b4a90fc1d5c9bdf4",
+          "name": "Gothic Garden",
+          "status": "ACTIVE",
+          "id": "6a76db68b4a90fc1d5c9be8a"
+        },
+        "colours": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be8f",
+            "slug": "midnight-black",
+            "code": "BLK-01",
+            "colorHex": "#121212",
+            "name": "Midnight Black",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be8f"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be90",
+            "slug": "botanical-green",
+            "code": "GRN-02",
+            "colorHex": "#1b4d3e",
+            "name": "Botanical Green",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be90"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be91",
+            "slug": "dusky-pink",
+            "code": "PNK-03",
+            "colorHex": "#e8c3c5",
+            "name": "Dusky Pink",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be91"
+          }
+        ],
+        "createdAt": "2026-08-13T13:28:10.628Z",
+        "createdBy": null,
+        "deletedAt": null,
+        "description": "House of Hackney luxury wallpaper featuring iconic British botanical artwork. Printed on FSC-certified substrate for easy paste-the-wall installation.",
+        "designer": {
+          "_id": "6a76db68b4a90fc1d5c9be8c",
+          "slug": "frieda-gormley",
+          "avatar": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/avatar.jpg",
+          "bio": "Co-founders and Creative Directors of House of Hackney",
+          "name": "Frieda Gormley & Javvy M Royle",
+          "status": "ACTIVE",
+          "id": "6a76db68b4a90fc1d5c9be8c"
+        },
+        "isBestSeller": true,
+        "isCustomizable": false,
+        "isFeatured": true,
+        "isNewArrival": true,
+        "isTradeAvailable": true,
+        "material": {
+          "_id": "6a76db68b4a90fc1d5c9be8e",
+          "slug": "eco-wallpaper",
+          "description": "Sustainably sourced FSC certified wallcovering paper",
+          "name": "Eco Non-Woven Paper",
+          "status": "ACTIVE",
+          "id": "6a76db68b4a90fc1d5c9be8e"
+        },
+        "name": "Bambusa",
+        "patterns": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be92",
+            "slug": "botanical-floral",
+            "description": "Intricate British flora and Victorian blooms",
+            "name": "Botanical & Floral",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be92"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be93",
+            "slug": "animalia-leopard",
+            "description": "Iconic Wild Card leopard prints and fauna",
+            "name": "Animalia & Wild",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be93"
+          }
+        ],
+        "productType": "WALLPAPER",
+        "publishedBy": null,
+        "rooms": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be96",
+            "slug": "living-room",
+            "description": "Statement walls and accent seating",
+            "name": "Living Room",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be96"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be97",
+            "slug": "bedroom",
+            "description": "Serene atmospheric bedroom drapery and wallcoverings",
+            "name": "Bedroom & Sanctuary",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be97"
+          }
+        ],
+        "searchKeywords": [
+          "Bambusa",
+          "Wallpaper",
+          "luxury",
+          "victorian",
+          "botanical"
+        ],
+        "shortDescription": "Iconic luxury British wallpaper crafted by House of Hackney.",
+        "slug": "bambusa",
+        "status": "PUBLISHED",
+        "styles": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be95",
+            "slug": "maximalist",
+            "description": "Vibrant bold prints and immersive color saturation",
+            "name": "Maximalist Luxury",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be95"
+          }
+        ],
+        "themes": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be94",
+            "slug": "victorian-heritage",
+            "description": "Classic English country house elegance",
+            "name": "Victorian Heritage",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be94"
+          }
+        ],
+        "updatedAt": "2026-10-22T09:27:23.045Z",
+        "updatedBy": null,
+        "visibility": "PUBLIC",
+        "images": [
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___spring/hollyhocks-wallpaper-spring-1"
+        ],
+        "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+        "media": {
+          "_id": "6ad99ee130f20f63a5533429",
+          "product": "6a7dc66a29308231cb21bc8d",
+          "createdAt": "2026-10-22T05:28:01.604Z",
+          "createdBy": null,
+          "deletedAt": null,
+          "documents": [],
+          "featuredImageIndex": 0,
+          "gallery": [
+            {
+              "media": {
+                "_id": "6a76d81cb4a90fc1d5c9bc11",
+                "publicId": "house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+                "altText": "Hollyhocks Wallpaper (Autumn)",
+                "caption": "Hollyhocks Wallpaper - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:48.526Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "hollyhocks-wallpaper-autumn-1.webp",
+                "folder": "house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn",
+                "mimeType": "image/webp",
+                "originalName": "hollyhocks-wallpaper-autumn-1.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:21.232Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+                "id": "6a76d81cb4a90fc1d5c9bc11"
+              },
+              "alt": "Bambusa - Bambusa - Blush Pink",
+              "sortOrder": 0
+            },
+            {
+              "media": {
+                "_id": "6a76d81cb4a90fc1d5c9bc15",
+                "publicId": "house_of_hackney/curtains___blinds/hollyhocks_wallpaper___spring/hollyhocks-wallpaper-spring-1",
+                "altText": "Hollyhocks Wallpaper (Spring)",
+                "caption": "Hollyhocks Wallpaper - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:48.566Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "hollyhocks-wallpaper-spring-1.webp",
+                "folder": "house_of_hackney/curtains___blinds/hollyhocks_wallpaper___spring",
+                "mimeType": "image/webp",
+                "originalName": "hollyhocks-wallpaper-spring-1.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___spring/hollyhocks-wallpaper-spring-1",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:21.268Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___spring/hollyhocks-wallpaper-spring-1",
+                "id": "6a76d81cb4a90fc1d5c9bc15"
+              },
+              "alt": "Bambusa - Bambusa - Blush Pink",
+              "sortOrder": 1
+            }
+          ],
+          "thumbnail": {
+            "_id": "6a76d81cb4a90fc1d5c9bc11",
+            "publicId": "house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+            "altText": "Hollyhocks Wallpaper (Autumn)",
+            "caption": "Hollyhocks Wallpaper - House of Hackney Original Print",
+            "createdAt": "2026-08-08T07:17:48.526Z",
+            "createdBy": null,
+            "extension": "webp",
+            "filename": "hollyhocks-wallpaper-autumn-1.webp",
+            "folder": "house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn",
+            "mimeType": "image/webp",
+            "originalName": "hollyhocks-wallpaper-autumn-1.jpg",
+            "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+            "status": "ACTIVE",
+            "updatedAt": "2026-08-08T07:36:21.232Z",
+            "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+            "id": "6a76d81cb4a90fc1d5c9bc11"
+          },
+          "updatedAt": "2026-10-22T05:28:01.604Z",
+          "updatedBy": null,
+          "videos": [],
+          "id": "6ad99ee130f20f63a5533429"
+        },
+        "variants": [
+          {
+            "_id": "6a7dc66a29308231cb21bc8f",
+            "sku": "SKU-BAMBUSA-BLUSH_PINK",
+            "attributes": [
+              {
+                "attribute": "Color / Finish",
+                "value": "Blush Pink",
+                "_id": "6a7ddb6e9943a514cddf7103",
+                "id": "6a7ddb6e9943a514cddf7103"
+              }
+            ],
+            "barcode": "BAR-SKU-BAMBUSA-BLUSH_PINK",
+            "createdAt": "2026-08-13T13:28:10.635Z",
+            "createdBy": null,
+            "deletedAt": null,
+            "isDefault": false,
+            "position": 0,
+            "product": "6a7dc66a29308231cb21bc8d",
+            "slug": "bambusa-blush_pink",
+            "status": "ACTIVE",
+            "title": "Bambusa - Blush Pink",
+            "updatedAt": "2026-10-22T05:27:56.193Z",
+            "updatedBy": null,
+            "weight": 0,
+            "gallery": [
+              "6a76d81cb4a90fc1d5c9bc11",
+              "6a76d81cb4a90fc1d5c9bc15"
+            ],
+            "image": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+            "images": [
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___spring/hollyhocks-wallpaper-spring-1"
+            ],
+            "thumbnail": {
+              "_id": "6a76d81cb4a90fc1d5c9bc11",
+              "publicId": "house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+              "altText": "Hollyhocks Wallpaper (Autumn)",
+              "caption": "Hollyhocks Wallpaper - House of Hackney Original Print",
+              "createdAt": "2026-08-08T07:17:48.526Z",
+              "createdBy": null,
+              "extension": "webp",
+              "filename": "hollyhocks-wallpaper-autumn-1.webp",
+              "folder": "house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn",
+              "mimeType": "image/webp",
+              "originalName": "hollyhocks-wallpaper-autumn-1.jpg",
+              "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+              "status": "ACTIVE",
+              "updatedAt": "2026-08-08T07:36:21.232Z",
+              "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+              "id": "6a76d81cb4a90fc1d5c9bc11"
+            },
+            "id": "6a7dc66a29308231cb21bc8f"
+          }
+        ],
+        "pricing": {
+          "_id": "6a7dc66a29308231cb21bc8e",
+          "currency": "GBP",
+          "basePrice": 165,
+          "sellingPrice": 145,
+          "compareAtPrice": 165,
+          "priceUnit": "roll",
+          "sample": {
+            "available": true,
+            "price": 4,
+            "currency": "GBP"
+          }
+        },
+        "inventory": {
+          "status": "OUT_OF_STOCK",
+          "availableQuantity": 0,
+          "inStock": false
+        },
+        "id": "6a7dc66a29308231cb21bc8d"
+      },
+      "errors": null
+    },
+    "media": {
+      "success": true,
+      "message": "Product media fetched successfully.",
+      "data": {
+        "product": "6a7dc66a29308231cb21bc8d",
+        "thumbnail": {
+          "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+          "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+          "altText": "Bambusa main image"
+        },
+        "gallery": [
+          {
+            "media": {
+              "_id": "6a76d81cb4a90fc1d5c9bc11",
+              "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+              "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+              "altText": "Hollyhocks Wallpaper (Autumn)",
+              "caption": "Hollyhocks Wallpaper - House of Hackney Original Print",
+              "folder": "house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn"
+            },
+            "isPrimary": true,
+            "sortOrder": 0
+          },
+          {
+            "media": {
+              "_id": "6a76d81cb4a90fc1d5c9bc15",
+              "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___spring/hollyhocks-wallpaper-spring-1",
+              "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___spring/hollyhocks-wallpaper-spring-1",
+              "altText": "Hollyhocks Wallpaper (Spring)",
+              "caption": "Hollyhocks Wallpaper - House of Hackney Original Print",
+              "folder": "house_of_hackney/curtains___blinds/hollyhocks_wallpaper___spring"
+            },
+            "isPrimary": false,
+            "sortOrder": 1
+          }
+        ],
+        "images": [
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___autumn/hollyhocks-wallpaper-autumn-1",
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/hollyhocks_wallpaper___spring/hollyhocks-wallpaper-spring-1"
+        ],
+        "videos": [],
+        "documents": []
+      },
+      "errors": null
+    },
+    "pricing": {
+      "success": true,
+      "message": "Pricing fetched successfully.",
+      "data": {
+        "_id": "6a7dc66a29308231cb21bc8e",
+        "currency": "GBP",
+        "basePrice": 165,
+        "sellingPrice": 145,
+        "compareAtPrice": 165,
+        "priceUnit": "roll",
+        "sample": {
+          "available": true,
+          "price": 4,
+          "currency": "GBP"
+        }
+      },
+      "errors": null
+    },
+    "specifications": {
+      "success": true,
+      "message": "Product specifications fetched successfully.",
+      "data": {
+        "width": {
+          "value": 52,
+          "unit": "cm"
+        },
+        "verticalRepeat": {
+          "value": 76,
+          "unit": "cm"
+        },
+        "horizontalRepeat": {
+          "value": 52,
+          "unit": "cm"
+        },
+        "composition": "Non-woven paper (FSC certified)",
+        "careInstructions": [
+          "Wipe clean with a damp sponge",
+          "Paste the wall application"
+        ],
+        "countryOfOrigin": "United Kingdom",
+        "suitability": [
+          "Living Room",
+          "Bedroom",
+          "Dining Room",
+          "Hallway"
+        ],
+        "certifications": [
+          "FSC Certified Paper"
+        ]
+      },
+      "errors": null
+    },
+    "related": {
+      "success": true,
+      "message": "Product related items fetched successfully.",
+      "data": [
+        {
+          "_id": "6a76d063b4a90fc1d5c9b1f4",
+          "id": "6a76d063b4a90fc1d5c9b1f4",
+          "name": "Zircon Paint",
+          "slug": "zircon_paint",
+          "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+          "productType": "PAINT",
+          "price": 48,
+          "sellingPrice": 48,
+          "compareAtPrice": 55,
+          "currency": "GBP",
+          "priceUnit": "tin",
+          "sample": {
+            "available": true,
+            "price": 5,
+            "currency": "GBP"
+          }
+        },
+        {
+          "_id": "6a76d063b4a90fc1d5c9b293",
+          "id": "6a76d063b4a90fc1d5c9b293",
+          "name": "Wonder Garden Ceramic Mug",
+          "slug": "wonder_garden_ceramic_mug",
+          "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/furnishings/wonder_garden_ceramic_mug/wondergarden-ceramic-mug-cream-1",
+          "productType": "HOMEWARE",
+          "price": 25,
+          "sellingPrice": 25,
+          "compareAtPrice": 30,
+          "currency": "GBP",
+          "priceUnit": "item",
+          "sample": {
+            "available": false,
+            "price": 0,
+            "currency": "GBP"
+          }
+        },
+        {
+          "_id": "6a76d066b4a90fc1d5c9b570",
+          "id": "6a76d066b4a90fc1d5c9b570",
+          "name": "Blackthorn Doormat",
+          "slug": "blackthorn_doormat",
+          "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/blackthorn_doormat___tread_softly/blackthorn-doormat-tread-softly-0",
+          "productType": "ACCESSORY",
+          "price": 125,
+          "sellingPrice": 125,
+          "compareAtPrice": 140,
+          "currency": "GBP",
+          "priceUnit": "item",
+          "sample": {
+            "available": false,
+            "price": 0,
+            "currency": "GBP"
+          }
+        },
+        {
+          "_id": "6a76d068b4a90fc1d5c9b6e6",
+          "id": "6a76d068b4a90fc1d5c9b6e6",
+          "name": "Byzantine Paint",
+          "slug": "byzantine_paint",
+          "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/paint/byzantine_paint___18/byzantine-paint-18-0",
+          "productType": "PAINT",
+          "price": 48,
+          "sellingPrice": 48,
+          "compareAtPrice": 55,
+          "currency": "GBP",
+          "priceUnit": "tin",
+          "sample": {
+            "available": true,
+            "price": 5,
+            "currency": "GBP"
+          }
+        },
+        {
+          "_id": "6a76d068b4a90fc1d5c9b7a2",
+          "id": "6a76d068b4a90fc1d5c9b7a2",
+          "name": "Paint Sample Pack",
+          "slug": "paint_sample_pack",
+          "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/paint/paint_sample_pack___browns/paint-sample-pack-brown-1",
+          "productType": "PAINT",
+          "price": 48,
+          "sellingPrice": 48,
+          "compareAtPrice": 55,
+          "currency": "GBP",
+          "priceUnit": "tin",
+          "sample": {
+            "available": true,
+            "price": 5,
+            "currency": "GBP"
+          }
+        },
+        {
+          "_id": "6a76d068b4a90fc1d5c9b7be",
+          "id": "6a76d068b4a90fc1d5c9b7be",
+          "name": "Prussian Blue Paint",
+          "slug": "prussian_blue_paint",
+          "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/paint/prussian_blue_paint___37/prussian-blue-paint-37-0",
+          "productType": "PAINT",
+          "price": 48,
+          "sellingPrice": 48,
+          "compareAtPrice": 55,
+          "currency": "GBP",
+          "priceUnit": "tin",
+          "sample": {
+            "available": true,
+            "price": 5,
+            "currency": "GBP"
+          }
+        },
+        {
+          "_id": "6a76d069b4a90fc1d5c9b865",
+          "id": "6a76d069b4a90fc1d5c9b865",
+          "name": "Babylon Wallpaper Dove",
+          "slug": "babylon_wallpaper_dove",
+          "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/wallpaper/babylon_wallpaper_dove___willow/babylon-wallpaper-dove-willow-0",
+          "productType": "WALLPAPER",
+          "price": 145,
+          "sellingPrice": 145,
+          "compareAtPrice": 165,
+          "currency": "GBP",
+          "priceUnit": "roll",
+          "sample": {
+            "available": true,
+            "price": 4,
+            "currency": "GBP"
+          }
+        },
+        {
+          "_id": "6a76d063b4a90fc1d5c9b273",
+          "id": "6a76d063b4a90fc1d5c9b273",
+          "name": "Sunseason Elixir",
+          "slug": "sunseason_elixir",
+          "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/sunseason_elixir/sunseason-elixir-1",
+          "productType": "HOMEWARE",
+          "price": 45,
+          "sellingPrice": 45,
+          "compareAtPrice": 50,
+          "currency": "GBP",
+          "priceUnit": "item",
+          "sample": {
+            "available": false,
+            "price": 0,
+            "currency": "GBP"
+          }
+        }
+      ],
+      "errors": null
+    }
+  },
+  "fabric": {
+    "details": {
+      "success": true,
+      "message": "Product fetched successfully.",
+      "data": {
+        "specifications": {
+          "width": {
+            "value": 140,
+            "unit": "cm"
+          },
+          "verticalRepeat": {
+            "value": 65,
+            "unit": "cm"
+          },
+          "horizontalRepeat": {
+            "value": 70,
+            "unit": "cm"
+          },
+          "composition": "100% British Cotton Velvet",
+          "careInstructions": [
+            "Dry clean only",
+            "Iron on reverse with low heat"
+          ],
+          "countryOfOrigin": "United Kingdom",
+          "suitability": [
+            "General Domestic Upholstery",
+            "Curtains",
+            "Blinds",
+            "Cushions"
+          ],
+          "certifications": [
+            "Passes Cigarette & Match Test"
+          ]
+        },
+        "_id": "6a76d065b4a90fc1d5c9b3ec",
+        "sku": "SKU-ZEUS_VELVET",
+        "barcode": "BAR-ZEUS_VELVET",
+        "brand": {
+          "logo": null,
+          "website": "",
+          "sortOrder": 0,
+          "_id": "6a76ce08b4a90fc1d5c9b1a8",
+          "slug": "house-of-hackney",
+          "banner": null,
+          "country": "",
+          "description": "British luxury interior brand",
+          "image": null,
+          "isFeatured": false,
+          "name": "House of Hackney",
+          "shortDescription": "",
+          "status": "ACTIVE",
+          "id": "6a76ce08b4a90fc1d5c9b1a8"
+        },
+        "category": {
+          "parentCategory": null,
+          "sortOrder": 0,
+          "_id": "6a76d063b4a90fc1d5c9b29e",
+          "slug": "fabric",
+          "banner": "6a76d81cb4a90fc1d5c9bc3a",
+          "description": "House of Hackney Fabric Collection",
+          "isFeatured": true,
+          "name": "Fabric",
+          "showInMenu": true,
+          "status": "ACTIVE",
+          "image": "6a76d81cb4a90fc1d5c9bc3a",
+          "id": "6a76d063b4a90fc1d5c9b29e"
+        },
+        "collection": {
+          "_id": "6a76db68b4a90fc1d5c9be8a",
+          "slug": "gothic-garden",
+          "description": "Dramatic dark botanical prints inspired by Victorian flora",
+          "image": "6a76d820b4a90fc1d5c9bdf4",
+          "name": "Gothic Garden",
+          "status": "ACTIVE",
+          "id": "6a76db68b4a90fc1d5c9be8a"
+        },
+        "colours": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be8f",
+            "slug": "midnight-black",
+            "code": "BLK-01",
+            "colorHex": "#121212",
+            "name": "Midnight Black",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be8f"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be90",
+            "slug": "botanical-green",
+            "code": "GRN-02",
+            "colorHex": "#1b4d3e",
+            "name": "Botanical Green",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be90"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be91",
+            "slug": "dusky-pink",
+            "code": "PNK-03",
+            "colorHex": "#e8c3c5",
+            "name": "Dusky Pink",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be91"
+          }
+        ],
+        "createdAt": "2026-08-08T06:44:53.224Z",
+        "createdBy": null,
+        "deletedAt": null,
+        "description": "House of Hackney premium upholstery and drapery fabric, woven with rich tactile textures suitable for luxury interiors.",
+        "designer": {
+          "_id": "6a76db68b4a90fc1d5c9be8c",
+          "slug": "frieda-gormley",
+          "avatar": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/avatar.jpg",
+          "bio": "Co-founders and Creative Directors of House of Hackney",
+          "name": "Frieda Gormley & Javvy M Royle",
+          "status": "ACTIVE",
+          "id": "6a76db68b4a90fc1d5c9be8c"
+        },
+        "isBestSeller": true,
+        "isCustomizable": false,
+        "isFeatured": true,
+        "isNewArrival": true,
+        "isTradeAvailable": true,
+        "material": {
+          "_id": "6a76db68b4a90fc1d5c9be8d",
+          "slug": "luxury-velvet",
+          "description": "Sumptuous cotton-blend velvet woven in England",
+          "name": "Luxury Velvet",
+          "status": "ACTIVE",
+          "id": "6a76db68b4a90fc1d5c9be8d"
+        },
+        "name": "Zeus Velvet",
+        "patterns": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be92",
+            "slug": "botanical-floral",
+            "description": "Intricate British flora and Victorian blooms",
+            "name": "Botanical & Floral",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be92"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be93",
+            "slug": "animalia-leopard",
+            "description": "Iconic Wild Card leopard prints and fauna",
+            "name": "Animalia & Wild",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be93"
+          }
+        ],
+        "productType": "FABRIC",
+        "publishedBy": null,
+        "rooms": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be96",
+            "slug": "living-room",
+            "description": "Statement walls and accent seating",
+            "name": "Living Room",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be96"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be97",
+            "slug": "bedroom",
+            "description": "Serene atmospheric bedroom drapery and wallcoverings",
+            "name": "Bedroom & Sanctuary",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be97"
+          }
+        ],
+        "searchKeywords": [
+          "Zeus Velvet",
+          "Fabric",
+          "luxury",
+          "victorian",
+          "botanical"
+        ],
+        "shortDescription": "Opulent British designer fabric crafted by House of Hackney.",
+        "slug": "zeus_velvet",
+        "status": "PUBLISHED",
+        "styles": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be95",
+            "slug": "maximalist",
+            "description": "Vibrant bold prints and immersive color saturation",
+            "name": "Maximalist Luxury",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be95"
+          }
+        ],
+        "themes": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be94",
+            "slug": "victorian-heritage",
+            "description": "Classic English country house elegance",
+            "name": "Victorian Heritage",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be94"
+          }
+        ],
+        "updatedAt": "2026-10-22T09:27:16.620Z",
+        "updatedBy": null,
+        "visibility": "PUBLIC",
+        "images": [
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-0",
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-0",
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-1"
+        ],
+        "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+        "media": {
+          "_id": "6a76d065b4a90fc1d5c9b3f3",
+          "product": "6a76d065b4a90fc1d5c9b3ec",
+          "createdAt": "2026-08-08T06:44:53.242Z",
+          "createdBy": null,
+          "deletedAt": null,
+          "documents": [],
+          "featuredImageIndex": 0,
+          "gallery": [
+            {
+              "media": {
+                "_id": "6a76d81eb4a90fc1d5c9bcbd",
+                "publicId": "house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+                "altText": "Zeus Velvet (Carob)",
+                "caption": "Zeus Velvet - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:50.121Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "zeus-velvet-carob-1.webp",
+                "folder": "house_of_hackney/fabric/zeus_velvet___carob",
+                "mimeType": "image/webp",
+                "originalName": "zeus-velvet-carob-1.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:22.857Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+                "id": "6a76d81eb4a90fc1d5c9bcbd"
+              },
+              "alt": "Zeus Velvet - Zeus Velvet - Carob",
+              "sortOrder": 0
+            },
+            {
+              "media": {
+                "_id": "6a76d81eb4a90fc1d5c9bcbc",
+                "publicId": "house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-0",
+                "altText": "Zeus Velvet (Carob)",
+                "caption": "Zeus Velvet - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:50.118Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "zeus-velvet-carob-0.webp",
+                "folder": "house_of_hackney/fabric/zeus_velvet___carob",
+                "mimeType": "image/webp",
+                "originalName": "zeus-velvet-carob-0.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-0",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:22.855Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-0",
+                "id": "6a76d81eb4a90fc1d5c9bcbc"
+              },
+              "alt": "Zeus Velvet - Zeus Velvet - Carob",
+              "sortOrder": 1
+            },
+            {
+              "media": {
+                "_id": "6a76d81eb4a90fc1d5c9bcbe",
+                "publicId": "house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-0",
+                "altText": "Zeus Velvet (Tobacco)",
+                "caption": "Zeus Velvet - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:50.137Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "zeus-velvet-tobacco-0.webp",
+                "folder": "house_of_hackney/fabric/zeus_velvet___tobacco",
+                "mimeType": "image/webp",
+                "originalName": "zeus-velvet-tobacco-0.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-0",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:22.873Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-0",
+                "id": "6a76d81eb4a90fc1d5c9bcbe"
+              },
+              "alt": "Zeus Velvet - Zeus Velvet - Tobacco",
+              "sortOrder": 2
+            },
+            {
+              "media": {
+                "_id": "6a76d81eb4a90fc1d5c9bcbf",
+                "publicId": "house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-1",
+                "altText": "Zeus Velvet (Tobacco)",
+                "caption": "Zeus Velvet - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:50.140Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "zeus-velvet-tobacco-1.webp",
+                "folder": "house_of_hackney/fabric/zeus_velvet___tobacco",
+                "mimeType": "image/webp",
+                "originalName": "zeus-velvet-tobacco-1.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-1",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:22.876Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-1",
+                "id": "6a76d81eb4a90fc1d5c9bcbf"
+              },
+              "alt": "Zeus Velvet - Zeus Velvet - Tobacco",
+              "sortOrder": 3
+            }
+          ],
+          "thumbnail": {
+            "_id": "6a76d81eb4a90fc1d5c9bcbd",
+            "publicId": "house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+            "altText": "Zeus Velvet (Carob)",
+            "caption": "Zeus Velvet - House of Hackney Original Print",
+            "createdAt": "2026-08-08T07:17:50.121Z",
+            "createdBy": null,
+            "extension": "webp",
+            "filename": "zeus-velvet-carob-1.webp",
+            "folder": "house_of_hackney/fabric/zeus_velvet___carob",
+            "mimeType": "image/webp",
+            "originalName": "zeus-velvet-carob-1.jpg",
+            "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+            "status": "ACTIVE",
+            "updatedAt": "2026-08-08T07:36:22.857Z",
+            "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+            "id": "6a76d81eb4a90fc1d5c9bcbd"
+          },
+          "updatedAt": "2026-10-22T05:27:58.958Z",
+          "updatedBy": null,
+          "videos": [],
+          "id": "6a76d065b4a90fc1d5c9b3f3"
+        },
+        "variants": [
+          {
+            "_id": "6a76d065b4a90fc1d5c9b3ee",
+            "sku": "SKU-ZEUS_VELVET-CAROB",
+            "attributes": [
+              {
+                "attribute": "Color / Finish",
+                "value": "Carob",
+                "_id": "6a76dc7662a3024bf2d9ff27",
+                "id": "6a76dc7662a3024bf2d9ff27"
+              }
+            ],
+            "barcode": "BAR-SKU-ZEUS_VELVET-CAROB",
+            "createdAt": "2026-08-08T06:44:53.229Z",
+            "createdBy": null,
+            "deletedAt": null,
+            "isDefault": false,
+            "position": 0,
+            "product": "6a76d065b4a90fc1d5c9b3ec",
+            "slug": "zeus_velvet-carob",
+            "status": "ACTIVE",
+            "title": "Zeus Velvet - Carob",
+            "updatedAt": "2026-10-22T05:27:53.164Z",
+            "updatedBy": null,
+            "weight": 0,
+            "gallery": [
+              "6a76d81eb4a90fc1d5c9bcbd",
+              "6a76d81eb4a90fc1d5c9bcbc"
+            ],
+            "image": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+            "images": [
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-0"
+            ],
+            "thumbnail": {
+              "_id": "6a76d81eb4a90fc1d5c9bcbd",
+              "publicId": "house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+              "altText": "Zeus Velvet (Carob)",
+              "caption": "Zeus Velvet - House of Hackney Original Print",
+              "createdAt": "2026-08-08T07:17:50.121Z",
+              "createdBy": null,
+              "extension": "webp",
+              "filename": "zeus-velvet-carob-1.webp",
+              "folder": "house_of_hackney/fabric/zeus_velvet___carob",
+              "mimeType": "image/webp",
+              "originalName": "zeus-velvet-carob-1.jpg",
+              "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+              "status": "ACTIVE",
+              "updatedAt": "2026-08-08T07:36:22.857Z",
+              "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___carob/zeus-velvet-carob-1",
+              "id": "6a76d81eb4a90fc1d5c9bcbd"
+            },
+            "id": "6a76d065b4a90fc1d5c9b3ee"
+          },
+          {
+            "_id": "6a76d065b4a90fc1d5c9b3f4",
+            "sku": "SKU-ZEUS_VELVET-TOBACCO",
+            "attributes": [
+              {
+                "attribute": "Color / Finish",
+                "value": "Tobacco",
+                "_id": "6a76dc7662a3024bf2d9ff29",
+                "id": "6a76dc7662a3024bf2d9ff29"
+              }
+            ],
+            "barcode": "BAR-SKU-ZEUS_VELVET-TOBACCO",
+            "createdAt": "2026-08-08T06:44:53.249Z",
+            "createdBy": null,
+            "deletedAt": null,
+            "isDefault": false,
+            "position": 0,
+            "product": "6a76d065b4a90fc1d5c9b3ec",
+            "slug": "zeus_velvet-tobacco",
+            "status": "ACTIVE",
+            "title": "Zeus Velvet - Tobacco",
+            "updatedAt": "2026-10-22T05:27:55.786Z",
+            "updatedBy": null,
+            "weight": 0,
+            "gallery": [
+              "6a76d81eb4a90fc1d5c9bcbe",
+              "6a76d81eb4a90fc1d5c9bcbf"
+            ],
+            "image": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-0",
+            "images": [
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-0",
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-1"
+            ],
+            "thumbnail": {
+              "_id": "6a76d81eb4a90fc1d5c9bcbe",
+              "publicId": "house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-0",
+              "altText": "Zeus Velvet (Tobacco)",
+              "caption": "Zeus Velvet - House of Hackney Original Print",
+              "createdAt": "2026-08-08T07:17:50.137Z",
+              "createdBy": null,
+              "extension": "webp",
+              "filename": "zeus-velvet-tobacco-0.webp",
+              "folder": "house_of_hackney/fabric/zeus_velvet___tobacco",
+              "mimeType": "image/webp",
+              "originalName": "zeus-velvet-tobacco-0.jpg",
+              "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-0",
+              "status": "ACTIVE",
+              "updatedAt": "2026-08-08T07:36:22.873Z",
+              "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/fabric/zeus_velvet___tobacco/zeus-velvet-tobacco-0",
+              "id": "6a76d81eb4a90fc1d5c9bcbe"
+            },
+            "id": "6a76d065b4a90fc1d5c9b3f4"
+          }
+        ],
+        "pricing": {
+          "_id": "6a76d065b4a90fc1d5c9b3ed",
+          "currency": "GBP",
+          "basePrice": 115,
+          "sellingPrice": 95,
+          "compareAtPrice": 115,
+          "priceUnit": "metre",
+          "sample": {
+            "available": true,
+            "price": 4,
+            "currency": "GBP"
+          }
+        },
+        "inventory": {
+          "status": "OUT_OF_STOCK",
+          "availableQuantity": 0,
+          "inStock": false
+        },
+        "id": "6a76d065b4a90fc1d5c9b3ec"
+      },
+      "errors": null
+    },
+    "pricing": {
+      "success": true,
+      "message": "Pricing fetched successfully.",
+      "data": {
+        "_id": "6a76d065b4a90fc1d5c9b3ed",
+        "currency": "GBP",
+        "basePrice": 115,
+        "sellingPrice": 95,
+        "compareAtPrice": 115,
+        "priceUnit": "metre",
+        "sample": {
+          "available": true,
+          "price": 4,
+          "currency": "GBP"
+        }
+      },
+      "errors": null
+    },
+    "specifications": {
+      "success": true,
+      "message": "Product specifications fetched successfully.",
+      "data": {
+        "width": {
+          "value": 140,
+          "unit": "cm"
+        },
+        "verticalRepeat": {
+          "value": 65,
+          "unit": "cm"
+        },
+        "horizontalRepeat": {
+          "value": 70,
+          "unit": "cm"
+        },
+        "composition": "100% British Cotton Velvet",
+        "careInstructions": [
+          "Dry clean only",
+          "Iron on reverse with low heat"
+        ],
+        "countryOfOrigin": "United Kingdom",
+        "suitability": [
+          "General Domestic Upholstery",
+          "Curtains",
+          "Blinds",
+          "Cushions"
+        ],
+        "certifications": [
+          "Passes Cigarette & Match Test"
+        ]
+      },
+      "errors": null
+    }
+  },
+  "paint": {
+    "details": {
+      "success": true,
+      "message": "Product fetched successfully.",
+      "data": {
+        "specifications": {
+          "width": {
+            "value": null,
+            "unit": ""
+          },
+          "verticalRepeat": {
+            "value": null,
+            "unit": ""
+          },
+          "horizontalRepeat": {
+            "value": null,
+            "unit": ""
+          },
+          "composition": "Water-based mineral emulsion (low VOC)",
+          "careInstructions": [
+            "Wipe clean with a damp cloth after 7 days curing"
+          ],
+          "countryOfOrigin": "United Kingdom",
+          "suitability": [
+            "Interior Walls",
+            "Ceilings",
+            "Primed Woodwork"
+          ],
+          "certifications": [
+            "Low VOC (less than 30g/l)"
+          ]
+        },
+        "_id": "6a76d063b4a90fc1d5c9b1f4",
+        "sku": "SKU-ZIRCON_PAINT",
+        "barcode": "BAR-ZIRCON_PAINT",
+        "brand": {
+          "logo": null,
+          "website": "",
+          "sortOrder": 0,
+          "_id": "6a76ce08b4a90fc1d5c9b1a8",
+          "slug": "house-of-hackney",
+          "banner": null,
+          "country": "",
+          "description": "British luxury interior brand",
+          "image": null,
+          "isFeatured": false,
+          "name": "House of Hackney",
+          "shortDescription": "",
+          "status": "ACTIVE",
+          "id": "6a76ce08b4a90fc1d5c9b1a8"
+        },
+        "category": {
+          "parentCategory": null,
+          "sortOrder": 0,
+          "_id": "6a76d067b4a90fc1d5c9b68d",
+          "slug": "paint",
+          "banner": "6a76d820b4a90fc1d5c9bd94",
+          "description": "House of Hackney Paint Collection",
+          "isFeatured": true,
+          "name": "Paint",
+          "showInMenu": true,
+          "status": "ACTIVE",
+          "image": "6a76d820b4a90fc1d5c9bd94",
+          "id": "6a76d067b4a90fc1d5c9b68d"
+        },
+        "collection": {
+          "_id": "6a76db68b4a90fc1d5c9be8a",
+          "slug": "gothic-garden",
+          "description": "Dramatic dark botanical prints inspired by Victorian flora",
+          "image": "6a76d820b4a90fc1d5c9bdf4",
+          "name": "Gothic Garden",
+          "status": "ACTIVE",
+          "id": "6a76db68b4a90fc1d5c9be8a"
+        },
+        "colours": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be8f",
+            "slug": "midnight-black",
+            "code": "BLK-01",
+            "colorHex": "#121212",
+            "name": "Midnight Black",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be8f"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be90",
+            "slug": "botanical-green",
+            "code": "GRN-02",
+            "colorHex": "#1b4d3e",
+            "name": "Botanical Green",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be90"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be91",
+            "slug": "dusky-pink",
+            "code": "PNK-03",
+            "colorHex": "#e8c3c5",
+            "name": "Dusky Pink",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be91"
+          }
+        ],
+        "createdAt": "2026-08-08T06:44:51.038Z",
+        "createdBy": null,
+        "deletedAt": null,
+        "description": "House of Hackney handcrafted designer paint, formulated with rich mineral pigments for depth of colour, exceptional coverage, and a durable finish.",
+        "designer": {
+          "_id": "6a76db68b4a90fc1d5c9be8c",
+          "slug": "frieda-gormley",
+          "avatar": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/avatar.jpg",
+          "bio": "Co-founders and Creative Directors of House of Hackney",
+          "name": "Frieda Gormley & Javvy M Royle",
+          "status": "ACTIVE",
+          "id": "6a76db68b4a90fc1d5c9be8c"
+        },
+        "isBestSeller": true,
+        "isCustomizable": false,
+        "isFeatured": true,
+        "isNewArrival": true,
+        "isTradeAvailable": true,
+        "material": null,
+        "name": "Zircon Paint",
+        "patterns": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be92",
+            "slug": "botanical-floral",
+            "description": "Intricate British flora and Victorian blooms",
+            "name": "Botanical & Floral",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be92"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be93",
+            "slug": "animalia-leopard",
+            "description": "Iconic Wild Card leopard prints and fauna",
+            "name": "Animalia & Wild",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be93"
+          }
+        ],
+        "productType": "PAINT",
+        "publishedBy": null,
+        "rooms": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be96",
+            "slug": "living-room",
+            "description": "Statement walls and accent seating",
+            "name": "Living Room",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be96"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be97",
+            "slug": "bedroom",
+            "description": "Serene atmospheric bedroom drapery and wallcoverings",
+            "name": "Bedroom & Sanctuary",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be97"
+          }
+        ],
+        "searchKeywords": [
+          "Zircon Paint",
+          "Curtains & Blinds",
+          "luxury",
+          "victorian",
+          "botanical"
+        ],
+        "shortDescription": "Rich mineral paint with superior coverage and depth of colour, by House of Hackney.",
+        "slug": "zircon_paint",
+        "status": "PUBLISHED",
+        "styles": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be95",
+            "slug": "maximalist",
+            "description": "Vibrant bold prints and immersive color saturation",
+            "name": "Maximalist Luxury",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be95"
+          }
+        ],
+        "themes": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be94",
+            "slug": "victorian-heritage",
+            "description": "Classic English country house elegance",
+            "name": "Victorian Heritage",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be94"
+          }
+        ],
+        "updatedAt": "2026-10-22T09:27:09.284Z",
+        "updatedBy": null,
+        "visibility": "PUBLIC",
+        "images": [
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-0",
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/apothecary/zircon_paint___06/zircon-paint-06-0",
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/apothecary/zircon_paint___06/zircon-paint-06-1"
+        ],
+        "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+        "media": {
+          "_id": "6a76d063b4a90fc1d5c9b1fb",
+          "product": "6a76d063b4a90fc1d5c9b1f4",
+          "createdAt": "2026-08-08T06:44:51.058Z",
+          "createdBy": null,
+          "deletedAt": null,
+          "documents": [],
+          "featuredImageIndex": 0,
+          "gallery": [
+            {
+              "media": {
+                "_id": "6a76d81cb4a90fc1d5c9bc39",
+                "publicId": "house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+                "altText": "Zircon Paint (06)",
+                "caption": "Zircon Paint - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:48.927Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "zircon-paint-06-1.webp",
+                "folder": "house_of_hackney/curtains___blinds/zircon_paint___06",
+                "mimeType": "image/webp",
+                "originalName": "zircon-paint-06-1.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:21.624Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+                "id": "6a76d81cb4a90fc1d5c9bc39"
+              },
+              "alt": "Zircon Paint - Zircon Paint - 06",
+              "sortOrder": 0
+            },
+            {
+              "media": {
+                "_id": "6a76d81cb4a90fc1d5c9bc38",
+                "publicId": "house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-0",
+                "altText": "Zircon Paint (06)",
+                "caption": "Zircon Paint - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:48.923Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "zircon-paint-06-0.webp",
+                "folder": "house_of_hackney/curtains___blinds/zircon_paint___06",
+                "mimeType": "image/webp",
+                "originalName": "zircon-paint-06-0.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-0",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:21.621Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-0",
+                "id": "6a76d81cb4a90fc1d5c9bc38"
+              },
+              "alt": "Zircon Paint - Zircon Paint - 06",
+              "sortOrder": 1
+            },
+            {
+              "media": {
+                "_id": "6a76d81cb4a90fc1d5c9bbfc",
+                "publicId": "house_of_hackney/apothecary/zircon_paint___06/zircon-paint-06-0",
+                "altText": "Zircon Paint (06)",
+                "caption": "Zircon Paint - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:48.313Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "zircon-paint-06-0.webp",
+                "folder": "house_of_hackney/apothecary/zircon_paint___06",
+                "mimeType": "image/webp",
+                "originalName": "zircon-paint-06-0.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/apothecary/zircon_paint___06/zircon-paint-06-0",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:21.026Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/apothecary/zircon_paint___06/zircon-paint-06-0",
+                "id": "6a76d81cb4a90fc1d5c9bbfc"
+              },
+              "alt": "Zircon Paint - Zircon Paint - 06",
+              "sortOrder": 2
+            },
+            {
+              "media": {
+                "_id": "6a76d81cb4a90fc1d5c9bbfd",
+                "publicId": "house_of_hackney/apothecary/zircon_paint___06/zircon-paint-06-1",
+                "altText": "Zircon Paint (06)",
+                "caption": "Zircon Paint - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:48.316Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "zircon-paint-06-1.webp",
+                "folder": "house_of_hackney/apothecary/zircon_paint___06",
+                "mimeType": "image/webp",
+                "originalName": "zircon-paint-06-1.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/apothecary/zircon_paint___06/zircon-paint-06-1",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:21.028Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/apothecary/zircon_paint___06/zircon-paint-06-1",
+                "id": "6a76d81cb4a90fc1d5c9bbfd"
+              },
+              "alt": "Zircon Paint - Zircon Paint - 06",
+              "sortOrder": 3
+            }
+          ],
+          "thumbnail": {
+            "_id": "6a76d81cb4a90fc1d5c9bc39",
+            "publicId": "house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+            "altText": "Zircon Paint (06)",
+            "caption": "Zircon Paint - House of Hackney Original Print",
+            "createdAt": "2026-08-08T07:17:48.927Z",
+            "createdBy": null,
+            "extension": "webp",
+            "filename": "zircon-paint-06-1.webp",
+            "folder": "house_of_hackney/curtains___blinds/zircon_paint___06",
+            "mimeType": "image/webp",
+            "originalName": "zircon-paint-06-1.jpg",
+            "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+            "status": "ACTIVE",
+            "updatedAt": "2026-08-08T07:36:21.624Z",
+            "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+            "id": "6a76d81cb4a90fc1d5c9bc39"
+          },
+          "updatedAt": "2026-10-22T05:27:56.232Z",
+          "updatedBy": null,
+          "videos": [],
+          "id": "6a76d063b4a90fc1d5c9b1fb"
+        },
+        "variants": [
+          {
+            "_id": "6a76d063b4a90fc1d5c9b1f6",
+            "sku": "SKU-ZIRCON_PAINT-06",
+            "attributes": [
+              {
+                "attribute": "Color / Finish",
+                "value": "06",
+                "_id": "6a76dc7562a3024bf2d9fea3",
+                "id": "6a76dc7562a3024bf2d9fea3"
+              }
+            ],
+            "barcode": "BAR-SKU-ZIRCON_PAINT-06",
+            "createdAt": "2026-08-08T06:44:51.044Z",
+            "createdBy": null,
+            "deletedAt": null,
+            "isDefault": false,
+            "position": 0,
+            "product": "6a76d063b4a90fc1d5c9b1f4",
+            "slug": "zircon_paint-06",
+            "status": "ACTIVE",
+            "title": "Zircon Paint - 06",
+            "updatedAt": "2026-10-22T05:27:53.779Z",
+            "updatedBy": null,
+            "weight": 0,
+            "gallery": [
+              "6a76d81cb4a90fc1d5c9bc39",
+              "6a76d81cb4a90fc1d5c9bc38",
+              "6a76d81cb4a90fc1d5c9bbfc",
+              "6a76d81cb4a90fc1d5c9bbfd"
+            ],
+            "image": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+            "images": [
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-0",
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/apothecary/zircon_paint___06/zircon-paint-06-0",
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/apothecary/zircon_paint___06/zircon-paint-06-1"
+            ],
+            "thumbnail": {
+              "_id": "6a76d81cb4a90fc1d5c9bc39",
+              "publicId": "house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+              "altText": "Zircon Paint (06)",
+              "caption": "Zircon Paint - House of Hackney Original Print",
+              "createdAt": "2026-08-08T07:17:48.927Z",
+              "createdBy": null,
+              "extension": "webp",
+              "filename": "zircon-paint-06-1.webp",
+              "folder": "house_of_hackney/curtains___blinds/zircon_paint___06",
+              "mimeType": "image/webp",
+              "originalName": "zircon-paint-06-1.jpg",
+              "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+              "status": "ACTIVE",
+              "updatedAt": "2026-08-08T07:36:21.624Z",
+              "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/curtains___blinds/zircon_paint___06/zircon-paint-06-1",
+              "id": "6a76d81cb4a90fc1d5c9bc39"
+            },
+            "id": "6a76d063b4a90fc1d5c9b1f6"
+          }
+        ],
+        "pricing": {
+          "_id": "6a76d063b4a90fc1d5c9b1f5",
+          "currency": "GBP",
+          "basePrice": 55,
+          "sellingPrice": 48,
+          "compareAtPrice": 55,
+          "priceUnit": "tin",
+          "sample": {
+            "available": true,
+            "price": 5,
+            "currency": "GBP"
+          }
+        },
+        "inventory": {
+          "status": "OUT_OF_STOCK",
+          "availableQuantity": 0,
+          "inStock": false
+        },
+        "id": "6a76d063b4a90fc1d5c9b1f4"
+      },
+      "errors": null
+    },
+    "pricing": {
+      "success": true,
+      "message": "Pricing fetched successfully.",
+      "data": {
+        "_id": "6a76d063b4a90fc1d5c9b1f5",
+        "currency": "GBP",
+        "basePrice": 55,
+        "sellingPrice": 48,
+        "compareAtPrice": 55,
+        "priceUnit": "tin",
+        "sample": {
+          "available": true,
+          "price": 5,
+          "currency": "GBP"
+        }
+      },
+      "errors": null
+    },
+    "specifications": {
+      "success": true,
+      "message": "Product specifications fetched successfully.",
+      "data": {
+        "width": {
+          "value": null,
+          "unit": ""
+        },
+        "verticalRepeat": {
+          "value": null,
+          "unit": ""
+        },
+        "horizontalRepeat": {
+          "value": null,
+          "unit": ""
+        },
+        "composition": "Water-based mineral emulsion (low VOC)",
+        "careInstructions": [
+          "Wipe clean with a damp cloth after 7 days curing"
+        ],
+        "countryOfOrigin": "United Kingdom",
+        "suitability": [
+          "Interior Walls",
+          "Ceilings",
+          "Primed Woodwork"
+        ],
+        "certifications": [
+          "Low VOC (less than 30g/l)"
+        ]
+      },
+      "errors": null
+    }
+  },
+  "homeware": {
+    "details": {
+      "success": true,
+      "message": "Product fetched successfully.",
+      "data": {
+        "specifications": {
+          "width": {
+            "value": 45,
+            "unit": "cm"
+          },
+          "verticalRepeat": {
+            "value": null,
+            "unit": ""
+          },
+          "horizontalRepeat": {
+            "value": null,
+            "unit": ""
+          },
+          "composition": "British Cotton Velvet with feather pad",
+          "careInstructions": [
+            "Spot clean / Hand wash only"
+          ],
+          "countryOfOrigin": "United Kingdom",
+          "suitability": [
+            "Indoor Home Decor"
+          ],
+          "certifications": []
+        },
+        "_id": "6a7dc66a29308231cb21bc85",
+        "sku": "SKU-LUXE_VELVET_CUSHION",
+        "barcode": "BAR-LUXE_VELVET_CUSHION",
+        "brand": {
+          "logo": null,
+          "website": "",
+          "sortOrder": 0,
+          "_id": "6a76ce08b4a90fc1d5c9b1a8",
+          "slug": "house-of-hackney",
+          "banner": null,
+          "country": "",
+          "description": "British luxury interior brand",
+          "image": null,
+          "isFeatured": false,
+          "name": "House of Hackney",
+          "shortDescription": "",
+          "status": "ACTIVE",
+          "id": "6a76ce08b4a90fc1d5c9b1a8"
+        },
+        "category": {
+          "parentCategory": null,
+          "sortOrder": 0,
+          "_id": "6a76d066b4a90fc1d5c9b53b",
+          "slug": "home_decor",
+          "banner": "6a76d81fb4a90fc1d5c9bd20",
+          "description": "House of Hackney Home Decor Collection",
+          "isFeatured": true,
+          "name": "Home Decor",
+          "showInMenu": true,
+          "status": "ACTIVE",
+          "image": "6a76d81fb4a90fc1d5c9bd20",
+          "id": "6a76d066b4a90fc1d5c9b53b"
+        },
+        "collection": {
+          "_id": "6a76db68b4a90fc1d5c9be8a",
+          "slug": "gothic-garden",
+          "description": "Dramatic dark botanical prints inspired by Victorian flora",
+          "image": "6a76d820b4a90fc1d5c9bdf4",
+          "name": "Gothic Garden",
+          "status": "ACTIVE",
+          "id": "6a76db68b4a90fc1d5c9be8a"
+        },
+        "colours": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be8f",
+            "slug": "midnight-black",
+            "code": "BLK-01",
+            "colorHex": "#121212",
+            "name": "Midnight Black",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be8f"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be90",
+            "slug": "botanical-green",
+            "code": "GRN-02",
+            "colorHex": "#1b4d3e",
+            "name": "Botanical Green",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be90"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be91",
+            "slug": "dusky-pink",
+            "code": "PNK-03",
+            "colorHex": "#e8c3c5",
+            "name": "Dusky Pink",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be91"
+          }
+        ],
+        "createdAt": "2026-08-13T13:28:10.421Z",
+        "createdBy": null,
+        "deletedAt": null,
+        "description": "House of Hackney fine homeware, bringing decorative British artistry and maximalist elegance to everyday living.",
+        "designer": {
+          "_id": "6a76db68b4a90fc1d5c9be8c",
+          "slug": "frieda-gormley",
+          "avatar": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/avatar.jpg",
+          "bio": "Co-founders and Creative Directors of House of Hackney",
+          "name": "Frieda Gormley & Javvy M Royle",
+          "status": "ACTIVE",
+          "id": "6a76db68b4a90fc1d5c9be8c"
+        },
+        "isBestSeller": true,
+        "isCustomizable": false,
+        "isFeatured": true,
+        "isNewArrival": true,
+        "isTradeAvailable": true,
+        "material": null,
+        "name": "Luxe Velvet Cushion",
+        "patterns": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be92",
+            "slug": "botanical-floral",
+            "description": "Intricate British flora and Victorian blooms",
+            "name": "Botanical & Floral",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be92"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be93",
+            "slug": "animalia-leopard",
+            "description": "Iconic Wild Card leopard prints and fauna",
+            "name": "Animalia & Wild",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be93"
+          }
+        ],
+        "productType": "HOMEWARE",
+        "publishedBy": null,
+        "rooms": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be96",
+            "slug": "living-room",
+            "description": "Statement walls and accent seating",
+            "name": "Living Room",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be96"
+          },
+          {
+            "_id": "6a76db68b4a90fc1d5c9be97",
+            "slug": "bedroom",
+            "description": "Serene atmospheric bedroom drapery and wallcoverings",
+            "name": "Bedroom & Sanctuary",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be97"
+          }
+        ],
+        "searchKeywords": [
+          "Luxe Velvet Cushion",
+          "Furnishings",
+          "luxury",
+          "victorian",
+          "botanical"
+        ],
+        "shortDescription": "Exquisite decorative British homeware by House of Hackney.",
+        "slug": "luxe_velvet_cushion",
+        "status": "PUBLISHED",
+        "styles": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be95",
+            "slug": "maximalist",
+            "description": "Vibrant bold prints and immersive color saturation",
+            "name": "Maximalist Luxury",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be95"
+          }
+        ],
+        "themes": [
+          {
+            "_id": "6a76db68b4a90fc1d5c9be94",
+            "slug": "victorian-heritage",
+            "description": "Classic English country house elegance",
+            "name": "Victorian Heritage",
+            "status": "ACTIVE",
+            "id": "6a76db68b4a90fc1d5c9be94"
+          }
+        ],
+        "updatedAt": "2026-10-22T09:27:17.729Z",
+        "updatedBy": null,
+        "visibility": "PUBLIC",
+        "images": [
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+          "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/anaconda_large_tassel_cut_velvet_cushion___olive_green/anaconda-large-tassel-cut-velvet-cushion-olive-green-0"
+        ],
+        "thumbnail": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+        "media": {
+          "_id": "6ad99edf30f20f63a5533424",
+          "product": "6a7dc66a29308231cb21bc85",
+          "createdAt": "2026-10-22T05:27:59.435Z",
+          "createdBy": null,
+          "deletedAt": null,
+          "documents": [],
+          "featuredImageIndex": 0,
+          "gallery": [
+            {
+              "media": {
+                "_id": "6a76d81fb4a90fc1d5c9bd21",
+                "publicId": "house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+                "altText": "Alice In Wonderland Medium Fringed Jacquard Cushion (Achillea)",
+                "caption": "Alice In Wonderland Medium Fringed Jacquard Cushion - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:51.036Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1.webp",
+                "folder": "house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea",
+                "mimeType": "image/webp",
+                "originalName": "alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:23.806Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+                "id": "6a76d81fb4a90fc1d5c9bd21"
+              },
+              "alt": "Luxe Velvet Cushion - Luxe Velvet Cushion - Onyx",
+              "sortOrder": 0
+            },
+            {
+              "media": {
+                "_id": "6a76d81fb4a90fc1d5c9bd24",
+                "publicId": "house_of_hackney/home_decor/anaconda_large_tassel_cut_velvet_cushion___olive_green/anaconda-large-tassel-cut-velvet-cushion-olive-green-0",
+                "altText": "Anaconda Large Tassel Cut Velvet Cushion (Olive Green)",
+                "caption": "Anaconda Large Tassel Cut Velvet Cushion - House of Hackney Original Print",
+                "createdAt": "2026-08-08T07:17:51.064Z",
+                "createdBy": null,
+                "extension": "webp",
+                "filename": "anaconda-large-tassel-cut-velvet-cushion-olive-green-0.webp",
+                "folder": "house_of_hackney/home_decor/anaconda_large_tassel_cut_velvet_cushion___olive_green",
+                "mimeType": "image/webp",
+                "originalName": "anaconda-large-tassel-cut-velvet-cushion-olive-green-0.jpg",
+                "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/anaconda_large_tassel_cut_velvet_cushion___olive_green/anaconda-large-tassel-cut-velvet-cushion-olive-green-0",
+                "status": "ACTIVE",
+                "updatedAt": "2026-08-08T07:36:23.838Z",
+                "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/anaconda_large_tassel_cut_velvet_cushion___olive_green/anaconda-large-tassel-cut-velvet-cushion-olive-green-0",
+                "id": "6a76d81fb4a90fc1d5c9bd24"
+              },
+              "alt": "Luxe Velvet Cushion - Luxe Velvet Cushion - Onyx",
+              "sortOrder": 1
+            }
+          ],
+          "thumbnail": {
+            "_id": "6a76d81fb4a90fc1d5c9bd21",
+            "publicId": "house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+            "altText": "Alice In Wonderland Medium Fringed Jacquard Cushion (Achillea)",
+            "caption": "Alice In Wonderland Medium Fringed Jacquard Cushion - House of Hackney Original Print",
+            "createdAt": "2026-08-08T07:17:51.036Z",
+            "createdBy": null,
+            "extension": "webp",
+            "filename": "alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1.webp",
+            "folder": "house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea",
+            "mimeType": "image/webp",
+            "originalName": "alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1.jpg",
+            "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+            "status": "ACTIVE",
+            "updatedAt": "2026-08-08T07:36:23.806Z",
+            "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+            "id": "6a76d81fb4a90fc1d5c9bd21"
+          },
+          "updatedAt": "2026-10-22T05:27:59.435Z",
+          "updatedBy": null,
+          "videos": [],
+          "id": "6ad99edf30f20f63a5533424"
+        },
+        "variants": [
+          {
+            "_id": "6a7dc66a29308231cb21bc87",
+            "sku": "SKU-LUXE_VELVET_CUSHION-ONYX",
+            "attributes": [
+              {
+                "attribute": "Color / Finish",
+                "value": "Onyx",
+                "_id": "6a7ddb6e9943a514cddf70ff",
+                "id": "6a7ddb6e9943a514cddf70ff"
+              }
+            ],
+            "barcode": "BAR-SKU-LUXE_VELVET_CUSHION-ONYX",
+            "createdAt": "2026-08-13T13:28:10.501Z",
+            "createdBy": null,
+            "deletedAt": null,
+            "isDefault": false,
+            "position": 0,
+            "product": "6a7dc66a29308231cb21bc85",
+            "slug": "luxe_velvet_cushion-onyx",
+            "status": "ACTIVE",
+            "title": "Luxe Velvet Cushion - Onyx",
+            "updatedAt": "2026-10-22T05:27:51.984Z",
+            "updatedBy": null,
+            "weight": 0,
+            "gallery": [
+              "6a76d81fb4a90fc1d5c9bd21",
+              "6a76d81fb4a90fc1d5c9bd24"
+            ],
+            "image": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+            "images": [
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+              "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/anaconda_large_tassel_cut_velvet_cushion___olive_green/anaconda-large-tassel-cut-velvet-cushion-olive-green-0"
+            ],
+            "thumbnail": {
+              "_id": "6a76d81fb4a90fc1d5c9bd21",
+              "publicId": "house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+              "altText": "Alice In Wonderland Medium Fringed Jacquard Cushion (Achillea)",
+              "caption": "Alice In Wonderland Medium Fringed Jacquard Cushion - House of Hackney Original Print",
+              "createdAt": "2026-08-08T07:17:51.036Z",
+              "createdBy": null,
+              "extension": "webp",
+              "filename": "alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1.webp",
+              "folder": "house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea",
+              "mimeType": "image/webp",
+              "originalName": "alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1.jpg",
+              "secureUrl": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+              "status": "ACTIVE",
+              "updatedAt": "2026-08-08T07:36:23.806Z",
+              "url": "https://res.cloudinary.com/tysd8i65/image/upload/house_of_hackney/home_decor/alice_in_wonderland_medium_fringed_jacquard_cushion___achillea/alice-in-wonderland-medium-fringed-jacquard-cushion-achillea-1",
+              "id": "6a76d81fb4a90fc1d5c9bd21"
+            },
+            "id": "6a7dc66a29308231cb21bc87"
+          }
+        ],
+        "pricing": {
+          "_id": "6a7dc66a29308231cb21bc86",
+          "currency": "GBP",
+          "basePrice": 140,
+          "sellingPrice": 125,
+          "compareAtPrice": 140,
+          "priceUnit": "item",
+          "sample": {
+            "available": false,
+            "price": 0,
+            "currency": "GBP"
+          }
+        },
+        "inventory": {
+          "status": "OUT_OF_STOCK",
+          "availableQuantity": 0,
+          "inStock": false
+        },
+        "id": "6a7dc66a29308231cb21bc85"
+      },
+      "errors": null
+    }
+  }
+}

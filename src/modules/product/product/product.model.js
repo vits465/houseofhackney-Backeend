@@ -135,6 +135,50 @@ const productSchema = new mongoose.Schema(
             },
         ],
 
+        // Technical specifications
+        specifications: {
+            composition: {
+                type: String,
+                default: "",
+                trim: true,
+            },
+            width: {
+                value: { type: Number, default: null },
+                unit: { type: String, default: "" },
+            },
+            verticalRepeat: {
+                value: { type: Number, default: null },
+                unit: { type: String, default: "" },
+            },
+            horizontalRepeat: {
+                value: { type: Number, default: null },
+                unit: { type: String, default: "" },
+            },
+            careInstructions: [
+                {
+                    type: String,
+                    trim: true,
+                },
+            ],
+            countryOfOrigin: {
+                type: String,
+                default: "",
+                trim: true,
+            },
+            suitability: [
+                {
+                    type: String,
+                    trim: true,
+                },
+            ],
+            certifications: [
+                {
+                    type: String,
+                    trim: true,
+                },
+            ],
+        },
+
         // Product flags
         isFeatured: {
             type: Boolean,

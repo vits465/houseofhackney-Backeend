@@ -15,12 +15,7 @@ import {
 
 const router = Router({ mergeParams: true });
 
-router.get(
-    "/",
-    getProductMediaValidation,
-    validateRequest,
-    productMediaController.get
-);
+router.get("/", productMediaController.get);
 
 router.post(
     "/",

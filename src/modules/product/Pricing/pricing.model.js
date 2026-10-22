@@ -40,6 +40,27 @@ const pricingSchema = new mongoose.Schema(
       default: 0,
       min: 0,
     },
+    priceUnit: {
+      type: String,
+      default: "item",
+      trim: true,
+    },
+    sample: {
+      available: {
+        type: Boolean,
+        default: false,
+      },
+      price: {
+        type: Number,
+        default: 0,
+        min: 0,
+      },
+      currency: {
+        type: String,
+        enum: Object.values(CURRENCIES),
+        default: CURRENCIES.GBP,
+      },
+    },
     taxClass: {
       type: String,
       enum: Object.values(TAX_CLASSES),

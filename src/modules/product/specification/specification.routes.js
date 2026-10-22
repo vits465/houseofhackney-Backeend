@@ -15,12 +15,7 @@ import {
 
 const router = Router({ mergeParams: true });
 
-router.get(
-    "/",
-    getSpecificationValidation,
-    validateRequest,
-    specificationController.get
-);
+router.get("/", specificationController.get);
 
 router.post(
     "/",

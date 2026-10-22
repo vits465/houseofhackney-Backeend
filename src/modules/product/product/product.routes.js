@@ -12,12 +12,14 @@ import {
     deleteProductValidation,
 } from "./product.validation.js";
 
+import optionalAuthMiddleware from "../../../middlewares/optionalAuth.middleware.js";
+
 const router = Router();
 
-// Public Routes
-router.get("/", productController.getAll);
-router.get("/slug/:slug", productController.getBySlug);
-router.get("/:id", productController.getById);
+// Public Routes (with optional auth for trade/admin role detection)
+router.get("/", optionalAuthMiddleware, productController.getAll);
+router.get("/slug/:slug", optionalAuthMiddleware, productController.getBySlug);
+router.get("/:id", optionalAuthMiddleware, productController.getById);
 
 // Admin Routes
 router.post(

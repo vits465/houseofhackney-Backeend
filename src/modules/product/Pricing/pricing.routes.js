@@ -3,6 +3,7 @@ import { Router } from "express";
 import pricingController from "./pricing.controller.js";
 
 import authMiddleware from "../../../middlewares/auth.middleware.js";
+import optionalAuthMiddleware from "../../../middlewares/optionalAuth.middleware.js";
 import { authorize } from "../../../middlewares/authorize.middleware.js";
 import validateRequest from "../../../middlewares/validateRequest.js";
 
@@ -14,11 +15,11 @@ import {
 
 const router = Router({ mergeParams: true });
 
-// Public
-    router.get("/", pricingController.get);
+// Public (with optional auth to securely disclose trade pricing only to verified trade accounts)
+router.get("/", optionalAuthMiddleware, pricingController.get);
 
 // Admin
-    router.post(
+router.post(
     "/",
     authMiddleware,
     authorize(["ADMIN"]),

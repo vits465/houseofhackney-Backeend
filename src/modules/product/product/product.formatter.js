@@ -1,8 +1,61 @@
 /**
  * Formats a Product document with complete, perfect, non-broken images,
- * properly linked variants with their specific variant images, pricing, and media.
+ * properly linked variants with their specific variant images, pricing,
+ * specifications, inventory status, and sample information.
  */
-export function formatProduct(product) {
+
+export function isTradeAuthorized(user) {
+    if (!user) return false;
+    const role = typeof user.role === "string" ? user.role.toUpperCase() : user.role?.name?.toUpperCase();
+    if (role === "ADMIN" || role === "SUPER_ADMIN" || role === "TRADE") return true;
+    if (user.tradeProfile && (user.tradeProfile.status === "APPROVED" || user.tradeProfile.isApproved)) return true;
+    return false;
+}
+
+export function formatPricing(pricingObj, user = null) {
+    if (!pricingObj) return null;
+    const raw = typeof pricingObj.toObject === "function" ? pricingObj.toObject() : { ...pricingObj };
+
+    const formatted = {
+        _id: raw._id,
+        currency: raw.currency || "GBP",
+        basePrice: raw.basePrice ?? raw.sellingPrice ?? 0,
+        sellingPrice: raw.sellingPrice ?? raw.basePrice ?? 0,
+        compareAtPrice: raw.compareAtPrice ?? raw.basePrice ?? 0,
+        priceUnit: raw.priceUnit || "item",
+        sample: {
+            available: Boolean(raw.sample?.available),
+            price: raw.sample?.price ?? (raw.sample?.available ? 4 : 0),
+            currency: raw.sample?.currency || raw.currency || "GBP",
+        },
+    };
+
+    // Only include tradePrice if requester is authorized trade account or admin
+    if (isTradeAuthorized(user) && raw.tradePrice !== undefined && raw.tradePrice !== null) {
+        formatted.tradePrice = raw.tradePrice;
+    }
+
+    return formatted;
+}
+
+export function formatInventory(inventoryObj) {
+    if (!inventoryObj) {
+        return {
+            status: "IN_STOCK",
+            availableQuantity: 50,
+            inStock: true,
+        };
+    }
+    const raw = typeof inventoryObj.toObject === "function" ? inventoryObj.toObject() : { ...inventoryObj };
+    const qty = raw.availableQuantity ?? raw.quantity ?? 0;
+    return {
+        status: raw.status || (qty > 0 ? "IN_STOCK" : "OUT_OF_STOCK"),
+        availableQuantity: qty,
+        inStock: qty > 0,
+    };
+}
+
+export function formatProduct(product, user = null) {
     if (!product) return null;
 
     const p = typeof product.toObject === "function" ? product.toObject({ virtuals: true }) : { ...product };
@@ -101,10 +154,22 @@ export function formatProduct(product) {
         allImages[0] ||
         null;
 
+    // Format Pricing
+    const formattedPricing = p.pricing ? formatPricing(p.pricing, user) : null;
+
+    // Format Inventory
+    const formattedInventory = formatInventory(p.inventory);
+
+    // Format Specifications
+    const specifications = p.specifications || {};
+
     return {
         ...p,
         thumbnail: primaryThumbnail,
         images: allImages.length ? allImages : (primaryThumbnail ? [primaryThumbnail] : []),
+        pricing: formattedPricing,
+        inventory: formattedInventory,
+        specifications,
         variants: formattedVariants,
     };
 }

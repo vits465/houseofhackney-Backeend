@@ -15,14 +15,11 @@ import {
     deleteRelatedValidation,
 } from "./related.validation.js";
 
+import optionalAuthMiddleware from "../../../middlewares/optionalAuth.middleware.js";
+
 const router = Router({ mergeParams: true });
 
-router.get(
-    "/",
-    getRelatedValidation,
-    validateRequest,
-    relatedController.get
-);
+router.get("/", optionalAuthMiddleware, relatedController.get);
 
 router.post(
     "/",
