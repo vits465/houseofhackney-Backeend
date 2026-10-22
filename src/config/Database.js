@@ -100,6 +100,21 @@ const ensureAdminUser = async (adminRole) => {
   console.log(`✅ Admin user seeded: ${adminEmail}`);
 };
 
+const sanitizeMongoUri = (rawUri) => {
+  if (!rawUri || typeof rawUri !== "string") return rawUri;
+  let cleanUri = rawUri.trim();
+
+  // Fix missing '?' before standard MongoDB query options (e.g., .../house_of_hackneyretryWrites=true)
+  if (!cleanUri.includes("?")) {
+    cleanUri = cleanUri.replace(
+      /([a-zA-Z0-9_-]+)(retryWrites=|w=|authSource=|appName=|ssl=|tls=)/i,
+      (match, p1, p2) => `${p1}?${p2}`
+    );
+  }
+
+  return cleanUri;
+};
+
 let isConnecting = null;
 
 const connectDatabase = async () => {
@@ -113,13 +128,15 @@ const connectDatabase = async () => {
     return isConnecting;
   }
 
-  const uri = process.env.MONGODB_URI;
+  let uri = process.env.MONGODB_URI;
   if (!uri) {
     const errorMsg =
       "MONGODB_URI is not set. Please add your MongoDB Atlas connection string in Vercel Project Settings > Environment Variables.";
     console.error(`❌ ${errorMsg}`);
     throw new Error(errorMsg);
   }
+
+  uri = sanitizeMongoUri(uri);
 
   if (process.env.VERCEL && (uri.includes("127.0.0.1") || uri.includes("localhost"))) {
     const errorMsg =
@@ -138,6 +155,7 @@ const connectDatabase = async () => {
 
   isConnecting = mongoose
     .connect(uri, {
+      dbName: "house_of_hackney",
       serverSelectionTimeoutMS: 5000,
     })
     .then(async (connection) => {
