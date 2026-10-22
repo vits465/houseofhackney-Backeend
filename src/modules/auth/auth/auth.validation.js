@@ -115,12 +115,13 @@ export const resetPasswordValidation = [
     .isEmail()
     .withMessage("Invalid email address")
     .normalizeEmail(),
-  body("otp")
+  body("resetToken")
     .trim()
     .notEmpty()
-    .withMessage("OTP is required")
-    .isLength({ min: 6, max: 6 })
-    .withMessage("OTP must be 6 digits"),
+    .withMessage("Reset token is required"),
+  body("otp")
+    .optional()
+    .trim(),
   body("newPassword")
     .trim()
     .notEmpty()

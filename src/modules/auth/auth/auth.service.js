@@ -4,6 +4,7 @@ import tokenService from "../token/token.service.js";
 import otpService from "../otp/otp.service.js";
 import emailService from "../otp/email.service.js";
 import AppError from "../../../shared/errors/AppError.js";
+import jwt from "jsonwebtoken";
 
 class AuthService {
   // Register User & Trigger Email Verification OTP
@@ -282,27 +283,78 @@ class AuthService {
 
   // Verify Reset OTP
   async verifyResetOtp({ email, otp }) {
+    const normalizedEmail = email.trim().toLowerCase();
+
+    // This verifies and consumes the OTP exactly once.
     await otpService.verifyOtp({
-      email,
+      email: normalizedEmail,
       purpose: "PASSWORD_RESET",
       otp,
     });
 
+    // Issue a short-lived token only for password resetting.
+    const resetToken = jwt.sign(
+      {
+        email: normalizedEmail,
+        purpose: "PASSWORD_RESET",
+      },
+      process.env.JWT_ACCESS_SECRET,
+      {
+        expiresIn: "5m",
+        issuer: "house-of-hackney",
+        audience: "password-reset",
+      }
+    );
+
     return {
-      message: "Reset OTP verified successfully. You may now reset your password.",
-      email,
+      message: "Reset OTP verified successfully.",
+      email: normalizedEmail,
+      resetToken,
+      expiresInSeconds: 300,
     };
   }
 
   // Reset Password
-  async resetPassword({ email, otp, newPassword }) {
-    await otpService.verifyOtp({
-      email,
-      purpose: "PASSWORD_RESET",
-      otp,
-    });
+  async resetPassword({ email, resetToken, newPassword }) {
+    const normalizedEmail = email.trim().toLowerCase();
 
-    const user = await userService.findByEmail(email);
+    if (!resetToken || !newPassword) {
+      throw new AppError(
+        "Reset authorization token and new password are required.",
+        400
+      );
+    }
+
+    let decoded;
+
+    try {
+      decoded = jwt.verify(
+        resetToken,
+        process.env.JWT_ACCESS_SECRET,
+        {
+          issuer: "house-of-hackney",
+          audience: "password-reset",
+        }
+      );
+    } catch {
+      throw new AppError(
+        "Password reset authorization is invalid or expired. Please verify a new OTP.",
+        401
+      );
+    }
+
+    if (
+      decoded.purpose !== "PASSWORD_RESET" ||
+      decoded.email !== normalizedEmail
+    ) {
+      throw new AppError(
+        "Invalid password reset authorization.",
+        401
+      );
+    }
+
+    const user = await userService.findByEmail(normalizedEmail);
+
     if (!user) {
       throw new AppError("User account not found.", 404);
     }
@@ -311,13 +363,13 @@ class AuthService {
     user.tokenVersion = (user.tokenVersion || 1) + 1;
     await user.save();
 
+    // Revoke existing login sessions after password reset.
     await sessionService.revokeAllUserSessions(user._id);
 
     return {
       message: "Password reset successfully. Please log in with your new password.",
     };
   }
-
   // Change Password
   async changePassword(userId, { currentPassword, newPassword }, currentRefreshToken) {
     const user = await userService.findById(userId, "+password");
