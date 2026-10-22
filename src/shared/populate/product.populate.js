@@ -55,6 +55,7 @@ export const PRODUCT_POPULATE = [
         populate: [
             { path: "thumbnail" },
             { path: "images" },
+            { path: "gallery" },
         ],
     },
     {
