@@ -22,7 +22,7 @@ export const PRODUCT_MEDIA_POPULATE = [
         path: "thumbnail",
     },
     {
-        path: "gallery",
+        path: "gallery.media",
     },
     {
         path: "videos",
@@ -44,6 +44,15 @@ export const VARIANT_POPULATE = [
     {
         path: "product",
         select: "name slug sku productType status shortDescription",
+    },
+    {
+        path: "thumbnail",
+    },
+    {
+        path: "images",
+    },
+    {
+        path: "gallery",
     },
     {
         path: "createdBy",
@@ -133,7 +142,7 @@ export const REVIEW_POPULATE = [
     },
     {
         path: "variant",
-        select: "title slug sku attributes",
+        select: "title slug sku attributes thumbnail image images",
     },
     {
         path: "order",

@@ -15,11 +15,12 @@ import {
 const router = Router();
 
 // Public Routes
-    router.get("/", productController.getAll);
+router.get("/", productController.getAll);
+router.get("/slug/:slug", productController.getBySlug);
 router.get("/:id", productController.getById);
 
 // Admin Routes
-    router.post(
+router.post(
     "/",
     authMiddleware,
     authorize(["ADMIN"]),

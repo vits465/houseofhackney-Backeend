@@ -61,6 +61,28 @@ const variantSchema = new mongoose.Schema(
       width: Number,
       height: Number,
     },
+    thumbnail: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Media",
+      default: null,
+    },
+    images: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Media",
+      },
+    ],
+    image: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+    gallery: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Media",
+      },
+    ],
     status: {
       type: String,
       enum: ["ACTIVE", "INACTIVE"],
@@ -84,6 +106,8 @@ const variantSchema = new mongoose.Schema(
   {
     timestamps: true,
     versionKey: false,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
 

@@ -10,18 +10,16 @@ import {
     createVariantValidation,
     updateVariantValidation,
     deleteVariantValidation,
-    getVariantValidation,
 } from "./variant.validation.js";
 
-const router = Router();
+const router = Router({ mergeParams: true });
 
-router.get(
-    "/product/:productId",
-    getVariantValidation,
-    validateRequest,
-    variantController.getAll
-);
+// Public Routes
+router.get("/", variantController.getAll);
+router.get("/product/:productId", variantController.getAll);
+router.get("/:id", variantController.getById);
 
+// Admin Routes
 router.post(
     "/",
     authMiddleware,

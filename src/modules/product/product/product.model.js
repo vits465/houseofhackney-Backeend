@@ -121,6 +121,20 @@ const productSchema = new mongoose.Schema(
             },
         ],
 
+        // Direct convenience image URLs (cached from media/variants for fast lookup)
+        thumbnail: {
+            type: String,
+            default: "",
+            trim: true,
+        },
+
+        images: [
+            {
+                type: String,
+                trim: true,
+            },
+        ],
+
         // Product flags
         isFeatured: {
             type: Boolean,
@@ -199,8 +213,39 @@ const productSchema = new mongoose.Schema(
         timestamps: true,
         versionKey: false,
         suppressReservedKeysWarning: true,
+        toJSON: { virtuals: true },
+        toObject: { virtuals: true },
     }
 );
+
+// Virtual relations
+productSchema.virtual("media", {
+    ref: "ProductMedia",
+    localField: "_id",
+    foreignField: "product",
+    justOne: true,
+});
+
+productSchema.virtual("variants", {
+    ref: "Variant",
+    localField: "_id",
+    foreignField: "product",
+    match: { deletedAt: null },
+});
+
+productSchema.virtual("pricing", {
+    ref: "ProductPricing",
+    localField: "_id",
+    foreignField: "product",
+    justOne: true,
+});
+
+productSchema.virtual("inventory", {
+    ref: "ProductInventory",
+    localField: "_id",
+    foreignField: "product",
+    justOne: true,
+});
 
 // Indexes
 productSchema.index({ barcode: 1 });

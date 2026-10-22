@@ -41,6 +41,16 @@ class ProductService extends BaseService {
 
     }
 
+// Get By Slug
+    async getBySlug(slug) {
+        return await this.repository.findBySlug(slug);
+    }
+
+// Get By SKU
+    async getBySku(sku) {
+        return await this.repository.findBySku(sku);
+    }
+
 // Update Product
     async updateProduct(productId, updateData) {
 

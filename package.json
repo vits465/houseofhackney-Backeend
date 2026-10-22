@@ -9,6 +9,7 @@
     "start": "node src/server.js",
     "seed": "node src/seed.js",
     "seed:images": "node src/seed_images_catalog.js",
+    "sync:images": "node src/sync_product_images.js",
     "upload:cloudinary": "node src/upload_images_to_cloudinary.js",
     "swagger:generate": "node src/docs/generateSwagger.js"
   },

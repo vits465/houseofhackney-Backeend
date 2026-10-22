@@ -13,6 +13,7 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 import Media from "./modules/media/media.model.js";
 import ProductMedia from "./modules/product/product-media/productMedia.model.js";
 import Product from "./modules/product/product/product.model.js";
+import Variant from "./modules/product/Variant/variant.model.js";
 
 // Configure Cloudinary
 cloudinary.config({
@@ -30,6 +31,10 @@ function slugify(text) {
     .replace(/\s+/g, "-")
     .replace(/[^\w\-]+/g, "")
     .replace(/\-\-+/g, "-");
+}
+
+function norm(text) {
+  return (text || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
 // Upload Sharp-compressed buffer stream to Cloudinary
@@ -73,14 +78,19 @@ async function uploadCompressedCatalogToCloudinary() {
         .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f))
         .slice(0, 2); // Top 2 images per variant
 
+      if (!imageFiles.length) continue;
+
       const parts = itemFolder.split("___");
       const rawProdName = parts[0] ? parts[0] : itemFolder;
+      const rawVarName = parts[1] || "";
       const prodSku = `SKU-${slugify(rawProdName).toUpperCase()}`;
 
-      const product = await Product.findOne({ sku: prodSku });
+      const product =
+        (await Product.findOne({ sku: prodSku })) ||
+        (await Product.findOne({ slug: slugify(rawProdName) }));
 
       const cloudinaryFolderPath = `house_of_hackney/${catFolder}/${itemFolder}`;
-      const galleryList = [];
+      const uploadedMediaRecords = [];
       let thumbnailId = null;
 
       for (const imgFile of imageFiles) {
@@ -128,7 +138,7 @@ async function uploadCompressedCatalogToCloudinary() {
           );
 
           if (!thumbnailId) thumbnailId = mediaRecord._id;
-          galleryList.push({ media: mediaRecord._id, alt: imgFile });
+          uploadedMediaRecords.push(mediaRecord);
 
           totalUploaded++;
           console.log(`  └─ ⚡ Compressed & Uploaded (${(result.bytes / 1024).toFixed(1)} KB): ${result.secure_url}`);
@@ -138,17 +148,74 @@ async function uploadCompressedCatalogToCloudinary() {
         }
       }
 
-      // Link Cloudinary Media to ProductMedia collection
-      if (product && thumbnailId) {
+      // Link to Variant
+      if (product && uploadedMediaRecords.length > 0) {
+        const mediaIds = uploadedMediaRecords.map((m) => m._id);
+        const primaryMedia = uploadedMediaRecords[0];
+        const primaryUrl = primaryMedia.secureUrl || primaryMedia.url;
+
+        // Find matching variant
+        const productVariants = await Variant.find({ product: product._id });
+        let matchedVariant = null;
+
+        if (rawVarName) {
+          matchedVariant = productVariants.find(
+            (v) =>
+              norm(v.slug).includes(norm(rawVarName)) ||
+              norm(v.title).includes(norm(rawVarName)) ||
+              norm(v.sku).includes(norm(rawVarName))
+          );
+        }
+
+        if (!matchedVariant && productVariants.length === 1) {
+          matchedVariant = productVariants[0];
+        }
+
+        if (matchedVariant) {
+          await Variant.findByIdAndUpdate(matchedVariant._id, {
+            thumbnail: primaryMedia._id,
+            image: primaryUrl,
+            images: mediaIds,
+            gallery: mediaIds,
+          });
+          console.log(`     ↳ Linked images to variant: "${matchedVariant.title}"`);
+        }
+
+        // Add to ProductMedia gallery (accumulate without duplicate)
+        const existingPM = await ProductMedia.findOne({ product: product._id });
+        const existingGallery = existingPM?.gallery || [];
+        const existingMediaIds = new Set(
+          existingGallery.map((g) => (g.media ? g.media.toString() : g.toString()))
+        );
+
+        for (const m of uploadedMediaRecords) {
+          if (!existingMediaIds.has(m._id.toString())) {
+            existingGallery.push({
+              media: m._id,
+              alt: `${product.name} - ${rawVarName || "Original"}`,
+              sortOrder: existingGallery.length,
+            });
+            existingMediaIds.add(m._id.toString());
+          }
+        }
+
+        const productThumbnailId = existingPM?.thumbnail || thumbnailId;
+
         await ProductMedia.findOneAndUpdate(
           { product: product._id },
           {
             product: product._id,
-            thumbnail: thumbnailId,
-            gallery: galleryList,
+            thumbnail: productThumbnailId,
+            gallery: existingGallery,
           },
           { upsert: true }
         );
+
+        // Update Product direct image fields
+        await Product.findByIdAndUpdate(product._id, {
+          thumbnail: primaryUrl,
+          $addToSet: { images: { $each: uploadedMediaRecords.map((m) => m.secureUrl || m.url) } },
+        });
       }
     }
   }

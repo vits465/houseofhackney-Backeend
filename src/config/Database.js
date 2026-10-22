@@ -1,3 +1,4 @@
+import dns from "node:dns";
 import mongoose from "mongoose";
 import roleRepository from "../modules/auth/role/role.repository.js";
 import userService from "../modules/user/user.service.js";
@@ -125,6 +126,14 @@ const connectDatabase = async () => {
       "MONGODB_URI points to localhost. Vercel cloud serverless functions cannot reach your local machine. Please add a MongoDB Atlas cloud URI to your Vercel Environment Variables.";
     console.error(`❌ ${errorMsg}`);
     throw new Error(errorMsg);
+  }
+
+  if (uri.startsWith("mongodb+srv:")) {
+    try {
+      dns.setServers(["8.8.8.8", "1.1.1.1"]);
+    } catch {
+      // Ignore if environment forbids custom DNS servers
+    }
   }
 
   isConnecting = mongoose

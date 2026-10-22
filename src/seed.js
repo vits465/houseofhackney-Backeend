@@ -477,16 +477,55 @@ async function seedMasterDatabase() {
         mediaCount++;
       }
 
-      if (thumbnailId) {
+      if (thumbnailId && galleryList.length > 0) {
+        const firstImgPubId = `house_of_hackney/${catFolder}/${itemFolder}/${slugify(path.parse(imageFiles[0]).name)}`;
+        const firstImgUrl = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${firstImgPubId}`;
+
+        await Variant.findByIdAndUpdate(variant._id, {
+          thumbnail: thumbnailId,
+          image: firstImgUrl,
+          images: galleryList.map((g) => g.media),
+          gallery: galleryList.map((g) => g.media),
+        });
+
+        const existingPM = await ProductMedia.findOne({ product: product._id });
+        const existingGallery = existingPM?.gallery || [];
+        const existingMediaIds = new Set(
+          existingGallery.map((g) => (g.media ? g.media.toString() : g.toString()))
+        );
+
+        for (const item of galleryList) {
+          if (!existingMediaIds.has(item.media.toString())) {
+            existingGallery.push({
+              media: item.media,
+              alt: item.alt,
+              sortOrder: existingGallery.length,
+            });
+            existingMediaIds.add(item.media.toString());
+          }
+        }
+
         await ProductMedia.findOneAndUpdate(
           { product: product._id },
           {
             product: product._id,
-            thumbnail: thumbnailId,
-            gallery: galleryList,
+            thumbnail: existingPM?.thumbnail || thumbnailId,
+            gallery: existingGallery,
           },
           { upsert: true }
         );
+
+        await Product.findByIdAndUpdate(product._id, {
+          thumbnail: firstImgUrl,
+          $addToSet: {
+            images: {
+              $each: imageFiles.map(
+                (img) =>
+                  `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/house_of_hackney/${catFolder}/${itemFolder}/${slugify(path.parse(img).name)}`
+              ),
+            },
+          },
+        });
       }
     }
 

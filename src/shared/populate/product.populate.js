@@ -44,6 +44,26 @@ export const PRODUCT_POPULATE = [
         select: "name slug description status",
     },
     {
+        path: "media",
+        populate: [
+            { path: "thumbnail" },
+            { path: "gallery.media" },
+        ],
+    },
+    {
+        path: "variants",
+        populate: [
+            { path: "thumbnail" },
+            { path: "images" },
+        ],
+    },
+    {
+        path: "pricing",
+    },
+    {
+        path: "inventory",
+    },
+    {
         path: "publishedBy",
         select: "firstName lastName email displayName",
     },

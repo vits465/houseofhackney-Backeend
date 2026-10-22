@@ -57,6 +57,7 @@ router.use("/products/:productId/specifications", specificationRoutes);
 router.use("/products/:productId/seo", seoRoutes);
 router.use("/products/:productId/related", relatedRoutes);
 router.use("/products/:productId/reviews", reviewRoutes);
+router.use("/products/:productId/variants", variantRoutes);
 
 // Global product sub-module routes
 router.use("/reviews", reviewRoutes);

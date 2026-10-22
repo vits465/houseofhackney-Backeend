@@ -37,12 +37,7 @@ const productMediaSchema = new mongoose.Schema(
             default: null,
         },
 
-        gallery: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "Media",
-            },
-        ],
+        gallery: [galleryItemSchema],
 
         videos: [
             {
@@ -83,6 +78,8 @@ const productMediaSchema = new mongoose.Schema(
     {
         timestamps: true,
         versionKey: false,
+        toJSON: { virtuals: true },
+        toObject: { virtuals: true },
     }
 );
 
