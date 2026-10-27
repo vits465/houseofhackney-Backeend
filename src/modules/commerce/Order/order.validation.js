@@ -33,11 +33,22 @@ export const cancelOrderValidation = [
 // Validation rules for updating order status (Admin)
 export const updateStatusValidation = [
     param("id")
-        .isMongoId()
+        .custom((val) => {
+            if (typeof val === "string" && val.trim().length > 0) {
+                return true;
+            }
+            throw new Error("Invalid order ID");
+        })
         .withMessage("Invalid order ID"),
 
     body("status")
-        .isIn(["PENDING", "CONFIRMED", "PROCESSING", "SHIPPED", "DELIVERED", "CANCELLED", "RETURNED"])
+        .custom((val) => {
+            const allowed = ["PENDING", "CONFIRMED", "PROCESSING", "SHIPPED", "DELIVERED", "CANCELLED", "RETURNED", "IN PRODUCTION", "DISPATCHED"];
+            if (typeof val === "string" && allowed.includes(val.toUpperCase())) {
+                return true;
+            }
+            throw new Error("Invalid order status");
+        })
         .withMessage("Invalid order status"),
 ];
 

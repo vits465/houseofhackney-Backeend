@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation — <%= order.orderNumber %> | House of Hackney</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f7f5f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1f1e1a; -webkit-font-smoothing: antialiased;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f7f5f0; padding: 40px 15px;">
+    <tr>
+      <td align="center">
+        <!-- Main Email Container -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 640px; background-color: #ffffff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #e8e3d8;">
+          
+          <!-- BRAND HEADER -->
+          <tr>
+            <td style="background-color: #111111; padding: 36px 30px; text-align: center; border-bottom: 2px solid #c5a968;">
+              <p style="margin: 0 0 6px 0; color: #c5a968; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; font-weight: 600;">EST. SHOREDITCH, LONDON</p>
+              <h1 style="margin: 0; color: #ffffff; font-family: Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase;">
+                HOUSE OF HACKNEY
+              </h1>
+              <p style="margin: 6px 0 0 0; color: #a39f93; font-size: 11px; letter-spacing: 2px; text-transform: uppercase;">BRITISH LUXURY INTERIORS</p>
+            </td>
+          </tr>
+
+          <!-- ORDER CONFIRMATION HERO -->
+          <tr>
+            <td style="padding: 40px 40px 25px 40px; text-align: center; background-color: #fbfaf7; border-bottom: 1px solid #eee8dc;">
+              <div style="display: inline-block; width: 48px; height: 48px; line-height: 48px; border-radius: 50%; background-color: #244426; color: #ffffff; font-size: 24px; text-align: center; margin-bottom: 16px;">
+                &#10003;
+              </div>
+              <h2 style="margin: 0 0 8px 0; color: #171713; font-family: Georgia, 'Times New Roman', serif; font-size: 24px; font-weight: 400; letter-spacing: 0.5px;">
+                Commission Confirmed
+              </h2>
+              <p style="margin: 0; color: #666155; font-size: 14px; line-height: 1.6;">
+                Dear <%= name %>, thank you for your bespoke patronage. Your order has been registered with our English atelier and print mills.
+              </p>
+              
+              <!-- Commission Details Pill -->
+              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin-top: 24px; background-color: #ffffff; border: 1px solid #dfd8cc; border-radius: 8px; padding: 14px 24px;">
+                <tr>
+                  <td style="text-align: center;">
+                    <span style="display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #888173; margin-bottom: 4px;">Commission Reference</span>
+                    <strong style="font-family: 'Courier New', Courier, monospace; font-size: 18px; color: #171713; letter-spacing: 1px;"><%= order.orderNumber %></strong>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ORDER SUMMARY DETAILS -->
+          <tr>
+            <td style="padding: 30px 40px 10px 40px;">
+              <h3 style="margin: 0 0 16px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; color: #171713; letter-spacing: 0.5px; border-bottom: 1px solid #eee8dc; padding-bottom: 10px;">
+                Purchased Creations
+              </h3>
+
+              <!-- ITEMS LIST -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <% if (order.items && order.items.length > 0) { %>
+                  <% order.items.forEach(function(item) { 
+                    const itemPrice = Number(item.unitPrice || item.price || 0);
+                    const itemQty = Number(item.quantity || item.qty || 1);
+                    const itemTotal = Number(item.total || (itemPrice * itemQty));
+                    const currencySymbol = (order.currency === 'INR' || !order.currency) ? '₹' : '£';
+                    const itemImg = item.image || item.product?.featuredImage?.url || item.product?.images?.[0]?.url || 'https://res.cloudinary.com/tysd8i65/image/upload/c_scale,w_400,f_auto,q_auto/house_of_hackney/wallpaper/babylon_wallpaper_dove___willow/babylon-wallpaper-dove-willow-0';
+                  %>
+                  <tr>
+                    <td style="padding: 14px 0; border-bottom: 1px solid #f0eae1; vertical-align: top;">
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td width="64" style="vertical-align: top; padding-right: 16px;">
+                            <img src="<%= itemImg %>" alt="<%= item.name || 'Creation' %>" width="64" height="64" style="display: block; border-radius: 6px; object-fit: cover; border: 1px solid #e5ded5;" />
+                          </td>
+                          <td style="vertical-align: top;">
+                            <strong style="display: block; font-size: 14px; color: #171713; margin-bottom: 4px;"><%= item.name || item.title || 'Artisanal Piece' %></strong>
+                            <% if (item.variant || item.variantTitle) { %>
+                              <span style="display: block; font-size: 12px; color: #7a7569; margin-bottom: 4px;">Variant: <%= item.variantTitle || item.variant %></span>
+                            <% } %>
+                            <span style="font-size: 12px; color: #918b7d;">Qty: <%= itemQty %> &times; <%= currencySymbol %><%= itemPrice.toLocaleString('en-IN') %></span>
+                          </td>
+                          <td align="right" style="vertical-align: top; font-size: 14px; font-weight: 600; color: #171713; white-space: nowrap;">
+                            <%= currencySymbol %><%= itemTotal.toLocaleString('en-IN') %>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <% }); %>
+                <% } else { %>
+                  <tr>
+                    <td style="padding: 15px 0; color: #777; font-size: 13px;">No items specified.</td>
+                  </tr>
+                <% } %>
+              </table>
+
+              <!-- FINANCIAL BREAKDOWN -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 20px; border-top: 1px solid #e0d9cd; padding-top: 14px;">
+                <% 
+                  const currSym = (order.currency === 'INR' || !order.currency) ? '₹' : '£';
+                  const sub = Number(order.subtotal || 0);
+                  const disc = Number(order.discount || order.discountAmount || 0);
+                  const fee = Number(order.shippingFee || 0);
+                  const grand = Number(order.grandTotal || order.totalAmount || order.total || Math.max(0, sub - disc + fee));
+                %>
+                <tr>
+                  <td style="padding: 4px 0; font-size: 13px; color: #6e695d;">Subtotal</td>
+                  <td align="right" style="padding: 4px 0; font-size: 13px; color: #171713; font-weight: 500;">
+                    <%= currSym %><%= sub.toLocaleString('en-IN') %>
+                  </td>
+                </tr>
+
+                <% if (disc > 0) { %>
+                <tr>
+                  <td style="padding: 4px 0; font-size: 13px; color: #244426;">
+                    Patron Voucher Discount <% if (order.couponCode || order.coupon?.code) { %>(<%= order.couponCode || order.coupon?.code %>)<% } %>
+                  </td>
+                  <td align="right" style="padding: 4px 0; font-size: 13px; color: #244426; font-weight: 600;">
+                    - <%= currSym %><%= disc.toLocaleString('en-IN') %>
+                  </td>
+                </tr>
+                <% } %>
+
+                <tr>
+                  <td style="padding: 4px 0; font-size: 13px; color: #6e695d;">White Glove Delivery</td>
+                  <td align="right" style="padding: 4px 0; font-size: 13px; color: #171713; font-weight: 500;">
+                    <%= fee > 0 ? (currSym + fee.toLocaleString('en-IN')) : 'Complimentary' %>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 12px 0 6px 0; font-size: 16px; font-weight: 700; color: #171713; border-top: 1px solid #dfd8cc;">Total Amount Paid</td>
+                  <td align="right" style="padding: 12px 0 6px 0; font-size: 18px; font-weight: 700; color: #171713; border-top: 1px solid #dfd8cc;">
+                    <%= currSym %><%= grand.toLocaleString('en-IN') %>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- PAYMENT METHOD & STATUS -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 14px; background-color: #f7f9f5; border: 1px solid #d5e2d1; border-radius: 8px; padding: 12px 18px;">
+                <tr>
+                  <td style="font-size: 12px; color: #2d5022;">
+                    <strong>Payment Status:</strong> <%= order.paymentStatus || 'PAID' %> via <%= order.paymentMethod || 'RAZORPAY' %>
+                    <% if (order.paymentId) { %>
+                      <br><span style="font-size: 11px; color: #526c49;">Transaction ID: <%= order.paymentId %></span>
+                    <% } %>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- SHIPPING DESTINATION & PATRON DETAILS -->
+          <tr>
+            <td style="padding: 20px 40px 30px 40px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #fcfbf9; border: 1px solid #eee8dc; border-radius: 8px; padding: 18px;">
+                <tr>
+                  <td>
+                    <h4 style="margin: 0 0 10px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 15px; color: #171713; letter-spacing: 0.5px;">
+                      Delivery Destination
+                    </h4>
+                    <% 
+                      const addr = order.shippingAddress || {};
+                      const recipient = addr.fullName || name || 'Valued Patron';
+                      const street = [addr.addressLine1, addr.addressLine2, addr.landmark].filter(Boolean).join(', ');
+                      const cityState = [addr.city, addr.state].filter(Boolean).join(', ');
+                      const postCountry = [addr.postalCode, addr.country].filter(Boolean).join(', ');
+                    %>
+                    <p style="margin: 0 0 4px 0; font-size: 13px; font-weight: 600; color: #171713;"><%= recipient %></p>
+                    <% if (street) { %><p style="margin: 0 0 3px 0; font-size: 12px; color: #5a554a;"><%= street %></p><% } %>
+                    <% if (cityState) { %><p style="margin: 0 0 3px 0; font-size: 12px; color: #5a554a;"><%= cityState %></p><% } %>
+                    <% if (postCountry) { %><p style="margin: 0 0 4px 0; font-size: 12px; color: #5a554a;"><%= postCountry %></p><% } %>
+                    <% if (addr.phone) { %><p style="margin: 6px 0 0 0; font-size: 12px; color: #7a7569;">Contact: <%= addr.phone %></p><% } %>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- CONCIERGE ASSISTANCE -->
+          <tr>
+            <td style="padding: 0 40px 36px 40px; text-align: center;">
+              <p style="margin: 0 0 8px 0; font-size: 13px; color: #6e695d;">
+                Should you require adjustments to your commission, please liaise with our London Concierge:
+              </p>
+              <a href="mailto:support@houseofhackney.com" style="display: inline-block; color: #111111; font-weight: 600; font-size: 13px; text-decoration: underline;">
+                concierge@houseofhackney.com
+              </a>
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td style="background-color: #111111; padding: 24px 30px; text-align: center; border-top: 1px solid #222222;">
+              <p style="margin: 0 0 6px 0; color: #c5a968; font-size: 11px; letter-spacing: 2px; text-transform: uppercase;">
+                HOUSE OF HACKNEY &bull; LONDON
+              </p>
+              <p style="margin: 0; color: #777265; font-size: 11px; line-height: 1.5;">
+                &copy; <%= year %> House of Hackney. All rights reserved.<br>
+                Certified B-Corporation &bull; Crafted with environmental reverence in England.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

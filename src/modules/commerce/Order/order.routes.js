@@ -14,7 +14,13 @@ import {
 
 const router = Router();
 
-// All order operations require authentication
+// Send order confirmation email (Public/Checkout endpoint)
+router.post(
+    "/send-confirmation",
+    orderController.sendConfirmation
+);
+
+// All subsequent order operations require authentication
 router.use(authMiddleware);
 
 // Get user orders list

@@ -94,6 +94,27 @@ class OrderController {
         }
     }
 
+    // Send order confirmation email
+    async sendConfirmation(req, res, next) {
+        try {
+            const { order, recipientEmail, recipientName } = req.body || {};
+            const result = await orderService.sendConfirmationEmail({
+                order,
+                recipientEmail,
+                recipientName,
+            });
+
+            return new ApiResponse(
+                res,
+                200,
+                "Order confirmation email dispatched successfully.",
+                result
+            ).send();
+        } catch (error) {
+            next(error);
+        }
+    }
+
 }
 
 export default new OrderController();

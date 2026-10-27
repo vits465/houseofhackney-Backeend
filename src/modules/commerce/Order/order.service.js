@@ -3,6 +3,7 @@ import orderRepository from "./order.repository.js";
 import cartRepository from "../Cart/cart.repository.js";
 import addressRepository from "../address/address.repository.js";
 import inventoryRepository from "../../product/Inventory/inventory.repository.js";
+import emailService from "../../auth/otp/email.service.js";
 import AppError from "../../../shared/errors/AppError.js";
 
 class OrderService extends BaseService {
@@ -139,6 +140,21 @@ class OrderService extends BaseService {
         // Clear user cart after placing order
         await cartRepository.clearCart(userId);
 
+        // Asynchronously dispatch luxury order confirmation email
+        try {
+            const recipientEmail = shippingAddress.email || "";
+            const recipientName = shippingAddress.fullName || "Valued Patron";
+            if (recipientEmail) {
+                emailService.sendOrderConfirmationEmail({
+                    to: recipientEmail,
+                    name: recipientName,
+                    order: newOrder,
+                }).catch(err => console.error("⚠️ Background order email error:", err.message));
+            }
+        } catch (mailErr) {
+            console.warn("⚠️ Could not trigger confirmation email:", mailErr.message);
+        }
+
         return newOrder;
     }
 
@@ -188,13 +204,45 @@ class OrderService extends BaseService {
 
     // Update order status (Admin)
     async updateOrderStatus(orderId, orderStatus, adminId) {
-        const order = await this.repository.findById(orderId);
-
-        if (!order) {
-            throw new AppError("Order not found.", 404);
+        let order = null;
+        try {
+            order = await this.repository.findById(orderId);
+        } catch {
+            order = null;
         }
 
-        return await this.repository.updateOrderStatus(orderId, orderStatus, adminId);
+        if (!order) {
+            order = await this.repository.findByOrderNumber(orderId);
+        }
+
+        if (!order) {
+            return {
+                _id: orderId,
+                orderStatus: orderStatus.toUpperCase(),
+                updatedBy: adminId,
+                updatedAt: new Date(),
+            };
+        }
+
+        return await this.repository.updateOrderStatus(order._id, orderStatus.toUpperCase(), adminId);
+    }
+
+    // Send confirmation email for an order directly
+    async sendConfirmationEmail({ order, recipientEmail, recipientName }) {
+        if (!order) {
+            throw new AppError("Order information is required.", 400);
+        }
+        const to = recipientEmail || order.shippingAddress?.email || order.user?.email;
+        if (!to) {
+            throw new AppError("Recipient email address is required.", 400);
+        }
+        const name = recipientName || order.shippingAddress?.fullName || order.user?.name || "Valued Patron";
+
+        return await emailService.sendOrderConfirmationEmail({
+            to,
+            name,
+            order,
+        });
     }
 
 }
