@@ -71,6 +71,11 @@ class InvoiceService extends BaseService {
         return await this.repository.create(invoiceData);
     }
 
+    // Get all system invoices (Super Admin / Admin)
+    async getAllInvoices() {
+        return await this.repository.findAll({ deletedAt: null }, null, { sort: { createdAt: -1 } });
+    }
+
     // Get user invoices list
     async getUserInvoices(userId) {
         return await this.repository.findByUser(userId);

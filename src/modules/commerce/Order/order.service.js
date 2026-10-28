@@ -3,6 +3,7 @@ import orderRepository from "./order.repository.js";
 import cartRepository from "../Cart/cart.repository.js";
 import addressRepository from "../address/address.repository.js";
 import inventoryRepository from "../../product/Inventory/inventory.repository.js";
+import invoiceService from "../invoice/invoice.service.js";
 import emailService from "../../auth/otp/email.service.js";
 import AppError from "../../../shared/errors/AppError.js";
 
@@ -139,6 +140,13 @@ class OrderService extends BaseService {
 
         // Clear user cart after placing order
         await cartRepository.clearCart(userId);
+
+        // Auto-generate invoice for order
+        try {
+            await invoiceService.generateInvoiceForOrder(userId, { orderId: newOrder._id });
+        } catch (invErr) {
+            console.warn("⚠️ Retail order invoice auto-generation warning:", invErr.message);
+        }
 
         // Asynchronously dispatch luxury order confirmation email
         try {

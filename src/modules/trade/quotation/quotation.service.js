@@ -3,6 +3,7 @@ import quotationRepository from "./quotation.repository.js";
 import tradeProfileRepository from "../tradeProfile/tradeProfile.repository.js";
 import productRepository from "../../product/product/product.repository.js";
 import orderRepository from "../../commerce/Order/order.repository.js";
+import invoiceService from "../../commerce/invoice/invoice.service.js";
 import AppError from "../../../shared/errors/AppError.js";
 
 class QuotationService extends BaseService {
@@ -190,6 +191,13 @@ class QuotationService extends BaseService {
             convertedOrder: order._id,
             updatedBy: userId,
         });
+
+        // Automatically generate commercial invoice for converted trade order
+        try {
+            await invoiceService.generateInvoiceForOrder(userId, { orderId: order._id });
+        } catch (invErr) {
+            console.warn("⚠️ Trade invoice auto-generation warning:", invErr.message);
+        }
 
         return order;
     }

@@ -19,10 +19,13 @@ class InvoiceController {
         }
     }
 
-    // Get user invoices
+    // Get user invoices (or all system invoices for Super Admin / Admin)
     async getAll(req, res, next) {
         try {
-            const invoices = await invoiceService.getUserInvoices(req.user._id);
+            const isAdmin = req.user.roles?.some(r => r.slug === "admin" || r.slug === "super_admin");
+            const invoices = isAdmin
+                ? await invoiceService.getAllInvoices()
+                : await invoiceService.getUserInvoices(req.user._id);
 
             return new ApiResponse(
                 res,
