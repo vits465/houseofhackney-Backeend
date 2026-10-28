@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import BaseService from "../../../shared/database/BaseService.js";
 import tradeProfileRepository from "./tradeProfile.repository.js";
 import companyRepository from "../Company/company.repository.js";
@@ -146,14 +147,21 @@ class TradeProfileService extends BaseService {
         if (uppercaseStatus === "APPROVED") {
             let assignedTier = null;
 
-            if (tierId) {
+            if (tierId && mongoose.Types.ObjectId.isValid(tierId)) {
                 assignedTier = await tradeTierRepository.findById(tierId);
-            } else {
-                assignedTier = await tradeTierRepository.findByName("BRONZE");
+            } else if (tierId) {
+                const cleanName = String(tierId).replace(/^tier_/i, "").toUpperCase();
+                assignedTier = await tradeTierRepository.findByName(cleanName) ||
+                               await tradeTierRepository.findOne({ name: new RegExp(cleanName, "i") });
+            }
+
+            if (!assignedTier) {
+                assignedTier = await tradeTierRepository.findByName("GOLD") ||
+                               await tradeTierRepository.findByName("BRONZE");
             }
 
             extraData.tier = assignedTier ? assignedTier._id : null;
-            extraData.creditLimit = creditLimit !== undefined ? Number(creditLimit) : (assignedTier?.creditLimit || 100000);
+            extraData.creditLimit = creditLimit !== undefined ? Number(creditLimit) : (assignedTier?.creditLimit || 50000);
             extraData.approvedAt = new Date();
             extraData.approvedBy = adminId;
         } else if (uppercaseStatus === "REJECTED") {

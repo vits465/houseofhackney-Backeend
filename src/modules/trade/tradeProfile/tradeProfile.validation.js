@@ -56,7 +56,10 @@ export const reviewTradeValidation = [
 
     body("tierId")
         .optional()
-        .isMongoId()
+        .custom((val) => {
+            if (!val) return true;
+            return typeof val === "string" && val.length > 0;
+        })
         .withMessage("Invalid tier ID"),
 
     body("creditLimit")
