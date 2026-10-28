@@ -2,6 +2,7 @@ import { Router } from "express";
 
 import couponController from "./coupon.controller.js";
 import authMiddleware from "../../../middlewares/auth.middleware.js";
+import optionalAuthMiddleware from "../../../middlewares/optionalAuth.middleware.js";
 import { authorize } from "../../../middlewares/authorize.middleware.js";
 import validateRequest from "../../../middlewares/validateRequest.js";
 
@@ -13,16 +14,17 @@ import {
 
 const router = Router();
 
-// All coupon operations require authentication
-router.use(authMiddleware);
-
-// Validate coupon code against user cart subtotal
+// Validate coupon code against user cart subtotal (Optional Auth for guest checkout)
 router.post(
     "/validate",
+    optionalAuthMiddleware,
     validateCouponValidation,
     validateRequest,
     couponController.validate
 );
+
+// All other coupon management operations require authentication
+router.use(authMiddleware);
 
 // Get all coupons
 router.get(
