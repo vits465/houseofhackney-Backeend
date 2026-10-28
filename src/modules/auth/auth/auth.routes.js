@@ -5,6 +5,7 @@ import validateRequest from "../../../middlewares/validateRequest.js";
 import { createRateLimiter } from "../../../middlewares/rateLimit.middleware.js";
 import {
   registerValidation,
+  tradeRegisterValidation,
   verifyEmailValidation,
   resendOtpValidation,
   loginValidation,
@@ -36,6 +37,13 @@ router.post(
   registerValidation,
   validateRequest,
   authController.register
+);
+
+router.post(
+  "/trade-register",
+  tradeRegisterValidation,
+  validateRequest,
+  authController.tradeRegister
 );
 
 router.post(

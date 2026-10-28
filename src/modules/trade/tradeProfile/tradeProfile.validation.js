@@ -2,10 +2,13 @@ import { body, param } from "express-validator";
 
 // Validation rules for trade application
 export const applyTradeValidation = [
-    body("phone")
-        .trim()
-        .notEmpty()
-        .withMessage("Contact phone is required"),
+    body().custom((val, { req }) => {
+        const phone = req.body.phone || req.body.companyPhone;
+        if (!phone || !phone.toString().trim()) {
+            throw new Error("Contact phone is required");
+        }
+        return true;
+    }),
 
     body("businessType")
         .optional()
@@ -13,6 +16,7 @@ export const applyTradeValidation = [
             "INTERIOR_DESIGNER",
             "ARCHITECT",
             "HOTEL_HOSPITALITY",
+            "HOSPITALITY",
             "RETAILER",
             "CONTRACTOR",
             "OTHER",
@@ -24,6 +28,18 @@ export const applyTradeValidation = [
         .trim(),
 
     body("vatNumber")
+        .optional()
+        .trim(),
+
+    body("companyName")
+        .optional()
+        .trim(),
+
+    body("companyPhone")
+        .optional()
+        .trim(),
+
+    body("phone")
         .optional()
         .trim(),
 ];

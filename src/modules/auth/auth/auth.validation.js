@@ -142,3 +142,47 @@ export const changePasswordValidation = [
     .isLength({ min: 6 })
     .withMessage("New password must be at least 6 characters"),
 ];
+
+export const tradeRegisterValidation = [
+  body("firstName")
+    .trim()
+    .notEmpty()
+    .withMessage("First name is required")
+    .isLength({ max: 50 })
+    .withMessage("First name cannot exceed 50 characters"),
+  body("lastName")
+    .trim()
+    .notEmpty()
+    .withMessage("Last name is required")
+    .isLength({ max: 50 })
+    .withMessage("Last name cannot exceed 50 characters"),
+  body("email")
+    .trim()
+    .notEmpty()
+    .withMessage("Email is required")
+    .isEmail()
+    .withMessage("Invalid email address")
+    .normalizeEmail(),
+  body("password")
+    .trim()
+    .notEmpty()
+    .withMessage("Password is required")
+    .isLength({ min: 6 })
+    .withMessage("Password must be at least 6 characters"),
+  body("companyName")
+    .trim()
+    .notEmpty()
+    .withMessage("Company or studio name is required"),
+  body().custom((val, { req }) => {
+    const phone = req.body.phone || req.body.companyPhone;
+    if (!phone || !phone.toString().trim()) {
+      throw new Error("Contact phone number is required");
+    }
+    return true;
+  }),
+  body("countryCode").optional().trim(),
+  body("businessType").optional().trim(),
+  body("website").optional().trim(),
+  body("taxId").optional().trim(),
+];
+

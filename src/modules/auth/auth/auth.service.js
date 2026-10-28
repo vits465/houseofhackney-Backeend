@@ -5,6 +5,8 @@ import otpService from "../otp/otp.service.js";
 import emailService from "../otp/email.service.js";
 import AppError from "../../../shared/errors/AppError.js";
 import jwt from "jsonwebtoken";
+import companyRepository from "../../trade/Company/company.repository.js";
+import tradeProfileRepository from "../../trade/tradeProfile/tradeProfile.repository.js";
 
 class AuthService {
   // Register User & Trigger Email Verification OTP
@@ -419,6 +421,109 @@ class AuthService {
   // Revoke Other Sessions
   async revokeOtherSessions(userId, currentRefreshToken) {
     return sessionService.revokeOtherSessions(userId, currentRefreshToken);
+  }
+
+  // Dedicated Trade Account Registration
+  async tradeRegister(tradeData, sessionData = {}) {
+    const {
+      firstName,
+      lastName,
+      email,
+      password,
+      companyName,
+      businessType = "INTERIOR_DESIGNER",
+      website = "",
+      taxId = "",
+      notes = "",
+      countryCode = "+91",
+    } = tradeData;
+
+    const contactPhone = (tradeData.phone || tradeData.companyPhone || "").toString().trim();
+
+    if (!companyName || !companyName.trim()) {
+      throw new AppError("Company or Studio name is required for trade registration.", 400);
+    }
+    if (!contactPhone) {
+      throw new AppError("Contact phone number is required.", 400);
+    }
+
+    // 1. Create User with trade properties
+    const user = await userService.registerUser({
+      firstName: firstName?.trim(),
+      lastName: lastName?.trim(),
+      email: email?.trim().toLowerCase(),
+      password,
+      phone: contactPhone,
+      countryCode,
+      accountType: "BUSINESS",
+      isTradeAccount: true,
+    });
+
+    if (!user) {
+      throw new AppError("Unable to create user account.", 500);
+    }
+
+    // 2. Create Company & Trade Profile
+    try {
+      const company = await companyRepository.create({
+        name: companyName.trim(),
+        phone: contactPhone,
+        website: website ? website.trim() : "",
+        taxNumber: taxId ? taxId.trim() : "",
+        country: tradeData.country || "India",
+        createdBy: user._id,
+      });
+
+      const normalizedBusinessType =
+        businessType === "HOSPITALITY" ? "HOTEL_HOSPITALITY" : businessType;
+
+      const profile = await tradeProfileRepository.create({
+        user: user._id,
+        company: company._id,
+        phone: contactPhone,
+        businessType: normalizedBusinessType,
+        website: website ? website.trim() : "",
+        gstNumber: taxId ? taxId.trim() : "",
+        status: "PENDING",
+        rejectionReason: notes ? notes.trim() : "",
+        createdBy: user._id,
+      });
+
+      user.tradeProfile = profile._id;
+      user.isTradeAccount = true;
+      user.accountType = "BUSINESS";
+      await user.save();
+    } catch (err) {
+      console.warn("Trade profile creation warning during trade registration:", err.message);
+    }
+
+    const userName = `${user.firstName || ""} ${user.lastName || ""}`.trim() || "Trade Partner";
+
+    // 3. Send Verification OTP
+    let otpResult;
+    try {
+      otpResult = await otpService.generateAndSendOtp({
+        email: user.email,
+        name: userName,
+        purpose: "EMAIL_VERIFICATION",
+      });
+    } catch (err) {
+      console.warn("OTP generation warning during trade registration:", err.message);
+    }
+
+    return {
+      message: "Trade registration successful. Please check your email for the verification OTP.",
+      user: {
+        _id: user._id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        accountType: user.accountType,
+        isTradeAccount: user.isTradeAccount,
+        isEmailVerified: user.isEmailVerified || false,
+      },
+      emailVerificationSent: !!otpResult,
+    };
   }
 }
 

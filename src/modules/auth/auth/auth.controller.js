@@ -28,6 +28,18 @@ class AuthController {
     }
   };
 
+  // Dedicated Trade Registration
+  tradeRegister = async (req, res, next) => {
+    try {
+      const sessionData = this.#extractSessionData(req);
+      const result = await authService.tradeRegister(req.body, sessionData);
+
+      return new ApiResponse(res, 201, result.message, result).send();
+    } catch (error) {
+      next(error);
+    }
+  };
+
   // Verify Email OTP
   verifyEmail = async (req, res, next) => {
     try {
