@@ -79,3 +79,27 @@ export const PRODUCT_POPULATE = [
 ];
 
 export default PRODUCT_POPULATE;
+export const PRODUCT_LIST_POPULATE = [
+    {
+        path: "category",
+        select: "name slug description image",
+    },
+    {
+        path: "brand",
+        select: "name slug logo",
+    },
+    {
+        path: "colours",
+        select: "name slug colorHex code status",
+    },
+    {
+        path: "material",
+        select: "name slug",
+    },
+    {
+        path: "pricing",
+    },
+    {
+        path: "inventory",
+    },
+];

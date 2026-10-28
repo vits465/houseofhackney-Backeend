@@ -30,6 +30,7 @@ class BrandController {
         try {
 
             const brands = await brandService.findAll();
+            if (!req.user) res.setHeader("Cache-Control", "public, s-maxage=120, stale-while-revalidate=600");
 
             return new ApiResponse(
                 res,

@@ -116,6 +116,7 @@ const sanitizeMongoUri = (rawUri) => {
 };
 
 let isConnecting = null;
+let hasCheckedAdmin = false;
 
 const connectDatabase = async () => {
   // If already connected, reuse connection
@@ -157,18 +158,24 @@ const connectDatabase = async () => {
     .connect(uri, {
       dbName: "house_of_hackney",
       serverSelectionTimeoutMS: 5000,
+      maxPoolSize: 10,
     })
     .then(async (connection) => {
       console.log(
         `✅ MongoDB Connected: ${connection.connection.host}/${connection.connection.name}`
       );
 
-      // Ensure admin role and user if needed
-      try {
-        const adminRole = await ensureAdminRole();
-        await ensureAdminUser(adminRole);
-      } catch (seedErr) {
-        console.warn("⚠️ Admin seeding note:", seedErr.message);
+      // Asynchronously ensure admin role and user in background without blocking API requests
+      if (!hasCheckedAdmin) {
+        hasCheckedAdmin = true;
+        Promise.resolve().then(async () => {
+          try {
+            const adminRole = await ensureAdminRole();
+            await ensureAdminUser(adminRole);
+          } catch (seedErr) {
+            console.warn("⚠️ Admin seeding note:", seedErr.message);
+          }
+        }).catch(() => {});
       }
 
       return connection;

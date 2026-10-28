@@ -3,6 +3,7 @@ import productService from "./product.service.js";
 import ApiResponse from "../../../shared/responses/ApiResponse.js";
 import AppError from "../../../shared/errors/AppError.js";
 import { formatProduct } from "./product.formatter.js";
+import { PRODUCT_LIST_POPULATE } from "../../../shared/populate/product.populate.js";
 import Category from "../../catalog/Category/category.model.js";
 
 class ProductController {
@@ -148,7 +149,16 @@ class ProductController {
                 page: pageNum,
                 limit: limitNum,
                 sort: sortOption,
+                populate: PRODUCT_LIST_POPULATE,
+                lean: true,
             });
+
+            // Fast Vercel Edge caching for guest shoppers, real-time for authenticated users
+            if (!req.user) {
+                res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=300");
+            } else {
+                res.setHeader("Cache-Control", "no-store");
+            }
 
             const formattedProducts = (paginationResult.data || []).map((p) => formatProduct(p, req.user));
 
