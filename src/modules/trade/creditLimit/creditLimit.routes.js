@@ -34,4 +34,11 @@ router.post(
     creditLimitController.setLimit
 );
 
+// Admin: Settle company credit / mark invoice payment received
+router.post(
+    "/settle",
+    authorize(["ADMIN", "SUPER_ADMIN"]),
+    creditLimitController.settleCredit
+);
+
 export default router;

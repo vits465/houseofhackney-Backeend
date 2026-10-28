@@ -90,11 +90,15 @@ class CreditLimitService extends BaseService {
 
     // Release credit when order invoice is paid
     async releaseCredit(companyId, amount) {
-        const credit = await this.repository.findByCompany(companyId);
+        let credit = await this.repository.findByCompany(companyId);
+        if (!credit) {
+            credit = await this.repository.findById(companyId);
+        }
 
         if (!credit) return null;
 
-        const newUsed = Math.max(0, credit.usedCredit - amount);
+        const settleAmount = amount !== undefined && !isNaN(amount) ? Number(amount) : credit.usedCredit;
+        const newUsed = Math.max(0, credit.usedCredit - settleAmount);
         const newAvailable = credit.totalCredit - newUsed;
         const status = newAvailable > 0 ? "ACTIVE" : credit.status;
 

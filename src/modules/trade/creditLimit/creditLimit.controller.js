@@ -51,6 +51,23 @@ class CreditLimitController {
         }
     }
 
+    // Settle company credit / invoice payment (Admin)
+    async settleCredit(req, res, next) {
+        try {
+            const { companyId, amount } = req.body;
+            const updated = await creditLimitService.releaseCredit(companyId, amount !== undefined ? Number(amount) : undefined);
+
+            return new ApiResponse(
+                res,
+                200,
+                "Company credit balance settled successfully.",
+                updated
+            ).send();
+        } catch (error) {
+            next(error);
+        }
+    }
+
 }
 
 export default new CreditLimitController();
