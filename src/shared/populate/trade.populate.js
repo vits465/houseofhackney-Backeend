@@ -61,7 +61,7 @@ export const QUOTATION_POPULATE = [
     },
     {
         path: "items.product",
-        select: "name slug sku productType status",
+        select: "name slug sku productType status images category pricing",
     },
     {
         path: "items.variant",

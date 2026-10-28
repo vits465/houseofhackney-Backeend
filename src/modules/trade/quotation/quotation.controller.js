@@ -22,9 +22,9 @@ class QuotationController {
     // Get user quotes list
     async getUserQuotes(req, res, next) {
         try {
-            const isAdmin = req.user.roles?.some(r => r.slug === "admin" || r.slug === "super_admin" || r.slug === "super-admin");
+            const isAdmin = req.user.roles?.some(r => r.slug === "admin" || r.slug === "super_admin" || r.slug === "super-admin" || r.name === "ADMIN" || r.name === "SUPER_ADMIN") || req.user.role === "ADMIN" || req.user.role === "SUPER_ADMIN" || req.user.accountType === "ADMIN";
             const quotes = isAdmin
-                ? await quotationService.repository.findAll({})
+                ? await quotationService.repository.findAll({}, null, { sort: { createdAt: -1 } })
                 : await quotationService.getUserQuotes(req.user._id);
 
             return new ApiResponse(
