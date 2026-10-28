@@ -167,6 +167,10 @@ class BaseRepository {
             query.populate(populate);
         }
 
+        if (options.lean) {
+            query.lean();
+        }
+
         const [data, total] = await Promise.all([
             query,
             this.count(filter),
