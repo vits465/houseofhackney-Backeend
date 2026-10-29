@@ -63,8 +63,8 @@ const handleCreateOrder = async (req, res) => {
     if (numAmount < 100) {
       return res.status(400).json({ success: false, message: "Amount must be at least 100 paise" });
     }
-    const key_id = process.env.RAZORPAY_KEY_ID;
-    const key_secret = process.env.RAZORPAY_KEY_SECRET;
+    const key_id = process.env.RAZORPAY_KEY_ID || "rzp_test_TsSGM70azhrLSg";
+    const key_secret = process.env.RAZORPAY_KEY_SECRET || "bwguUzmvy7gcrj7kVlhRBwyB";
     if (!key_id || !key_secret) {
       return res.status(500).json({ success: false, message: "Razorpay credentials not configured" });
     }
@@ -106,7 +106,7 @@ const handleVerifyPayment = (req, res) => {
       });
     }
 
-    const key_secret = process.env.RAZORPAY_KEY_SECRET;
+    const key_secret = process.env.RAZORPAY_KEY_SECRET || "bwguUzmvy7gcrj7kVlhRBwyB";
     if (!key_secret) {
       return res.status(500).json({ success: false, message: "RAZORPAY_KEY_SECRET is not configured" });
     }
