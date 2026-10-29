@@ -59,6 +59,13 @@ export const updateReviewValidation = [
 export const adminReplyValidation = [
     validateMongoId("id", "param", "Invalid review id"),
 
+    (req, res, next) => {
+        if (!req.body.message) {
+            req.body.message = req.body.reply || req.body.comment || "";
+        }
+        next();
+    },
+
     body("message")
         .trim()
         .notEmpty()

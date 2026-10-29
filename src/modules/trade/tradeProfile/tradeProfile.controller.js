@@ -87,6 +87,44 @@ class TradeProfileController {
         }
     }
 
+    // Direct profile update (Admin)
+    async updateProfile(req, res, next) {
+        try {
+            const profile = await tradeProfileService.updateProfile(
+                req.params.id,
+                req.body
+            );
+
+            return new ApiResponse(
+                res,
+                200,
+                "Trade profile updated successfully.",
+                profile
+            ).send();
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    // Upgrade trade tier (Trade User / Admin)
+    async upgradeTier(req, res, next) {
+        try {
+            const profile = await tradeProfileService.upgradeTier(
+                req.user._id,
+                req.body
+            );
+
+            return new ApiResponse(
+                res,
+                200,
+                "Trade tier upgraded successfully.",
+                profile
+            ).send();
+        } catch (error) {
+            next(error);
+        }
+    }
+
 }
 
 export default new TradeProfileController();

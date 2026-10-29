@@ -15,7 +15,7 @@ const router = Router();
 
 // User Routes / Register User
     router.post(
-    "/register",
+    ["/", "/register"],
     createUserValidation,
     validateRequest,
     userController.register

@@ -28,15 +28,15 @@ router.post(
 );
 
 router.delete(
+    "/",
+    wishlistController.clear
+);
+
+router.delete(
     "/:productId",
     removeItemValidation,
     validateRequest,
     wishlistController.remove
-);
-
-router.delete(
-    "/",
-    wishlistController.clear
 );
 
 export default router;

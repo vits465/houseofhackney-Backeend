@@ -43,6 +43,12 @@ router.get(
     tradeProfileController.getPendingApplications
 );
 
+// Admin / Trade: Upgrade tier
+router.post(
+    "/upgrade-tier",
+    tradeProfileController.upgradeTier
+);
+
 // Admin: Review (Approve/Reject) application
 router.patch(
     "/:id/review",
@@ -50,6 +56,13 @@ router.patch(
     reviewTradeValidation,
     validateRequest,
     tradeProfileController.review
+);
+
+// Admin: Direct profile update
+router.patch(
+    "/:id",
+    authorize(["ADMIN", "SUPER_ADMIN"]),
+    tradeProfileController.updateProfile
 );
 
 export default router;

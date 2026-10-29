@@ -42,6 +42,17 @@ export const createCouponValidation = [
 
 // Validation rules for validating a coupon code
 export const validateCouponValidation = [
+    (req, res, next) => {
+        if (!req.body.code && (req.body.couponCode || req.body.coupon)) {
+            req.body.code = req.body.couponCode || req.body.coupon;
+        }
+        if (req.body.subtotal === undefined && req.body.cartTotal !== undefined) {
+            req.body.subtotal = req.body.cartTotal;
+        } else if (req.body.subtotal === undefined && req.body.amount !== undefined) {
+            req.body.subtotal = req.body.amount;
+        }
+        next();
+    },
     body("code")
         .trim()
         .notEmpty()

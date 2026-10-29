@@ -188,6 +188,52 @@ class TradeProfileService extends BaseService {
         return updatedProfile;
     }
 
+    async updateProfile(profileId, updateData) {
+        if (updateData.tier && !mongoose.Types.ObjectId.isValid(updateData.tier)) {
+            const cleanName = String(updateData.tier).replace(/^tier_/i, "").toUpperCase();
+            const foundTier = await tradeTierRepository.findByName(cleanName) ||
+                              await tradeTierRepository.findOne({ name: new RegExp(cleanName, "i") });
+            if (foundTier) {
+                updateData.tier = foundTier._id;
+                if (!updateData.creditLimit) {
+                    updateData.creditLimit = foundTier.creditLimit;
+                }
+            }
+        }
+        return await this.repository.update(profileId, updateData);
+    }
+
+    async upgradeTier(userId, { profileId, tierId, tierName, notes, projectSpend, sector }) {
+        let targetId = profileId;
+        if (!targetId) {
+            const userProfile = await this.repository.findByUser(userId);
+            targetId = userProfile?._id;
+        }
+        if (!targetId) {
+            throw new AppError("Trade profile not found for tier upgrade.", 404);
+        }
+
+        let assignedTier = null;
+        if (tierId && mongoose.Types.ObjectId.isValid(tierId)) {
+            assignedTier = await tradeTierRepository.findById(tierId);
+        } else if (tierName || tierId) {
+            const cleanName = String(tierName || tierId).replace(/^tier_/i, "").toUpperCase();
+            assignedTier = await tradeTierRepository.findByName(cleanName) ||
+                           await tradeTierRepository.findOne({ name: new RegExp(cleanName, "i") });
+        }
+
+        const updateData = {
+            updatedBy: userId,
+        };
+        if (notes) updateData.rejectionReason = notes;
+        if (assignedTier) {
+            updateData.tier = assignedTier._id;
+            updateData.creditLimit = assignedTier.creditLimit || 50000;
+        }
+
+        return await this.repository.update(targetId, updateData);
+    }
+
 }
 
 export default new TradeProfileService();

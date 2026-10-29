@@ -164,9 +164,10 @@ class ReviewController {
 
         try {
 
+            const replyText = req.body.message || req.body.reply || req.body.comment || "";
             const review = await reviewService.addAdminReply(
                 req.params.id,
-                req.body.message,
+                replyText,
                 req.user._id
             );
 
